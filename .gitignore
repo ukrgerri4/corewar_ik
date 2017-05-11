@@ -1,5 +1,6 @@
 # shared files
 /cmake-build-debug/*
+/.idea/*
 CMake*
 .DS*
 ._*
