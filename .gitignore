@@ -1,3 +1,5 @@
 # shared files
+/cmake-build-debug/*
+CMake*
 .DS*
 ._*
