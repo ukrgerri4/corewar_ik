@@ -6,13 +6,12 @@
 /*   By: apoplavs <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/12 10:07:29 by apoplavs          #+#    #+#             */
-/*   Updated: 2017/05/12 17:14:04 by apoplavs         ###   ########.fr       */
+/*   Updated: 2017/05/12 17:16:35 by apoplavs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
-// my comment
-
+// my
 int 		main(int argc, char **argv)
 {
 	int 	fd;
@@ -26,4 +25,5 @@ int 		main(int argc, char **argv)
 	read_filename(fd, argv[1], file);
 	read_file(fd, file);
 }
-// my new comment
+
+//new comment
