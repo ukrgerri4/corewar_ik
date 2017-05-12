@@ -15,6 +15,7 @@
 
 void		check_filename(t_asm *file, char *filename)
 {
+	
 	if (filename[ft_strlen(filename) - 1] != 's'
 		|| filename[ft_strlen(filename) - 2] != '.')
 		ft_error("invalid type of file");
