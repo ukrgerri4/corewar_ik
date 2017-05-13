@@ -18,3 +18,9 @@ void 	ft_error(char *str)
 	exit(1);
 }
 
+char		*point_jump(char *p)
+{
+	while (*p && (*p == ' ' || *p == '\t' || *p == '\r'))
+		p++;
+	return (p);
+}

@@ -12,13 +12,14 @@
 
 #include "asm.h"
 
-
 void		check_filename(t_asm *file, char *filename)
 {
-	
-	if (filename[ft_strlen(filename) - 1] != 's'
-		|| filename[ft_strlen(filename) - 2] != '.')
+	int		len;
+
+	len = ft_strlen(filename);
+	if (filename[len - 1] != 's'
+		|| filename[len - 2] != '.')
 		ft_error("invalid type of file");
-	file->filename = ft_strnew(ft_strlen(filename) - 1);
-	ft_strncpy(file->filename, filename, ft_strlen(filename) - 2);
+	file->filename = ft_strnew(len - 1);
+	ft_strncpy(file->filename, filename, len - 2);
 }

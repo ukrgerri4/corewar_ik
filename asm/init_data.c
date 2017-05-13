@@ -20,6 +20,8 @@ t_asm	init_file(void)
 	file->name = NULL;
 	file->comment = NULL;
 	file->filename = NULL;
+	file->magic = COREWAR_EXEC_MAGIC;
+	file->code = NULL;
 	return (file);
 }
 
@@ -32,8 +34,7 @@ void	init_name(t_asm *file, char *line)
 	file->name = ft_strnew(PROG_NAME_LENGTH);
 	p = line;
 	p += 5;
-	while (*p && (*p == ' ' || *p == '\t' || *p == '\r'))
-		p++;
+	p = point_jump(p);
 	if (*p != '"')
 		ft_error("invalid name");
 	p++;
@@ -54,8 +55,7 @@ void	init_comment(t_asm *file, char *line)
 	file->comment = ft_strnew(COMMENT_LENGTH);
 	p = line;
 	p += 8;
-	while (*p && (*p == ' ' || *p == '\t' || *p == '\r'))
-		p++;
+	p = point_jump(p);
 	if (*p != '"')
 		ft_error("invalid comment");
 	p++;
@@ -65,4 +65,11 @@ void	init_comment(t_asm *file, char *line)
 		ft_error("comment is very long");
 	ft_strncpy(file->comment, p, i);
 	free(line);
+}
+
+void 		ft_parse_line(char *line, t_asm *file)
+{
+	char 	*p;
+
+	// continued there
 }

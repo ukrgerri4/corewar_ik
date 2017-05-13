@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "asm.h"
-// my
+
 int 		main(int argc, char **argv)
 {
 	int 	fd;
@@ -26,4 +26,3 @@ int 		main(int argc, char **argv)
 	read_file(fd, file);
 }
 
-//new comment

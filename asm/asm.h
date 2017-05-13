@@ -16,6 +16,12 @@
 #include "../libftprintf/get_next_line.h"
 #include "../op.h"
 
+typedef struct 		t_line
+{
+	char 			*line;
+	struct s_line	*next;
+}					s_line;
+
 typedef struct 		s_asm
 {
 	unsigned int	magic;
@@ -23,6 +29,7 @@ typedef struct 		s_asm
 	char 			*name;
 	char 			*comment;
 	char 			*filename;
+	s_line			*code;
 }					t_asm;
 
 /*
@@ -47,6 +54,7 @@ void				check_filename(t_asm *file, char *filename);
 ** error_management.c
 */
 void 				ft_error(char *str);
+char				*point_jump(char *p);
 
 
 #endif

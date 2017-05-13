@@ -25,8 +25,10 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 			init_name(file, line);
 		else if (ft_strncmp(line, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING)))
 			init_comment(file, line);
-		else if (line[0] == '#')
+		else if (line[0] == COMMENT_CHAR)
 			free(line);
+		else
+			ft_error(ft_strjoin("\ninvalid instruction : ", line));
 	}
 	if (!file->filename || !file->comment || !file->name)
 		ft_error("invalid file");
@@ -35,5 +37,15 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 
 void		read_file(int fd, t_asm	*file)
 {
+	char 	*line;
 
+	while (get_next_line(fd, &line) > 0)
+	{
+		if (line[0] == '\0' || line[0] == COMMENT_CHAR)
+			free(line);
+		else if (ft_strchr(LABEL_CHARS, line[0]))
+			ft_parse_line(line, file);
+		else
+			ft_error(ft_strjoin("\ninvalid instruction : ", line));
+	}
 }
