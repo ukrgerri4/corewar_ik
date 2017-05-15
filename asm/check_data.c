@@ -23,3 +23,11 @@ void		check_filename(t_asm *file, char *filename)
 	file->filename = ft_strnew(len - 1);
 	ft_strncpy(file->filename, filename, len - 2);
 }
+
+
+void 		ft_parse_line(char *line, t_asm *file)
+{
+	char 	*p;
+
+	// continued there
+}

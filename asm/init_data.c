@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-t_asm	init_file(void)
+t_asm	*init_file(void)
 {
 	t_asm	*file;
 
@@ -25,12 +25,23 @@ t_asm	init_file(void)
 	return (file);
 }
 
-void	init_name(t_asm *file, char *line)
+int 	com_len(char *p, int *len)
 {
-	char *p;
 	int i;
 
 	i = 0;
+	while (p[i] && p[i] != '"')
+		i++;
+	*len += i;
+	return (i);
+}
+
+void	init_name(int fd, t_asm *file, char *line)
+{
+	char *p;
+	int len;
+
+	len = 0;
 	file->name = ft_strnew(PROG_NAME_LENGTH);
 	p = line;
 	p += 5;
@@ -38,20 +49,29 @@ void	init_name(t_asm *file, char *line)
 	if (*p != '"')
 		ft_error("invalid name");
 	p++;
-	while (p[i] != '"')
-		i++;
-	if (i > PROG_NAME_LENGTH)
-		ft_error("name is very long");
+	com_len(p, &len);
 	ft_strncpy(file->name, p, i);
 	free(line);
+	if (!ft_strchr(line, '"'))
+	{
+		while (get_next_line(fd, &line) > 0)
+		{
+			ft_strncat(file->comment, line, com_len(line, &len));
+			if (ft_strchr(line, '"'))
+				break ;
+			free(line);
+		}
+	}
+	if (len > PROG_NAME_LENGTH)
+		ft_error("name is very long");
 }
 
-void	init_comment(t_asm *file, char *line)
+void	init_comment(int fd, t_asm *file, char *line)
 {
 	char *p;
-	int i;
+	int len;
 
-	i = 0;
+	len = 0;
 	file->comment = ft_strnew(COMMENT_LENGTH);
 	p = line;
 	p += 8;
@@ -59,17 +79,130 @@ void	init_comment(t_asm *file, char *line)
 	if (*p != '"')
 		ft_error("invalid comment");
 	p++;
-	while (p[i] != '"')
-		i++;
-	if (i > COMMENT_LENGTH)
-		ft_error("comment is very long");
+	com_len(p, &len);
 	ft_strncpy(file->comment, p, i);
 	free(line);
+	if (!ft_strchr(line, '"'))
+	{
+		while (get_next_line(fd, &line) > 0)
+		{
+			ft_strncat(file->comment, line, com_len(line, &len));
+			if (ft_strchr(line, '"'))
+				break ;
+			free(line);
+		}
+	}
+	if (len > COMMENT_LENGTH)
+		ft_error("comment is very long");
 }
 
-void 		ft_parse_line(char *line, t_asm *file)
+void		convert_tabs(char *str)
 {
-	char 	*p;
+	int 	i;
 
-	// continued there
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\t')
+			str[i] = ' ';
+		i++;
+	}
 }
+
+void		trim_line(char *line, t_asm *file)
+{
+	char 	**tab;
+	int 	i;
+	t_line	*s;
+
+	i = 0;
+	convert_tabs(line);
+	s = file->code;
+	while (s->next)
+		s = s->next;
+	s = ft_strnew(ft_strlen(line));
+	tab = ft_strsplit(line, ' ');
+	ft_strcpy(s->line, tab[0]);
+	while (tab[++i])
+	{
+		if (s->line[ft_strlen(s->line) - 1] != SEPARATOR_CHAR)
+			s->line[ft_strlen(s->line)] = ' ';
+		ft_strcat(s->line, tab[i]);
+	}
+	free(line);
+	line = ft_strchr(s->line, COMMENT_CHAR);
+	ft_strclr(line);
+	del_tab(tab);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

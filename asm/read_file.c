@@ -35,10 +35,11 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 	free(line);
 }
 
-void		read_file(int fd, t_asm	*file)
+void		read_file(int fd, t_asm *file)
 {
 	char 	*line;
 
+	make_line(file);
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (line[0] == '\0' || line[0] == COMMENT_CHAR)
@@ -47,5 +48,6 @@ void		read_file(int fd, t_asm	*file)
 			ft_parse_line(line, file);
 		else
 			ft_error(ft_strjoin("\ninvalid instruction : ", line));
+		make_line(file);
 	}
 }

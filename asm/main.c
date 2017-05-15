@@ -12,6 +12,27 @@
 
 #include "asm.h"
 
+void		write_file(t_asm *file)
+{
+t_line		*line;
+
+	line = file->code;
+	ft_printf("name = %s", file->name);
+	ft_printf("comment = %s", file->comment);
+	ft_printf("filename = %s", file->filename);
+	ft_printf("line 1 = %s", line->line);
+	line = line->next;
+	ft_printf("line 2 = %s", line->line);
+	line = line->next;
+	ft_printf("line 3 = %s", line->line);
+	line = line->next;
+	ft_printf("line 4 = %s", line->line);
+	line = line->next;
+	ft_printf("line 5 = %s", line->line);
+
+}
+
+
 int 		main(int argc, char **argv)
 {
 	int 	fd;
@@ -24,5 +45,6 @@ int 		main(int argc, char **argv)
 	file = init_file();
 	read_filename(fd, argv[1], file);
 	read_file(fd, file);
+	write_file(file);
 }
 
