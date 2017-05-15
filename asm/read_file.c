@@ -22,9 +22,9 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 		if (line[0] == '\0')
 			break ;
 		else if (ft_strncmp(line, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING)))
-			init_name(file, line);
+			init_name(fd, file, line);
 		else if (ft_strncmp(line, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING)))
-			init_comment(file, line);
+			init_comment(fd, file, line);
 		else if (line[0] == COMMENT_CHAR)
 			free(line);
 		else
@@ -45,7 +45,7 @@ void		read_file(int fd, t_asm *file)
 		if (line[0] == '\0' || line[0] == COMMENT_CHAR)
 			free(line);
 		else if (ft_strchr(LABEL_CHARS, line[0]))
-			ft_parse_line(line, file);
+			trim_line(line, file);
 		else
 			ft_error(ft_strjoin("\ninvalid instruction : ", line));
 		make_line(file);

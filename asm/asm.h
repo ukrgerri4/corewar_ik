@@ -51,7 +51,7 @@ void				trim_line(char *line, t_asm *file);
 ** check_data.c
 */
 void				check_filename(t_asm *file, char *filename);
-void 				ft_parse_line(char *line, t_asm *file);
+//void 				ft_parse_line(char *line, t_asm *file);
 
 /*
 ** error_management.c

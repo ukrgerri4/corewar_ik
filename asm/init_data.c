@@ -49,8 +49,7 @@ void	init_name(int fd, t_asm *file, char *line)
 	if (*p != '"')
 		ft_error("invalid name");
 	p++;
-	com_len(p, &len);
-	ft_strncpy(file->name, p, i);
+	ft_strncpy(file->name, p, com_len(p, &len));
 	free(line);
 	if (!ft_strchr(line, '"'))
 	{
@@ -79,8 +78,7 @@ void	init_comment(int fd, t_asm *file, char *line)
 	if (*p != '"')
 		ft_error("invalid comment");
 	p++;
-	com_len(p, &len);
-	ft_strncpy(file->comment, p, i);
+	ft_strncpy(file->comment, p, com_len(p, &len));
 	free(line);
 	if (!ft_strchr(line, '"'))
 	{
@@ -120,7 +118,7 @@ void		trim_line(char *line, t_asm *file)
 	s = file->code;
 	while (s->next)
 		s = s->next;
-	s = ft_strnew(ft_strlen(line));
+	s->line = ft_strnew(ft_strlen(line));
 	tab = ft_strsplit(line, ' ');
 	ft_strcpy(s->line, tab[0]);
 	while (tab[++i])
