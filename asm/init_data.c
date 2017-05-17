@@ -25,9 +25,9 @@ t_asm	*init_file(void)
 	return (file);
 }
 
-int 	com_len(char *p, int *len)
+size_t 		com_len(char *p, int *len)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (p[i] && p[i] != '"')
@@ -92,19 +92,6 @@ void	init_comment(int fd, t_asm *file, char *line)
 	}
 	if (len > COMMENT_LENGTH)
 		ft_error("comment is very long");
-}
-
-void		convert_tabs(char *str)
-{
-	int 	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '\t')
-			str[i] = ' ';
-		i++;
-	}
 }
 
 void		trim_line(char *line, t_asm *file)

@@ -12,6 +12,25 @@
 
 #include "asm.h"
 
+void		make_line(t_asm *file)
+{
+	t_line	*line;
+	t_line	*p;
+
+	line = malloc(sizeof(t_line));
+	line->line = NULL;
+	line->next = NULL;
+	if (!file->code)
+		file->code = line;
+	else
+	{
+		p = file->code;
+		while (p && p->next)
+			p = p->next;
+		p->next = line;
+	}
+}
+
 void		read_filename(int fd, char *filename, t_asm	*file)
 {
 	char 	*line;
@@ -37,7 +56,7 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 void		read_file(int fd, t_asm *file)
 {
 	char 	*line;
-	
+
 	make_line(file);
 	while (get_next_line(fd, &line) > 0)
 	{

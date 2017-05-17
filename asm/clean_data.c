@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_data.c                                       :+:      :+:    :+:   */
+/*   clean_data.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apoplavs <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/12 11:46:36 by apoplavs          #+#    #+#             */
-/*   Updated: 2017/05/12 11:46:49 by apoplavs         ###   ########.fr       */
+/*   Created: 2017/05/17 16:18:20 by apoplavs          #+#    #+#             */
+/*   Updated: 2017/05/17 16:18:31 by apoplavs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-void		check_filename(t_asm *file, char *filename)
+void		del_tab(char **tab)
 {
-	int		len;
+	int		i;
 
-	len = (int)ft_strlen(filename);
-	if (filename[len - 1] != 's'
-		|| filename[len - 2] != '.')
-		ft_error("invalid type of file");
-	if (!(file->filename = ft_strnew((size_t)len - 1)))
-		ft_error("memory was not allocated");
-	ft_strncpy(file->filename, filename, (size_t)len - 2);
+	i = -1;
+	while (tab[++i])
+		free(tab[i]);
+	free(tab[i]);
+	free(tab);
+}
+
+void		convert_tabs(char *str)
+{
+	int 	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\t')
+			str[i] = ' ';
+		i++;
+	}
 }

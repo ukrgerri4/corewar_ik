@@ -25,36 +25,6 @@ char		*point_jump(char *p)
 	return (p);
 }
 
-void		del_tab(char **tab)
-{
-	int		i;
-
-	i = -1;
-	while (tab[++i])
-		free(tab[i]);
-	free(tab[i]);
-	free(tab);
-}
-
-void		make_line(t_asm *file)
-{
-	t_line	*line;
-	t_line	*p;
-
-	line = malloc(sizeof(t_line));
-	line->line = NULL;
-	line->next = NULL;
-	if (!file->code)
-		file->code = line;
-	else
-	{
-		p = file->code;
-		while (p && p->next)
-			p = p->next;
-		p->next = line;
-	}
-}
-
 int 	correct_char(char c)
 {
 	if (ft_strchr(LABEL_CHARS, c)

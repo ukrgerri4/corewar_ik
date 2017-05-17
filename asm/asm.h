@@ -32,17 +32,30 @@ typedef struct 		s_asm
 	t_line			*code;
 }					t_asm;
 
+typedef struct				s_op
+{
+	char					*name;
+	int						nb_param;
+	char					params_types[4];
+	int						opcode;
+	int						nb_tours;
+	char					*full_name;
+	char					params_byte;
+	char					index_size;
+}							t_op;
+
 /*
 ** read_file.c
 */
 void				read_filename(int fd, char *filename, t_asm	*file);
 void				read_file(int fd, t_asm *filename);
+void				make_line(t_asm *file);
 
 /*
 ** init_file.c
 */
 t_asm				*init_file(void);
-int 				com_len(char *p, int *len);
+size_t 				com_len(char *p, int *len);
 void				init_name(int fd, t_asm *file, char *line);
 void				init_comment(int fd, t_asm *file, char *line);
 void				trim_line(char *line, t_asm *file);
@@ -51,15 +64,22 @@ void				trim_line(char *line, t_asm *file);
 ** check_data.c
 */
 void				check_filename(t_asm *file, char *filename);
-//void 				ft_parse_line(char *line, t_asm *file);
 
 /*
 ** error_management.c
 */
 void 				ft_error(char *str);
 char				*point_jump(char *p);
-void				del_tab(char **tab);
-void				make_line(t_asm *file);
 
+/*
+** clean_data.c
+*/
+void				del_tab(char **tab);
+void				convert_tabs(char *str);
+
+/*
+** parse_lines.c
+*/
+void 				ft_parse_lines(t_line *str);
 
 #endif
