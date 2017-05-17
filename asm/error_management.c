@@ -49,7 +49,7 @@ void		make_line(t_asm *file)
 	else
 	{
 		p = file->code;
-		while (p->next)
+		while (p && p->next)
 			p = p->next;
 		p->next = line;
 	}

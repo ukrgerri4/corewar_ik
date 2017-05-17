@@ -16,7 +16,7 @@ t_asm	*init_file(void)
 {
 	t_asm	*file;
 
-	file = malloc(sizeof(file));
+	file = malloc(sizeof(t_asm));
 	file->name = NULL;
 	file->comment = NULL;
 	file->filename = NULL;

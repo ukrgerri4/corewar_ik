@@ -15,21 +15,20 @@
 void		write_file(t_asm *file)
 {
 t_line		*line;
+	int 	i;
+
+	i = 0;
 
 	line = file->code;
-	ft_printf("name = %s", file->name);
-	ft_printf("comment = %s", file->comment);
-	ft_printf("filename = %s", file->filename);
-	ft_printf("line 1 = %s", line->line);
-	line = line->next;
-	ft_printf("line 2 = %s", line->line);
-	line = line->next;
-	ft_printf("line 3 = %s", line->line);
-	line = line->next;
-	ft_printf("line 4 = %s", line->line);
-	line = line->next;
-	ft_printf("line 5 = %s", line->line);
+	ft_printf("filename = %s\n", file->filename);
+	ft_printf("name = %s\n", file->name);
+	ft_printf("comment = %s\n", file->comment);
 
+	while (line)
+	{
+		ft_printf("line %d =   %s\n", ++i, line->line);
+		line = line->next;
+	}
 }
 
 

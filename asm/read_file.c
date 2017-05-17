@@ -19,35 +19,37 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 	check_filename(file, filename);
 	while (get_next_line(fd, &line) > 0)
 	{
-		if (line[0] == '\0')
-			break ;
-		else if (ft_strncmp(line, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING)))
-			init_name(fd, file, line);
-		else if (ft_strncmp(line, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING)))
-			init_comment(fd, file, line);
-		else if (line[0] == COMMENT_CHAR)
+		if (line[0] == COMMENT_CHAR || line[0] == '\0')
 			free(line);
+		else if (ft_strnequ(line, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING)))
+			init_name(fd, file, line);
+		else if (ft_strnequ(line, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING)))
+			init_comment(fd, file, line);
 		else
 			ft_error(ft_strjoin("\ninvalid instruction : ", line));
+		if (file->name && file->comment)
+			break ;
 	}
 	if (!file->filename || !file->comment || !file->name)
 		ft_error("invalid file");
-	free(line);
 }
 
 void		read_file(int fd, t_asm *file)
 {
 	char 	*line;
-
+	
 	make_line(file);
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (line[0] == '\0' || line[0] == COMMENT_CHAR)
 			free(line);
-		else if (ft_strchr(LABEL_CHARS, line[0]))
+		else if (ft_strchr(LABEL_CHARS, line[0])
+				 || line[0] == ' ' || line[0] == '\t')
+		{
 			trim_line(line, file);
+			make_line(file);
+		}
 		else
 			ft_error(ft_strjoin("\ninvalid instruction : ", line));
-		make_line(file);
 	}
 }
