@@ -22,7 +22,7 @@ LIBFT = ../libftprintf/libftprintf.a
 
 SRC = main.c error_management.c\
 init_data.c check_data.c read_file.c\
-parse_lines.c clean_data.c
+parse_lines.c clean_data.c ik_1.c
 
 OBJ = $(SRC:.c=.o)
 

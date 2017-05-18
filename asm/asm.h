@@ -83,4 +83,9 @@ void				convert_tabs(char *str);
 */
 void				ft_parse_lines(t_line *str);
 
+/*
+** ik_functions
+*/
+void    make_cor(t_asm *file);
+
 #endif

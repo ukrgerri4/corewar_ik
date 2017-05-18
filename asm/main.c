@@ -64,7 +64,8 @@ int 		main(int argc, char **argv)
 	read_filename(fd, argv[1], file);
 	read_file(fd, file);
 	//ft_parse_lines(file->code);
-	write_file(file);
+	//write_file(file);
+	make_cor(file);
 	return (0);
 }
 
