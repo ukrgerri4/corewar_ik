@@ -21,13 +21,14 @@ CC = gcc
 LIBFT = ../libftprintf/libftprintf.a
 
 SRC = main.c error_management.c\
-init_data.c check_data.c read_file.c
+init_data.c check_data.c read_file.c\
+parse_lines.c clean_data.c
 
 OBJ = $(SRC:.c=.o)
 
 HEADERS = ../libftprintf/get_next_line.h asm.h ../op.h
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra 
 
 all: $(NAME)
 

@@ -13,36 +13,36 @@
 #ifndef ASM_H
 # define ASM_H
 
-#include "../libftprintf/get_next_line.h"
-#include "../op.h"
+# include "../libftprintf/get_next_line.h"
+# include "../op.h"
 
-typedef struct 		s_line
+typedef struct		s_line
 {
-	char 			*line;
+	char			*line;
 	struct s_line	*next;
 }					t_line;
 
-typedef struct 		s_asm
+typedef struct		s_asm
 {
 	unsigned int	magic;
 	unsigned int	prog_size;
-	char 			*name;
-	char 			*comment;
-	char 			*filename;
+	char			*name;
+	char			*comment;
+	char			*filename;
 	t_line			*code;
 }					t_asm;
 
-typedef struct				s_op
+typedef struct		s_op
 {
-	char					*name;
-	int						nb_param;
-	char					params_types[4];
-	int						opcode;
-	int						nb_tours;
-	char					*full_name;
-	char					params_byte;
-	char					index_size;
-}							t_op;
+	char			*name;
+	int				nb_param;
+	char			params_types[4];
+	int				opcode;
+	int				nb_tours;
+	char			*full_name;
+	char			params_byte;
+	char			index_size;
+}					t_op;
 
 /*
 ** read_file.c
@@ -55,7 +55,7 @@ void				make_line(t_asm *file);
 ** init_file.c
 */
 t_asm				*init_file(void);
-size_t 				com_len(char *p, int *len);
+size_t				com_len(char *p, int *len);
 void				init_name(int fd, t_asm *file, char *line);
 void				init_comment(int fd, t_asm *file, char *line);
 void				trim_line(char *line, t_asm *file);
@@ -64,11 +64,12 @@ void				trim_line(char *line, t_asm *file);
 ** check_data.c
 */
 void				check_filename(t_asm *file, char *filename);
+void				check_label_name(char *name);
 
 /*
 ** error_management.c
 */
-void 				ft_error(char *str);
+void				ft_error(char *str);
 char				*point_jump(char *p);
 
 /*
@@ -80,6 +81,6 @@ void				convert_tabs(char *str);
 /*
 ** parse_lines.c
 */
-void 				ft_parse_lines(t_line *str);
+void				ft_parse_lines(t_line *str);
 
 #endif
