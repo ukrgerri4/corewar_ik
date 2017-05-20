@@ -21,11 +21,14 @@ t_asm	*init_file(void)
 	file->comment = NULL;
 	file->filename = NULL;
 	file->magic = COREWAR_EXEC_MAGIC;
+	file->code = NULL;
+
+	file->header = NULL;
+	file->prog = NULL;
     file->prog_size = 0;
     file->i = 0;
-    file->header = NULL;
-    file->prog = NULL;
-	file->code = NULL;
+	file->byte = 0;
+	file->mark = NULL;
 	return (file);
 }
 

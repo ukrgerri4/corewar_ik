@@ -21,8 +21,7 @@ entry:
 	live	%21
 	fork	%:machine_gun_init
 
-wall_prep:
-	ld		%0, r2
+wall_prep:	ld		%0, r2
 	ld		%0, r16
 
 wall:

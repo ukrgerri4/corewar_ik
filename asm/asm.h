@@ -16,6 +16,13 @@
 # include "../libftprintf/get_next_line.h"
 # include "../op.h"
 
+typedef struct  s_mark
+{
+    char            *mark;
+    int             steps;
+    struct s_mark   *next;
+}               t_mark;
+
 typedef struct		s_line
 {
 	char			*line;
@@ -29,10 +36,13 @@ typedef struct		s_asm
 	char			*name;
 	char			*comment;
 	char			*filename;
+    t_line			*code;
+
     char            *header;
     char            *prog;
     int             i;
-	t_line			*code;
+    int             byte;
+    t_mark          *mark;
 }					t_asm;
 
 typedef struct		s_op
@@ -90,8 +100,16 @@ void				ft_parse_lines(t_line *str);
 /*
 ** ik_functions
 */
+
 void    make_cor(t_asm *file);
 void	print_memory(const void *addr, size_t size);
 void    make_prog(t_asm *file);
+
+void    write_reg(t_asm *file, char *str, unsigned char reg);
+void    write_ind(t_asm *file, char *str, unsigned short ind);
+void    write_dir(t_asm *file, char *str, unsigned int dir);
+
+void    init_mark(t_asm *file, char *name, int steps);
+void    write_command(t_asm *file, char **line);
 
 #endif

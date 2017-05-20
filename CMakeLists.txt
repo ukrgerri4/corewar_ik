@@ -17,7 +17,7 @@ set(SOURCE_FILES
                     asm/ik_1.c
                     asm/ik_2.c
                     asm/ik_print_memory.c
-                    )
+        asm/ik_init_struct.c asm/ik_write_comand.c)
 
 add_executable(asm ${SOURCE_FILES})
 
