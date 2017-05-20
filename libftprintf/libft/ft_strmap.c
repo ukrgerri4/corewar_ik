@@ -19,7 +19,7 @@ char		*ft_strmap(char const *s, char (*f)(char))
 	int		i;
 
 	i = 0;
-	if (s != NULL & f != NULL)
+	if (s != NULL && f != NULL)
 	{
 		if ((str = (char*)malloc(sizeof(*str) * (ft_strlen(s) + 1))) == NULL)
 			return (NULL);

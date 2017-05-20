@@ -41,8 +41,8 @@ void    make_cor(t_asm *file)
     j = 0;
     while (file->name[j])
         file->header[file->i++] = file->name[j++];
-    //file->i = 136;
-    //write_dir(file, 235); // there must be champ_size
+    file->i = 136;
+    write_dir(file, 0); // there must be champ_size
     j = 0;
     while (file->comment[j])
         file->header[file->i++] = file->comment[j++];

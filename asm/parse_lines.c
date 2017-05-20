@@ -16,8 +16,7 @@ char 		type_arg(char *arg)
 {
 	if (arg[0] == 'r' && ft_isdigit(arg[1]))
 		return (T_REG);
-	
-
+    return 0;
 }
 
 void		parse3(char **tab, t_line *str)

@@ -39,7 +39,7 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (line[0] == COMMENT_CHAR || line[0] == '\0')
-			free(line);
+			continue;
 		else if (ft_strnequ(line, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING)))
 			init_name(fd, file, line);
 		else if (ft_strnequ(line, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING)))
@@ -48,6 +48,7 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 			ft_error(ft_strjoin("\ninvalid instruction : ", line));
 		if (file->name && file->comment)
 			break ;
+		ft_strdel(&line);
 	}
 	if (!file->filename || !file->comment || !file->name)
 		ft_error("invalid file");
