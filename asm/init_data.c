@@ -21,6 +21,10 @@ t_asm	*init_file(void)
 	file->comment = NULL;
 	file->filename = NULL;
 	file->magic = COREWAR_EXEC_MAGIC;
+    file->prog_size = 0;
+    file->i = 0;
+    file->header = NULL;
+    file->prog = NULL;
 	file->code = NULL;
 	return (file);
 }
@@ -55,7 +59,7 @@ void	init_name(int fd, t_asm *file, char *line)
 	{
 		while (get_next_line(fd, &line) > 0)
 		{
-			ft_strncat(file->comment, line, com_len(line, &len));
+			ft_strncat(file->name, line, com_len(line, &len));
 			if (ft_strchr(line, '"'))
 				break ;
 			free(line);

@@ -1,4 +1,6 @@
-//
-// Created by Igor Kryvenko on 5/19/17.
-//
+#include "asm.h"
 
+void    make_prog(t_asm *file)
+{
+
+}

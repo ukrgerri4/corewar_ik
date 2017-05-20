@@ -1,11 +1,11 @@
 #include "asm.h"
 
-void    write_reg(char *f_line, int *i, unsigned char reg)
+void    write_reg(t_asm *file, unsigned char reg)
 {
-    f_line[(*i)++] = reg;
+    file->header[file->i++] = reg;
 }
 
-void    write_ind(char *f_line, int *i, unsigned short ind)
+void    write_ind(t_asm *file, unsigned short ind)
 {
     int j;
     unsigned short tmp;
@@ -13,11 +13,11 @@ void    write_ind(char *f_line, int *i, unsigned short ind)
     j = 0;
     while (j < 2) {
         tmp = ind;
-        f_line[(*i)++] = (char) (tmp >> (24 - 8 * j++));
+        file->header[file->i++] = (char) (tmp >> (8 - 8 * j++));
     }
 }
 
-void    write_dir(char *f_line, int *i, unsigned int dir)
+void    write_dir(t_asm *file, unsigned int dir)
 {
     int j;
     unsigned int tmp;
@@ -25,22 +25,27 @@ void    write_dir(char *f_line, int *i, unsigned int dir)
     j = 0;
     while (j < 4) {
         tmp = dir;
-        f_line[(*i)++] = (char) (tmp >> (24 - 8 * j++));
+        file->header[file->i++] = (char) (tmp >> (24 - 8 * j++));
     }
 }
 
 void    make_cor(t_asm *file)
 {
-    char *f_line;
-    int i;
+    int j;
 
-    i = 0;
-    f_line = ft_strnew(4 + PROG_NAME_LENGTH + 1 + COMMENT_LENGTH + 1 + CHAMP_MAX_SIZE + 1);
-    ft_bzero(f_line, 4 + PROG_NAME_LENGTH + COMMENT_LENGTH + CHAMP_MAX_SIZE);
-    write_dir(f_line, &i, COREWAR_EXEC_MAGIC);
-    int j = 0;
+    file->header = ft_strnew(4 + PROG_NAME_LENGTH + 8 + 4 + COMMENT_LENGTH);
+    file->prog = ft_strnew(CHAMP_MAX_SIZE);
+    ft_bzero(file->header, 4 + PROG_NAME_LENGTH + 8 + 4 + COMMENT_LENGTH);
+    ft_bzero(file->prog, CHAMP_MAX_SIZE);
+    write_dir(file, COREWAR_EXEC_MAGIC);
+    j = 0;
     while (file->name[j])
-        f_line[i++] = file->name[j++];
-
-    print_memory(f_line, 32);
+        file->header[file->i++] = file->name[j++];
+    //file->i = 136;
+    //write_dir(file, 235); // there must be champ_size
+    j = 0;
+    while (file->comment[j])
+        file->header[file->i++] = file->comment[j++];
+    make_prog(file);
+    print_memory(file->header, 4 + PROG_NAME_LENGTH + 8 + 4 + COMMENT_LENGTH);
 }

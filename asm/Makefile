@@ -20,9 +20,16 @@ CC = gcc
 
 LIBFT = ../libftprintf/libftprintf.a
 
-SRC = main.c error_management.c\
-init_data.c check_data.c read_file.c\
-parse_lines.c clean_data.c ik_1.c ik_print_memory.c
+SRC =   main.c \
+        error_management.c \
+        init_data.c \
+        check_data.c \
+        read_file.c \
+        parse_lines.c \
+        clean_data.c \
+        ik_1.c \
+        ik_print_memory.c \
+
 
 OBJ = $(SRC:.c=.o)
 

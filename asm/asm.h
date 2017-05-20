@@ -29,6 +29,9 @@ typedef struct		s_asm
 	char			*name;
 	char			*comment;
 	char			*filename;
+    char            *header;
+    char            *prog;
+    int             i;
 	t_line			*code;
 }					t_asm;
 
@@ -44,6 +47,7 @@ typedef struct		s_op
 	char			index_size;
 }					t_op;
 
+t_op    *g_tab;
 /*
 ** read_file.c
 */
@@ -88,5 +92,6 @@ void				ft_parse_lines(t_line *str);
 */
 void    make_cor(t_asm *file);
 void	print_memory(const void *addr, size_t size);
+void    make_prog(t_asm *file);
 
 #endif
