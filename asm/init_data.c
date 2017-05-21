@@ -27,7 +27,6 @@ t_asm	*init_file(void)
 	file->prog = NULL;
     file->prog_size = 0;
     file->i = 0;
-	file->byte = 0;
 	file->mark = NULL;
 	return (file);
 }

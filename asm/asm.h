@@ -16,10 +16,19 @@
 # include "../libftprintf/get_next_line.h"
 # include "../op.h"
 
+typedef struct  s_mark_inside
+{
+    int				before_command_byte;
+    int				place_of_byte;
+	int				rdi;
+    struct s_mark_inside   *next;
+}               t_mark_inside;
+
 typedef struct  s_mark
 {
     char            *mark;
     int             steps;
+    t_mark_inside  *start;
     struct s_mark   *next;
 }               t_mark;
 
@@ -41,7 +50,9 @@ typedef struct		s_asm
     char            *header;
     char            *prog;
     int             i;
-    int             byte;
+	int 			arg_byte;
+    int             command_byte;
+	int				tab_nb;
     t_mark          *mark;
 }					t_asm;
 
@@ -102,7 +113,8 @@ void				ft_parse_lines(t_line *str);
 */
 
 void    make_cor(t_asm *file);
-void	print_memory(const void *addr, size_t size);
+void	print_memory(const void *addr, size_t size); // delete
+int		find_quantity_elem_in_line(char **line);
 void    make_prog(t_asm *file);
 
 void    write_reg(t_asm *file, char *str, unsigned char reg);
@@ -110,6 +122,8 @@ void    write_ind(t_asm *file, char *str, unsigned short ind);
 void    write_dir(t_asm *file, char *str, unsigned int dir);
 
 void    init_mark(t_asm *file, char *name, int steps);
+void    init_mark_inside(t_asm *file, t_mark **mark, int rdi);
 void    write_command(t_asm *file, char **line);
+void    write_mark_place(t_asm *file, char *mark, int rdi);
 
 #endif
