@@ -49,6 +49,7 @@ typedef struct		s_asm
 
     char            *header;
     char            *prog;
+    int             prog_len;
     int             i;
 	int 			arg_byte;
     int             command_byte;

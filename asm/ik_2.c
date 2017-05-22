@@ -54,18 +54,8 @@ void    make_prog(t_asm *file)
             ft_strdel(&line[i++]);
         free(line);
     }
+    file->prog_len = file->i;
+    file->i = 136;
+    write_dir(file, file->header, (unsigned int)file->prog_len);
     fill_mark(file);
-    //delete
-    while (file->mark)
-    {
-        ft_printf("STEPS = %d, %s  ", file->mark->steps,file->mark->mark);
-        while(file->mark->start){
-            ft_printf("[com.b = %d, this.b = %d] ", file->mark->start->before_command_byte,file->mark->start->place_of_byte);
-            file->mark->start = file->mark->start->next;
-        }
-        ft_printf("\n");
-        file->mark = file->mark->next;
-    }
-    print_memory(file->prog, CHAMP_MAX_SIZE);
-    //delete
 }

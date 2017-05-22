@@ -48,5 +48,6 @@ void    make_cor(t_asm *file)
         file->header[file->i++] = file->comment[j++];
     file->i = 0;
     make_prog(file);
-    //print_memory(file->header, 4 + PROG_NAME_LENGTH + 8 + 4 + COMMENT_LENGTH);
+    print_memory(file->header, 4 + PROG_NAME_LENGTH + 8 + 4 + COMMENT_LENGTH);
+    print_memory(file->prog, (unsigned int)file->prog_len);
 }
