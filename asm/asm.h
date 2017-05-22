@@ -20,7 +20,7 @@ typedef struct  s_mark_inside
 {
     int				before_command_byte;
     int				place_of_byte;
-	int				rdi;
+    int				rdi;
     struct s_mark_inside   *next;
 }               t_mark_inside;
 
@@ -34,42 +34,44 @@ typedef struct  s_mark
 
 typedef struct		s_line
 {
-	char			*line;
-	struct s_line	*next;
+    char			*line;
+    struct s_line	*next;
 }					t_line;
 
 typedef struct		s_asm
 {
-	unsigned int	magic;
-	unsigned int	prog_size;
-	char			*name;
-	char			*comment;
-	char			*filename;
+    unsigned int	magic;
+    unsigned int	prog_size;
+    char			*name;
+    char			*comment;
+    char			*filename;
+    int             fd_filename;
     t_line			*code;
 
     char            *header;
     char            *prog;
     int             prog_len;
     int             i;
-	int 			arg_byte;
+    int 			arg_byte;
     int             command_byte;
-	int				tab_nb;
+    int				tab_nb;
     t_mark          *mark;
 }					t_asm;
 
 typedef struct		s_op
 {
-	char			*name;
-	int				nb_param;
-	char			params_types[4];
-	int				opcode;
-	int				nb_tours;
-	char			*full_name;
-	char			params_byte;
-	char			index_size;
+    char			*name;
+    int				nb_param;
+    char			params_types[3];
+    int				opcode;
+    int				nb_tours;
+    char			*full_name;
+    char			params_byte;
+    char			index_size;
 }					t_op;
 
-t_op    *g_tab;
+t_op				*g_tab;
+
 /*
 ** read_file.c
 */
@@ -91,12 +93,16 @@ void				trim_line(char *line, t_asm *file);
 */
 void				check_filename(t_asm *file, char *filename);
 void				check_label_name(char *name);
+void				check_t_reg(char *ins);
+void				check_t_dir(char *ins);
+void				check_t_ind(char *ins);
 
 /*
 ** error_management.c
 */
 void				ft_error(char *str);
 char				*point_jump(char *p);
+void				exit_notice(char *note, char *line);
 
 /*
 ** clean_data.c
@@ -112,9 +118,22 @@ void				ft_parse_lines(t_line *str);
 /*
 ** ik_functions
 */
-
 void    make_cor(t_asm *file);
-void	print_memory(const void *addr, size_t size); // delete
+
+
+/*
+** check_instruction.c
+*/
+void				set_args(char *a1, char *a2, char *a3, char **params);
+int 				get_instruction(char *inst);
+char 				type_arg(char *arg);
+void 				check_arguments(char a1, char a2, char a3, int n);
+
+/*
+** ik_functions
+*/
+void    make_cor(t_asm *file);
+void	print_memory(t_asm *file, const void *addr, size_t size); // delete
 int		find_quantity_elem_in_line(char **line);
 void    make_prog(t_asm *file);
 

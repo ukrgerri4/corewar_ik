@@ -18,6 +18,18 @@ void 	ft_error(char *str)
 	exit(1);
 }
 
+void		exit_notice(char *note, char *line)
+{
+	char 	*notice;
+
+	notice = ft_strnew(ft_strlen(note) + ft_strlen(line) + 3);
+	ft_strcpy(notice, note);
+	notice[ft_strlen(notice)] = '[';
+	ft_strcat(notice, line);
+	notice[ft_strlen(notice)] = ']';
+	ft_error(notice);
+}
+
 char		*point_jump(char *p)
 {
 	while (*p && (*p == ' ' || *p == '\t'))

@@ -26,10 +26,14 @@ SRC =   main.c \
         check_data.c \
         read_file.c \
         parse_lines.c \
-        clean_data.c \
+        clean_data.c ik_1.c \
+        check_instructions.c \
         ik_1.c \
+        ik_2.c \
         ik_print_memory.c \
-
+        ik_init_struct.c \
+        ik_write_comand.c \
+        ik_write_mark.c
 
 OBJ = $(SRC:.c=.o)
 

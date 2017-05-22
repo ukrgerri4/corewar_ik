@@ -12,6 +12,24 @@
 
 #include "asm.h"
 
+int 		is_no_code(char *line)
+{
+	int 	i;
+
+	i = 0;
+	if (line[0] == COMMENT_CHAR)
+		return (1);
+	while (line[i])
+	{
+		if (line[i] == COMMENT_CHAR)
+			return (1);
+		if (line[i] != '\t' && line[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 void		make_line(t_asm *file)
 {
 	t_line	*line;
@@ -31,6 +49,16 @@ void		make_line(t_asm *file)
 	}
 }
 
+void	create_filename_fd(t_asm *file)
+{
+	char	*f_name;
+
+	if (!(f_name = ft_strjoin(file->filename, ".cor")))
+		exit(1);
+	file->fd_filename = open(f_name, O_WRONLY|O_TRUNC|O_CREAT, S_IREAD|S_IWRITE);
+	ft_strdel(&f_name);
+}
+
 void		read_filename(int fd, char *filename, t_asm	*file)
 {
 	char 	*line;
@@ -39,7 +67,7 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (line[0] == COMMENT_CHAR || line[0] == '\0')
-			continue;
+			free(line);
 		else if (ft_strnequ(line, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING)))
 			init_name(fd, file, line);
 		else if (ft_strnequ(line, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING)))
@@ -48,10 +76,10 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 			ft_error(ft_strjoin("\ninvalid instruction : ", line));
 		if (file->name && file->comment)
 			break ;
-		ft_strdel(&line);
 	}
 	if (!file->filename || !file->comment || !file->name)
 		ft_error("invalid file");
+	create_filename_fd(file);
 }
 
 void		read_file(int fd, t_asm *file)
@@ -61,7 +89,7 @@ void		read_file(int fd, t_asm *file)
 	make_line(file);
 	while (get_next_line(fd, &line) > 0)
 	{
-		if (line[0] == '\0' || line[0] == COMMENT_CHAR)
+		if (line[0] == '\0'	|| is_no_code(line))
 			free(line);
 		else if (ft_strchr(LABEL_CHARS, line[0])
 				 || line[0] == ' ' || line[0] == '\t')
@@ -72,4 +100,5 @@ void		read_file(int fd, t_asm *file)
 		else
 			ft_error(ft_strjoin("\ninvalid instruction : ", line));
 	}
+    free(line);
 }
