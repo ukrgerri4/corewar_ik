@@ -43,14 +43,10 @@ t_op 		*init_tab(void)
 	return (tab);
 
 }
-
-/*void		write_file(t_asm *file)
+void		write_file(t_asm *file)
 {
 	t_line		*line;
-	int 	i;
-
-	i = 0;
-
+	
 	line = file->code;
 	ft_printf("filename = %s\n", file->filename);
 	ft_printf("name = %s\n", file->name);
@@ -79,7 +75,7 @@ void		print_t_op(void)
 		ft_printf("%s ", g_tab[i].full_name);
 		i++;
 	}
-}*/
+}
 
 
 int 		main(int argc, char **argv)

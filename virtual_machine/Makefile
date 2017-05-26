@@ -1,4 +1,4 @@
-#******************************************************************************#
+cd l    #******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -10,7 +10,7 @@
 #                                                                              #
 #******************************************************************************#
 
-NAME = asm
+NAME = corevar
 
 LEN_NAME = `printf "%s" $(NAME) | wc -c`
 
@@ -21,25 +21,19 @@ CC = gcc
 LIBFT = ../libftprintf/libftprintf.a
 
 SRC =   main.c \
-        error_management.c \
-        init_data.c \
-        check_data.c \
-        read_file.c \
-        parse_lines.c \
-        clean_data.c \
-        check_instructions.c \
-        ik_1.c \
-        ik_2.c \
-        ik_print_memory.c \
-        ik_init_struct.c \
-        ik_write_comand.c \
-        ik_write_mark.c
+		allocation_memory.c \
+		free_memory.c \
+		ft_error.c \
+		ft_parsing_file.c \
+		ft_search_flags.c \
+		ft_valid_name.c \
+		print_memory.c
 
 OBJ = $(SRC:.c=.o)
 
-HEADERS = ../libftprintf/get_next_line.h asm.h ../op.h
+HEADERS = ../libftprintf/get_next_line.h virtual_machine.h ../op.h
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra
 
 all: $(NAME)
 

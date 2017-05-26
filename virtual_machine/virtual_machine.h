@@ -41,12 +41,12 @@ typedef struct	s_st
 
 typedef struct	s_struct
 {
-	int			num_pl;//колтчевство игроков
-	int			fl_dump;//if (-1, nothing) else (num where must stop)
-	int 		fl_n;//visualisation flag "-n"
-	t_st		**players;
+	int				num_pl;//колтчевство игроков
+	int				fl_dump;//if (-1, nothing) else (num where must stop)
+	int 			fl_n;//visualisation flag "-n"
+	t_st			**players;
 
-	unsigned char *map;
+	unsigned char 	*map;
 }				t_struct;
 
 //if exist flag "-n", flag -dump will be ignored
