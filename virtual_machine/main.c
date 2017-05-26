@@ -17,6 +17,8 @@ void 	ft_init_st(t_struct	*pl)
 	pl->fl_dump = -1;
 	pl->fl_n = -1;
 	pl->num_pl = 0;
+	pl->map = (unsigned char*)malloc(sizeof(unsigned char) * MEM_SIZE);
+
 //	pl->names_pl = NULL;
 }
 

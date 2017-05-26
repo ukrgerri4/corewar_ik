@@ -13,28 +13,40 @@
 #ifndef VIRTUAL_MACHINE_H
 # define VIRTUAL_MACHINE_H
 
-# include "./libftprintf/get_next_line.h"
+# include "../libftprintf/get_next_line.h"
 # include "op.h"
 # include <stdio.h>
 # include <errno.h>
 
+typedef struct	s_pc
+{
+	int 			r[17];
+	unsigned char	*pc_ptr;
+	struct s_pc		*next;
+}				t_pc;
+
+
 typedef struct	s_st
 {
-	char		*file_name;
+	char				*file_name;
 	unsigned char		*magic;
 	unsigned char		*name;
+	int					size_cd;
 	unsigned char		*comment;
 	unsigned char 		*code;
-	int			size_cd;
+
+	int 				player_number;
+	t_pc				first;
 }				t_st;
 
 typedef struct	s_struct
 {
 	int			num_pl;//колтчевство игроков
-	char		**names_pl;//for each index have player
 	int			fl_dump;//if (-1, nothing) else (num where must stop)
 	int 		fl_n;//visualisation flag "-n"
 	t_st		**players;
+
+	unsigned char *map;
 }				t_struct;
 
 //if exist flag "-n", flag -dump will be ignored

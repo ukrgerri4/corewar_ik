@@ -1,1 +1,1 @@
-cc ft_parsing_file.c ft_error.c free_memory.c allocation_memory.c ft_valid_name.c ft_search_flags.c main.c ./libftprintf/libftprintf.a
+cc ft_parsing_file.c ft_error.c free_memory.c allocation_memory.c ft_valid_name.c ft_search_flags.c main.c ../libftprintf/libftprintf.a
