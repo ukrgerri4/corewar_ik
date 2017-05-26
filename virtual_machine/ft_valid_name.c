@@ -15,24 +15,24 @@
 void	ft_create_players(char **names, t_struct *pl)
 {
 	int i;
+	int j;
+	int p_num;
 
 	i = 0;
+	j = pl->num_pl;
 	if (!names)
 		ft_error("no players");
 	pl->players	= (t_st **)malloc(sizeof(pl->players) * (pl->num_pl + 1));
 	pl->players[pl->num_pl] = NULL;
-//	while (names && names[i])
 	while (names && i < pl->num_pl)
 	{
 		pl->players[i] = (t_st *)malloc(sizeof(t_st));
 		pl->players[i]->file_name = ft_strdup(names[i]);
-//		pl->players[i]->name = NULL;
-//		pl->players[i]->comment = NULL;
-//		pl->players[i]->code = NULL;
-//		pl->players[i]->size_cd = 0;
+		pl->players[i]->player_number = j--;
+		p_num = pl->players[i]->player_number;
+		init_pc(pl , i, pl->map + ((p_num - i - 1) * (MEM_SIZE/p_num)));
 		i++;
 	}
-
 }
 
 int		ft_len_db_array(char **array)
@@ -56,7 +56,6 @@ void 	ft_valid_name(char **argv, t_struct *pl)
 	while (argv[i])
 	{
 		tmp = ft_strsplit(argv[i], '.');
-//		ft_printf("1 -[%s] 2 -[%s]\n", tmp[0], tmp[1]);
 		if (ft_len_db_array(tmp) == 2 && ft_strequ(tmp[1], "cor"))
 		{
 			names = ft_add_str_in_double(names, argv[i]);

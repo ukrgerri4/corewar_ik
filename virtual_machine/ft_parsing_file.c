@@ -6,34 +6,27 @@
 /*   By: dsemench <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 18:50:00 by dsemench          #+#    #+#             */
-/*   Updated: 2017/05/23 18:50:08 by dsemench         ###   ########.fr       */
+/*   Updated: 2017/05/26 16:53:34 by dsemench         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
 
-//int 	ft_interpretation(unsigned char *str, int size)//it will change in int
-//{
-//	output(str, size);
-//}
-
-void		output(unsigned char *file, int size)
+int 	ft_interpretation(unsigned char *str, int size)
 {
+	int res;
 	int i;
 
 	i = 0;
+	res = 0;
 	while (i < size)
 	{
-		printf("%0.2x ", file[i]);
+		res = res << 8;
+		res |= str[i];
 		i++;
 	}
-	printf("\n");
-}
-
-int 	ft_interpretation(unsigned char *str, int size)//it will change in int
-{
-	output(str, size);
-	return (0);
+	free(str);
+	return (res);
 }
 
 unsigned char	*ft_unig_strsub(unsigned char *file, int from, int to)
@@ -42,7 +35,6 @@ unsigned char	*ft_unig_strsub(unsigned char *file, int from, int to)
 	unsigned char *res;
 
 	size = to - from;
-	printf("bite = %d\n", size);
 	res = (unsigned char *)ft_strnew((size_t)size + 1);
 	res[size] = '\0';
 	size = 0;
@@ -57,21 +49,22 @@ unsigned char	*ft_unig_strsub(unsigned char *file, int from, int to)
 
 void	ft_write_pl_info(size_t size, unsigned char *file, int i, t_struct *pl)
 {
-	pl->players[i]->magic = ft_unig_strsub(file, 0, 3);//magic
-	ft_printf("magic ");
-	output(pl->players[i]->magic, 4);
-	pl->players[i]->name = ft_unig_strsub(file, 4, 136);//name
-	ft_printf("name ");
-	output(pl->players[i]->name, 132);
-	ft_interpretation(ft_unig_strsub(file, 136, 140), 4);
-//	pl->players[i]->size_cd = ft_interpretation(ft_unig_strsub(file, 135, 140), 4);//size_code
-//	ft_printf("size_cd [%d]\n", pl->players[i]->size_cd);
-	pl->players[i]->comment = ft_unig_strsub(file, 140, 2192);//comment
-	ft_printf("comment ");
-	output(pl->players[i]->comment, 2052);
-	pl->players[i]->code = ft_unig_strsub(file, 2192, (int)size);//program code
-	ft_printf("code ", pl->players[i]->code);
-	output(pl->players[i]->code, (int)size - 2192);
+	int point;
+
+	point = 3;
+	pl->players[i]->magic = ft_unig_strsub(file, 0, point);
+	point++;
+	pl->players[i]->name = ft_unig_strsub(file, point, point + PROG_NAME_LENGTH + 4);
+	point += PROG_NAME_LENGTH + 4;
+	pl->players[i]->size_cd = ft_interpretation(ft_unig_strsub(file, point, point + 4), 4);
+	point += 4;
+	pl->players[i]->comment = ft_unig_strsub(file, point, point + COMMENT_LENGTH + 4);
+	point += COMMENT_LENGTH + 4;
+	pl->players[i]->code = ft_unig_strsub(file, point, (int)size);
+	if (pl->players[i]->size_cd != (int)size - point)
+		ft_error("declared size of program and program isn't match");
+	if (pl->players[i]->size_cd > CHAMP_MAX_SIZE || (int)size - point > CHAMP_MAX_SIZE)
+		ft_error("size of program is to bigger than max declared size");
 }
 
 void			ft_parsing_file(t_struct *pl)
@@ -94,8 +87,7 @@ void			ft_parsing_file(t_struct *pl)
 		file[size] = '\0';
 		read(fd, file, (size_t)size);
 		ft_write_pl_info((size_t)size, file, i, pl);
-//		printf("%zu\n", (size_t)size);
-		printf("size = %zu\n", (size_t)size);
+		free(file);
 		i++;
 	}
 }

@@ -20,7 +20,7 @@ set(SOURCE_FILES
                     asm/ik_print_memory.c
                     asm/ik_init_struct.c
                     asm/ik_write_comand.c
-                    asm/ik_write_mark.c)
+                    asm/ik_write_mark.c virtual_machine/ik_init_pc.c virtual_machine/ik_base_function.c)
 
 add_executable(asm ${SOURCE_FILES})
 

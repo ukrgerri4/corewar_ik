@@ -6,4 +6,8 @@ void    start_vm(t_struct *pl)
 
     i = pl->num_pl;
     while (i > 0)
+    {
+        pl->players[i]->first.pc_ptr = pl->map + ;
+        i--;
+    }
 }

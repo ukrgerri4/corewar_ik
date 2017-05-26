@@ -14,13 +14,16 @@
 # define VIRTUAL_MACHINE_H
 
 # include "../libftprintf/get_next_line.h"
-# include "op.h"
+# include "../op.h"
 # include <stdio.h>
 # include <errno.h>
 
 typedef struct	s_pc
 {
 	int 			r[17];
+	int 			live;
+	int				cycles;
+	int 			carry;
 	unsigned char	*pc_ptr;
 	struct s_pc		*next;
 }				t_pc;
@@ -36,7 +39,7 @@ typedef struct	s_st
 	unsigned char 		*code;
 
 	int 				player_number;
-	t_pc				first;
+	t_pc				*first;
 }				t_st;
 
 typedef struct	s_struct
@@ -86,5 +89,11 @@ void	ft_free_db_array(char **array);
 **ft_error.c
 */
 void 	ft_error(char *error);
+
+/*
+** ik_function
+*/
+void	ft_fill_int(int *arr, int size, int n);
+void    init_pc(t_struct *pl, int i, unsigned char *ptr);
 
 #endif

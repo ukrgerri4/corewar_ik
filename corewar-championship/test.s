@@ -1,5 +1,6 @@
 .name		"S.A.M."
 .comment	"Ca roxxe du chameau"
-
-ld -1, r1
-st r1, 10
+	
+label:
+	ld %1, r150
+	live %-1
