@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES
                     asm/main.c
                     asm/check_data.c
+                    asm/check_instructions.c
                     asm/clean_data.c
                     asm/error_management.c
                     asm/init_data.c

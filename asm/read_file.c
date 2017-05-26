@@ -76,6 +76,7 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 			ft_error(ft_strjoin("\ninvalid instruction : ", line));
 		if (file->name && file->comment)
 			break ;
+		ft_strdel(&line);
 	}
 	if (!file->filename || !file->comment || !file->name)
 		ft_error("invalid file");

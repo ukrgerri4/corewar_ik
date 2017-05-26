@@ -50,7 +50,6 @@ void	init_name(int fd, t_asm *file, char *line)
 		ft_error("invalid name");
 	p++;
 	ft_strncpy(file->name, p, com_len(p, &len));
-	free(line);
 	if (!ft_strchr(line, '"'))
 	{
 		while (get_next_line(fd, &line) > 0)
@@ -58,7 +57,6 @@ void	init_name(int fd, t_asm *file, char *line)
 			ft_strncat(file->name, line, com_len(line, &len));
 			if (ft_strchr(line, '"'))
 				break ;
-			free(line);
 		}
 	}
 	if (len > PROG_NAME_LENGTH)
@@ -79,7 +77,6 @@ void	init_comment(int fd, t_asm *file, char *line)
 		ft_error("invalid comment");
 	p++;
 	ft_strncpy(file->comment, p, com_len(p, &len));
-	free(line);
 	if (!ft_strchr(line, '"'))
 	{
 		while (get_next_line(fd, &line) > 0)
@@ -87,7 +84,6 @@ void	init_comment(int fd, t_asm *file, char *line)
 			ft_strncat(file->comment, line, com_len(line, &len));
 			if (ft_strchr(line, '"'))
 				break ;
-			free(line);
 		}
 	}
 	if (len > COMMENT_LENGTH)
