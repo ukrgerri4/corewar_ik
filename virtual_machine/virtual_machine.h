@@ -17,6 +17,7 @@
 # include "../op.h"
 # include <stdio.h>
 # include <errno.h>
+# include <ncurses.h>
 
 typedef struct	s_pc
 {
@@ -26,6 +27,7 @@ typedef struct	s_pc
 	int 			carry;
 	unsigned char	*pc_ptr;
 	struct s_pc		*next;
+    struct s_pc		*prev;
 }				t_pc;
 
 
@@ -40,6 +42,7 @@ typedef struct	s_st
 
 	int 				player_number;
 	t_pc				*first;
+    t_pc				*last;
 }				t_st;
 
 typedef struct	s_struct
@@ -50,6 +53,8 @@ typedef struct	s_struct
 	t_st			**players;
 
 	unsigned char 	*map;
+    int             glob_cycles;
+	int 			iterator;//delete
 }				t_struct;
 
 //if exist flag "-n", flag -dump will be ignored
@@ -95,5 +100,10 @@ void 	ft_error(char *error);
 */
 void	ft_fill_int(int *arr, int size, int n);
 void    init_pc(t_struct *pl, int i, unsigned char *ptr);
+
+void    start_vm(t_struct *pl);
+
+void init_window(void);
+void	visualization(t_struct *pl, size_t size);
 
 #endif

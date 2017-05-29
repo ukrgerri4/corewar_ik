@@ -17,13 +17,20 @@ void 	ft_init_st(t_struct	*pl)
 	pl->fl_dump = -1;
 	pl->fl_n = -1;
 	pl->num_pl = 0;
+    pl->glob_cycles = 0;
+	pl->players = NULL;
+	if (!(pl->map = (unsigned char*)malloc(sizeof(unsigned char) * MEM_SIZE)))
+		exit(1);
+    ft_bzero(pl->map, MEM_SIZE);
+    pl->iterator = 0;//delete
 }
 
 int 	main(int argc, char **argv)
 {
 	t_struct	pl;
 
-	ft_init_st(&pl);
+    init_window();
+    ft_init_st(&pl);
 	if (argc == 1)
 	{
 		//output info how use exec
@@ -34,5 +41,7 @@ int 	main(int argc, char **argv)
 		ft_valid_name(argv, &pl);
 		ft_parsing_file(&pl);
 	}
+    start_vm(&pl);
+    endwin();
 	return (0);
 }

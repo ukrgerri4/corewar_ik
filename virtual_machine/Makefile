@@ -1,4 +1,4 @@
-cd l    #******************************************************************************#
+#******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -27,7 +27,10 @@ SRC =   main.c \
 		ft_parsing_file.c \
 		ft_search_flags.c \
 		ft_valid_name.c \
-		print_memory.c
+		ik_base_function.c \
+		ik_init_pc.c \
+		ik_start_pc.c \
+		ik_visualization.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -38,8 +41,9 @@ FLAGS = -Wall -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	@$(CC) -o $(NAME) $(OBJ) $(LIBFT)
+	@$(CC) -o $(NAME) $(OBJ) $(LIBFT) -lncurses
 	@echo "\r\033[48;5;15;38;5;25m✅  MADE $(NAME)  \033[0m\033[K"
+	@make clean
 
 $(OBJ): %.o: %.c
 	@$(CC) -c $(FLAGS) $< -o $@

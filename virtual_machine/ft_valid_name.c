@@ -12,25 +12,28 @@
 
 #include "virtual_machine.h"
 
+
+
 void	ft_create_players(char **names, t_struct *pl)
 {
 	int i;
 	int j;
-	int p_num;
 
 	i = 0;
 	j = pl->num_pl;
 	if (!names)
 		ft_error("no players");
-	pl->players	= (t_st **)malloc(sizeof(pl->players) * (pl->num_pl + 1));
+	pl->players	= (t_st **)malloc(sizeof(pl->players) * (pl->num_pl));
 	pl->players[pl->num_pl] = NULL;
 	while (names && i < pl->num_pl)
 	{
 		pl->players[i] = (t_st *)malloc(sizeof(t_st));
+		ft_printf("\n%s\n", names[i]);
 		pl->players[i]->file_name = ft_strdup(names[i]);
 		pl->players[i]->player_number = j--;
-		p_num = pl->players[i]->player_number;
-		init_pc(pl , i, pl->map + ((p_num - i - 1) * (MEM_SIZE/p_num)));
+        pl->players[i]->first = NULL;
+        pl->players[i]->last = NULL;
+		init_pc(pl , i, pl->map + ((pl->num_pl - i - 1) * (MEM_SIZE/pl->num_pl)));
 		i++;
 	}
 }
