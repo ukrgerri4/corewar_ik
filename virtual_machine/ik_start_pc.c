@@ -27,18 +27,18 @@ int     set_cycles(t_pc *cur)
     int i;
 
     i = 0;
-    if (cur->cycles)
-        return 1 ;
+    if (cur->cycles > 0)
+        return 1;
     while (i < 17)
     {
         if (g_tab[i].opcode == *(cur->pc_ptr))
         {
             cur->cycles = g_tab[i].nb_tours;
-            return 1;
+            return 0 ;
         }
-
         i++;
     }
+    return 1 ;
 }
 
 void    go_some_cycles(t_struct *pl, int cycles)
@@ -50,11 +50,15 @@ void    go_some_cycles(t_struct *pl, int cycles)
     while (i < cycles)
     {
         tmp = pl->first;
-        while (tmp) {
-            if (set_cycles(tmp))
-                move_ptr(pl, &tmp->pc_ptr, 1);
-            else
+        while (tmp)
+        {
+            if (tmp->cycles == 0)
                 go_to_function();
+            else
+            {
+                if (set_cycles(tmp))
+                    move_ptr(pl, &tmp->pc_ptr, 1);
+            }
             tmp = tmp->next;
         }
         i++;
