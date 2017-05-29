@@ -49,8 +49,8 @@ void	visualization(t_struct *pl, size_t size)
                 c %= 16;
                 printw("%c", base[c % 16]);
             }
-            /*if (i % 2 == 1 && i != j * 64 - 1)
-                printw(" ");*/
+            //if (i % 2 == 1 && i != j * 64 - 1)
+                printw(" ");
             i++;
         }
         printw("\n");
@@ -58,11 +58,14 @@ void	visualization(t_struct *pl, size_t size)
     }
 
     attroff(A_BOLD | COLOR_PAIR(2));
-    mvprintw(10, 165, "Cycles = ");
+    mvprintw(10, 200, "Cycles = ");
     attron(A_BOLD | COLOR_PAIR(1));
     printw("%d", pl->iterator++);
     attroff(A_BOLD | COLOR_PAIR(1));
-
+    move(0,0);
+    //halfdelay(1);
+    getch();
+    refresh();
     move(0, 0);
 
 }

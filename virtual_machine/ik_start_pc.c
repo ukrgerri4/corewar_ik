@@ -1,89 +1,61 @@
 #include "virtual_machine.h"
 
-void    write_code_to_field(t_struct *pl, int pnb)
+void    write_code_to_field(t_struct *pl)
 {
-    unsigned char   *tmp;
+    t_pc            *tmp;
+    unsigned char   *ptr;
     int             i;
+    int             j;
 
-    while (pnb < pl->num_pl) {
-        tmp = pl->players[pnb]->first->pc_ptr;
-        i = 0;
-        while (i < pl->players[pnb]->size_cd) {
-            tmp[i] = pl->players[pnb]->code[i];
-            ++i;
+    i = 0;
+    tmp = pl->last;
+    while (i < pl->num_pl) {
+        ptr = tmp->pc_ptr;
+        j = 0;
+        while (j < pl->players[i]->size_cd)
+        {
+            ptr[j] = pl->players[i]->code[j];
+            ++j;
         }
-        pnb++;
+        i++;
+        tmp = tmp->prev;
     }
 }
 
-int     check_live(t_struct *pl)
+int     set_cycles(t_pc *cur)
 {
-    int     i;
-    int     count;
-    int     flag;
-    t_pc    *tmp;
+    int i;
 
-    i = pl->num_pl;
-    count = pl->num_pl;
-    while (i > 0)
+    i = 0;
+    if (cur->cycles)
+        return 1 ;
+    while (i < 17)
     {
-        flag = 0;
-        tmp = pl->players[i - 1]->first;
-        while (tmp)
+        if (g_tab[i].opcode == *(cur->pc_ptr))
         {
-            if (!tmp->live)
-                delete_pc();
-            else
-                flag++;
-            tmp = tmp->next;
+            cur->cycles = g_tab[i].nb_tours;
+            return 1;
         }
-        if (!flag)
-            count--;
-        i--;
+
+        i++;
     }
-    return count;
 }
 
 void    go_some_cycles(t_struct *pl, int cycles)
 {
-    int i;
-    int nb;
-    t_pc *tmp;
-    unsigned char x = 255;
+    int     i;
+    t_pc    *tmp;
 
     i = 0;
-    while (i < cycles){
-        /*--------------------*/
-        move(0,0);
-        halfdelay(1);
-        getch();
-        refresh();
-        visualization(pl, 4096);
-        /*-------------------*/
-        nb = pl->num_pl;
-        while (nb > 0){
-            tmp = pl->players[nb - 1]->first;
-            while (tmp)
-            {
-                /*
-                *(tmp->pc_ptr) = x;
-                int xc = (tmp->pc_ptr - pl->map) / 64;
-                int yc = ((tmp->pc_ptr - pl->map) % 64)*2;
-                mvchgat(xc, yc, 1, 0, 7, NULL);
-                if ((tmp->pc_ptr - pl->map) < 4095)
-                    tmp->pc_ptr++;
-                else {
-                    tmp->pc_ptr = pl->map;
-                    x = 85;
-                }
-                */
-                if (!tmp->cycles)    //если циклы каретки 0 - выполняем функции
-                    go_to_function;  //старт функций (ap,ds)
-                else                 //если циклы не 0 то декрементируем и идем дальше
-                    tmp->cycles--;
-                tmp = tmp->next;
-            }
-            nb--;
+    while (i < cycles)
+    {
+        tmp = pl->first;
+        while (tmp) {
+            if (set_cycles(tmp))
+                move_ptr(pl, &tmp->pc_ptr, 1);
+            else
+                go_to_function();
+            tmp = tmp->next;
         }
         i++;
     }
@@ -92,10 +64,10 @@ void    go_some_cycles(t_struct *pl, int cycles)
 
 void    start_vm(t_struct *pl)
 {
-    //int i;
-    write_code_to_field(pl, 0);
+    write_code_to_field(pl);
+    visualization(pl, 4096);
     go_some_cycles(pl, CYCLE_TO_DIE);
-    while (check_live(pl) != 1)        //пока не выполнится условие (1 и жива) будем добавлять по CYCLE_DELTA
-        go_some_cycles(pl, CYCLE_DELTA);
+    //while (check_live(pl) != 1)        //пока не выполнится условие (1 и жива) будем добавлять по CYCLE_DELTA
+    //    go_some_cycles(pl, CYCLE_TO_DIE - CYCLE_DELTA);
 }
 

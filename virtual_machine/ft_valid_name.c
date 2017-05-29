@@ -23,17 +23,16 @@ void	ft_create_players(char **names, t_struct *pl)
 	j = pl->num_pl;
 	if (!names)
 		ft_error("no players");
-	pl->players	= (t_st **)malloc(sizeof(pl->players) * (pl->num_pl));
+	pl->players	= (t_st **)malloc(sizeof(pl->players) * (pl->num_pl + 1));
 	pl->players[pl->num_pl] = NULL;
 	while (names && i < pl->num_pl)
 	{
 		pl->players[i] = (t_st *)malloc(sizeof(t_st));
 		ft_printf("\n%s\n", names[i]);
 		pl->players[i]->file_name = ft_strdup(names[i]);
-		pl->players[i]->player_number = j--;
-        pl->players[i]->first = NULL;
-        pl->players[i]->last = NULL;
-		init_pc(pl , i, pl->map + ((pl->num_pl - i - 1) * (MEM_SIZE/pl->num_pl)));
+		pl->players[i]->player_number = (unsigned int)((i + 1) * -1);
+		init_pc(pl, pl->map + ((pl->num_pl - i - 1) * (MEM_SIZE/pl->num_pl)));
+		pl->last->r[1] = pl->players[i]->player_number;
 		i++;
 	}
 }
@@ -59,7 +58,7 @@ void 	ft_valid_name(char **argv, t_struct *pl)
 	while (argv[i])
 	{
 		tmp = ft_strsplit(argv[i], '.');
-		if (ft_len_db_array(tmp) == 2 && ft_strequ(tmp[1], "cor"))
+		if (ft_len_db_array(tmp) >= 2 && ft_strequ(tmp[ft_len_db_array(tmp) - 1], "cor"))
 		{
 			names = ft_add_str_in_double(names, argv[i]);
 			pl->num_pl++;
