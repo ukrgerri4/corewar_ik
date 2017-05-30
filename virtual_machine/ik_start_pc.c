@@ -29,16 +29,16 @@ int     set_cycles(t_pc *cur)
     i = 0;
     if (cur->cycles > 0)
         return 1;
-    while (i < 17)
+    while (i < 16)
     {
         if (g_tab[i].opcode == *(cur->pc_ptr))
         {
             cur->cycles = g_tab[i].nb_tours;
-            return 0 ;
+            return 1 ;
         }
         i++;
     }
-    return 1 ;
+    return 0 ;
 }
 
 void    go_some_cycles(t_struct *pl, int cycles)
@@ -49,29 +49,69 @@ void    go_some_cycles(t_struct *pl, int cycles)
     i = 0;
     while (i < cycles)
     {
+        /*--------------------*/
+        move(0,0);
+        halfdelay(1);
+        getch();
+        refresh();
+        visualization(pl, 4096);
+        /*-------------------*/
         tmp = pl->first;
         while (tmp)
         {
-            if (tmp->cycles == 0)
-                go_to_function();
+            if (tmp->cycles == 0) {
+                *(tmp->pc_ptr) = 255; //go_to_function();
+                tmp->cycles = -1;
+            }
             else
             {
                 if (set_cycles(tmp))
+                    tmp->cycles--;
+                else
                     move_ptr(pl, &tmp->pc_ptr, 1);
             }
+            /*--------------------*/
+            int xc = (tmp->pc_ptr - pl->map) / 64;
+            int yc = ((tmp->pc_ptr - pl->map) % 64) * 3;
+            mvchgat(xc, yc, 1, 0, 7, NULL);
+            /*--------------------*/
             tmp = tmp->next;
         }
         i++;
     }
 }
 
+int     check_live(t_struct *pl)
+{
+    t_pc    *tmp;
+    t_pc    *del;
+
+    tmp = pl->first;
+    while (tmp){
+        if (!tmp->live) {
+            del = tmp;
+            tmp = tmp->next;
+            delete_pc(pl, &del);
+        }
+        else
+            tmp = tmp->next;
+    }
+    if (!pl->first) {
+        move(0, 0);
+        mvprintw(50, 50, "GAVABUNGA");
+        //halfdelay(500);
+        getch();
+        refresh();
+        return 1;
+    }
+    return 0;
+}
 
 void    start_vm(t_struct *pl)
 {
     write_code_to_field(pl);
-    visualization(pl, 4096);
-    go_some_cycles(pl, CYCLE_TO_DIE);
-    //while (check_live(pl) != 1)        //пока не выполнится условие (1 и жива) будем добавлять по CYCLE_DELTA
-    //    go_some_cycles(pl, CYCLE_TO_DIE - CYCLE_DELTA);
+    go_some_cycles(pl, pl->glob_cycles);
+    while (check_live(pl) != 1)
+        go_some_cycles(pl, pl->glob_cycles);
 }
 

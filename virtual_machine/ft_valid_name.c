@@ -17,10 +17,8 @@
 void	ft_create_players(char **names, t_struct *pl)
 {
 	int i;
-	int j;
 
 	i = 0;
-	j = pl->num_pl;
 	if (!names)
 		ft_error("no players");
 	pl->players	= (t_st **)malloc(sizeof(pl->players) * (pl->num_pl + 1));

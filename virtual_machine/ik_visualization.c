@@ -16,7 +16,7 @@ void init_window(void) {
     start_color(); //Активируем поддержку цвета
     use_default_colors(); //Фон stscr будет "прозрачным"
     init_pair(1, COLOR_RED,     COLOR_BLACK);
-    init_pair(2, COLOR_GREEN,   COLOR_BLACK);
+    init_pair(2, COLOR_WHITE,   COLOR_BLACK);
     init_pair(3, COLOR_YELLOW,  COLOR_BLACK);
     init_pair(4, COLOR_BLUE,    COLOR_BLACK);
     init_pair(5, COLOR_CYAN,    COLOR_BLACK);
@@ -37,7 +37,7 @@ void	visualization(t_struct *pl, size_t size)
     i = 0;
     j = 1;
     mem = pl->map;
-    attron(A_BOLD | COLOR_PAIR(2));
+    attron(COLOR_PAIR(2));
     while (i < size)
     {
         while (i < j * 64)
@@ -57,15 +57,12 @@ void	visualization(t_struct *pl, size_t size)
         j++;
     }
 
-    attroff(A_BOLD | COLOR_PAIR(2));
+    attroff(COLOR_PAIR(2));
     mvprintw(10, 200, "Cycles = ");
     attron(A_BOLD | COLOR_PAIR(1));
     printw("%d", pl->iterator++);
     attroff(A_BOLD | COLOR_PAIR(1));
-    move(0,0);
-    //halfdelay(1);
-    getch();
-    refresh();
+
     move(0, 0);
 
 }
