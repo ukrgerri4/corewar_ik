@@ -10,7 +10,7 @@
 #                                                                              #
 #******************************************************************************#
 
-NAME = corevar
+NAME = corewar
 
 LEN_NAME = `printf "%s" $(NAME) | wc -c`
 
@@ -31,6 +31,10 @@ SRC =   main.c \
 		ik_init_pc.c \
 		ik_start_pc.c \
 		ik_visualization.c \
+		ik_init_function.c \
+		instruction_live.c \
+		support_instructions.c \
+
 
 OBJ = $(SRC:.c=.o)
 

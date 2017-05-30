@@ -62,6 +62,8 @@ typedef struct	s_struct
     t_pc			*last;
 }				t_struct;
 
+int             (*g_fun[17])(t_struct *pl, t_pc *current_pc);
+
 //if exist flag "-n", flag -dump will be ignored
 
 /*
@@ -113,5 +115,11 @@ void    move_ptr(t_struct *pl, unsigned char **ptr, int i);
 
 void 	init_window(void);
 void	visualization(t_struct *pl, size_t size);
+
+
+int					live(t_struct *data, t_pc *p);
+unsigned int	get_argument(t_struct *data, t_pc *p, int size);
+
+void    init_function(void);
 
 #endif

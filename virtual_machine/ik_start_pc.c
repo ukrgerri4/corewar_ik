@@ -49,18 +49,19 @@ void    go_some_cycles(t_struct *pl, int cycles)
     i = 0;
     while (i < cycles)
     {
-        /*--------------------*/
+        /*--------------------
         move(0,0);
-        halfdelay(1);
+        //halfdelay(1);
         getch();
         refresh();
         visualization(pl, 4096);
-        /*-------------------*/
+        -------------------*/
         tmp = pl->first;
         while (tmp)
         {
             if (tmp->cycles == 0) {
-                *(tmp->pc_ptr) = 255; //go_to_function();
+                if (!g_fun[*(tmp->pc_ptr)](pl, tmp))
+                    move_ptr(pl, &tmp->pc_ptr, 1);
                 tmp->cycles = -1;
             }
             else
@@ -70,18 +71,18 @@ void    go_some_cycles(t_struct *pl, int cycles)
                 else
                     move_ptr(pl, &tmp->pc_ptr, 1);
             }
-            /*--------------------*/
+            /*--------------------
             int xc = (tmp->pc_ptr - pl->map) / 64;
             int yc = ((tmp->pc_ptr - pl->map) % 64) * 3;
             mvchgat(xc, yc, 1, 0, 7, NULL);
-            /*--------------------*/
+            --------------------*/
             tmp = tmp->next;
         }
         i++;
     }
 }
 
-int     check_live(t_struct *pl)
+int     check_ending(t_struct *pl)
 {
     t_pc    *tmp;
     t_pc    *del;
@@ -93,17 +94,15 @@ int     check_live(t_struct *pl)
             tmp = tmp->next;
             delete_pc(pl, &del);
         }
-        else
+        else {
+            tmp->live = 0;
             tmp = tmp->next;
+        }
     }
-    if (!pl->first) {
-        move(0, 0);
-        mvprintw(50, 50, "GAVABUNGA");
-        //halfdelay(500);
-        getch();
-        refresh();
+    if (!pl->first)
         return 1;
-    }
+    //проверить
+    //проверить 10
     return 0;
 }
 
@@ -111,7 +110,7 @@ void    start_vm(t_struct *pl)
 {
     write_code_to_field(pl);
     go_some_cycles(pl, pl->glob_cycles);
-    while (check_live(pl) != 1)
+    while (check_ending(pl) != 1)
         go_some_cycles(pl, pl->glob_cycles);
 }
 

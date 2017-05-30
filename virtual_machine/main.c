@@ -65,8 +65,9 @@ int 	main(int argc, char **argv)
 {
 	t_struct	pl;
 
+	init_function();
     g_tab = init_tab();
-    init_window();
+    //init_window();
     ft_init_st(&pl);
 	if (argc == 1)
 	{
@@ -79,6 +80,6 @@ int 	main(int argc, char **argv)
 		ft_parsing_file(&pl);
 	}
     start_vm(&pl);
-    endwin();
+    //endwin();
 	return (0);
 }
