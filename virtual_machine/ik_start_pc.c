@@ -7,9 +7,9 @@ void    write_code_to_field(t_struct *pl)
     int             i;
     int             j;
 
-    i = 0;
+    i = pl->num_pl - 1;
     tmp = pl->last;
-    while (i < pl->num_pl) {
+    while (i >= 0) {
         ptr = tmp->pc_ptr;
         j = 0;
         while (j < pl->players[i]->size_cd)
@@ -17,7 +17,7 @@ void    write_code_to_field(t_struct *pl)
             ptr[j] = pl->players[i]->code[j];
             ++j;
         }
-        i++;
+        i--;
         tmp = tmp->prev;
     }
 }
@@ -49,13 +49,14 @@ void    go_some_cycles(t_struct *pl, int cycles)
     i = 0;
     while (i < cycles)
     {
-        /*--------------------
-        move(0,0);
-        //halfdelay(1);
-        getch();
-        refresh();
-        visualization(pl, 4096);
-        -------------------*/
+        if (pl->v) {
+            move(0, 0);
+            //halfdelay(1);
+            getch();
+            refresh();
+            visualization(pl, 4096);
+        }
+
         tmp = pl->first;
         while (tmp)
         {
@@ -71,11 +72,12 @@ void    go_some_cycles(t_struct *pl, int cycles)
                 else
                     move_ptr(pl, &tmp->pc_ptr, 1);
             }
-            /*--------------------
-            int xc = (tmp->pc_ptr - pl->map) / 64;
-            int yc = ((tmp->pc_ptr - pl->map) % 64) * 3;
-            mvchgat(xc, yc, 1, 0, 7, NULL);
-            --------------------*/
+            if (pl->v) {
+                int xc = (tmp->pc_ptr - pl->map) / 64;
+                int yc = ((tmp->pc_ptr - pl->map) % 64) * 3;
+                mvchgat(xc, yc, 2, 0, 6, NULL);
+            }
+
             tmp = tmp->next;
         }
         i++;
@@ -101,9 +103,17 @@ int     check_ending(t_struct *pl)
     }
     if (!pl->first)
         return 1;
-    //проверить
-    //проверить 10
-    return 0;
+    if (pl->nbr_live >= NBR_LIVE || pl->max_checks == 1)
+    {
+        pl->glob_cycles -= CYCLE_DELTA;
+        pl->max_checks = MAX_CHECKS;
+    }
+    else
+        pl->max_checks--;
+    pl->nbr_live = 0;
+    if (pl->glob_cycles > 0)
+        return 0;
+    return 1;
 }
 
 void    start_vm(t_struct *pl)
@@ -112,5 +122,16 @@ void    start_vm(t_struct *pl)
     go_some_cycles(pl, pl->glob_cycles);
     while (check_ending(pl) != 1)
         go_some_cycles(pl, pl->glob_cycles);
+    if (pl->v) {
+        int row, col;
+        clear();
+        getmaxyx(stdscr, row, col);
+        attron(A_BOLD | COLOR_PAIR((int) ((pl->number_last_live_player * -1) - 1)));
+        mvwprintw(stdscr, row / 2, (col - 22) / 2, "Winner is player N[%d]", (int) pl->number_last_live_player);
+        attroff(A_BOLD | COLOR_PAIR((int) ((pl->number_last_live_player * -1) - 1)));
+        refresh();
+        halfdelay(200);
+        getch();
+    }
 }
 

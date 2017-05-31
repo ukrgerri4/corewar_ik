@@ -24,3 +24,12 @@ void	ft_free_db_array(char **array)
 	}
 	free(array);
 }
+
+int 	free_for_functions(void *old_1, void *old_2, int res)
+{
+	if (old_1)
+		free(old_1);
+	if (old_2)
+		free(old_2);
+	return (res);
+}

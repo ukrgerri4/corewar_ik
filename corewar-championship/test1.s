@@ -2,4 +2,4 @@
 .comment	"Ca roxxe du chameau"
 	
 label:
-	st	r2, 40
+	live %-2

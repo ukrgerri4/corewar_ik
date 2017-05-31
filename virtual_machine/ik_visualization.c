@@ -15,13 +15,15 @@ void init_window(void) {
     }
     start_color(); //Активируем поддержку цвета
     use_default_colors(); //Фон stscr будет "прозрачным"
-    init_pair(1, COLOR_RED,     COLOR_BLACK);
-    init_pair(2, COLOR_WHITE,   COLOR_BLACK);
-    init_pair(3, COLOR_YELLOW,  COLOR_BLACK);
-    init_pair(4, COLOR_BLUE,    COLOR_BLACK);
-    init_pair(5, COLOR_CYAN,    COLOR_BLACK);
-    init_pair(6, COLOR_MAGENTA, COLOR_BLACK);
-    init_pair(7, COLOR_BLUE,   COLOR_YELLOW);
+    init_pair(0, COLOR_RED,     COLOR_BLACK);
+    init_pair(1, COLOR_GREEN,    COLOR_BLACK);
+    init_pair(2, COLOR_YELLOW,  COLOR_BLACK);
+    init_pair(3, COLOR_BLUE,    COLOR_BLACK);
+
+    init_pair(4, COLOR_WHITE,   COLOR_BLACK);
+
+    init_pair(5, COLOR_MAGENTA, COLOR_BLACK);
+    init_pair(6, COLOR_BLACK,   COLOR_YELLOW);
 }
 
 
@@ -37,7 +39,7 @@ void	visualization(t_struct *pl, size_t size)
     i = 0;
     j = 1;
     mem = pl->map;
-    attron(COLOR_PAIR(2));
+    attron(COLOR_PAIR(4));
     while (i < size)
     {
         while (i < j * 64)
@@ -49,7 +51,6 @@ void	visualization(t_struct *pl, size_t size)
                 c %= 16;
                 printw("%c", base[c % 16]);
             }
-            //if (i % 2 == 1 && i != j * 64 - 1)
                 printw(" ");
             i++;
         }
@@ -57,12 +58,20 @@ void	visualization(t_struct *pl, size_t size)
         j++;
     }
 
-    attroff(COLOR_PAIR(2));
+    attroff(COLOR_PAIR(4));
     mvprintw(10, 200, "Cycles = ");
-    attron(A_BOLD | COLOR_PAIR(1));
+    attron(A_BOLD | COLOR_PAIR(5));
     printw("%d", pl->iterator++);
-    attroff(A_BOLD | COLOR_PAIR(1));
-
+    attroff(A_BOLD | COLOR_PAIR(5));
+    i = 0;
+    j = 12;
+    while ((int)i < pl->num_pl){
+        attron(A_BOLD | COLOR_PAIR(i));
+        mvprintw((int)j, 200, "Player[%d] say live - [%d] times", (int)pl->players[i]->player_number, pl->players[i]->count_live);
+        attroff(A_BOLD | COLOR_PAIR(i));
+        j += 2;
+        i++;
+    }
     move(0, 0);
 
 }

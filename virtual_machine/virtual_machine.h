@@ -32,6 +32,7 @@ typedef struct	s_pc
 }				t_pc;
 
 
+
 typedef struct	s_st
 {
 	char				*file_name;
@@ -57,13 +58,16 @@ typedef struct	s_struct
     int             nbr_live;
     int             max_checks;
     int             glob_cycles;
-	int 			iterator;//delete
     t_pc			*first;
     t_pc			*last;
+
+	int 			iterator;//delete
+	int 			v;
 }				t_struct;
 
 int             (*g_fun[17])(t_struct *pl, t_pc *current_pc);
 
+# include "instructions.h"
 //if exist flag "-n", flag -dump will be ignored
 
 /*
@@ -91,12 +95,14 @@ int		ft_len_db_array(char **array);
 /*
 **allocation_memory.c
 */
-char		**ft_add_str_in_double(char **old, char *str);
+char	**ft_add_str_in_double(char **old, char *str);
 
 /*
 **free_memory.c
 */
 void	ft_free_db_array(char **array);
+int 	free_for_functions(void *old_1, void *old_2, int res);
+
 
 /*
 **ft_error.c
@@ -104,7 +110,7 @@ void	ft_free_db_array(char **array);
 void 	ft_error(char *error);
 
 /*
-** ik_function
+**ik_function
 */
 void	ft_fill_int(unsigned int *arr, int size, unsigned int n);
 void    init_pc(t_struct *pl, unsigned char *ptr);
@@ -115,10 +121,6 @@ void    move_ptr(t_struct *pl, unsigned char **ptr, int i);
 
 void 	init_window(void);
 void	visualization(t_struct *pl, size_t size);
-
-
-int					live(t_struct *data, t_pc *p);
-unsigned int	get_argument(t_struct *data, t_pc *p, int size);
 
 void    init_function(void);
 

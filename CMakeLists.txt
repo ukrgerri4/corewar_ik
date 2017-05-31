@@ -25,7 +25,7 @@ set(SOURCE_FILES_ASM
                     asm/ik_write_mark.c
                     op.h)
 
-set (SOURCE_FILES_CORVAR
+set (SOURCE_FILES_CORWAR
                     virtual_machine/ik_init_pc.c
                     virtual_machine/ik_base_function.c
                     virtual_machine/ik_visualization.c
@@ -39,10 +39,21 @@ set (SOURCE_FILES_CORVAR
                     virtual_machine/ft_search_flags.c
                     virtual_machine/ft_valid_name.c
                     virtual_machine/virtual_machine.h
-                    op.h)
+                    virtual_machine/support_instructions.c
+                    virtual_machine/instruction_live.c
+                    virtual_machine/checking_instructions.c
+                    virtual_machine/instruction_live.c
+                    virtual_machine/instruction_ld.c
+                    virtual_machine/instruction_st.c
+                    virtual_machine/instruction_add.c
+                    virtual_machine/instruction_sub.c
+                    virtual_machine/instruction_lld.c
+                    virtual_machine/instruction_sti.c
+                    virtual_machine/ik_init_function.c
+                    op.h )
 
 add_executable(asm ${SOURCE_FILES_ASM})
-add_executable(corvar ${SOURCE_FILES_CORVAR})
+add_executable(corwar ${SOURCE_FILES_CORWAR})
 
 target_link_libraries(asm libftprintf.a)
-target_link_libraries(corvar libftprintf.a ncurses)
+target_link_libraries(corwar libftprintf.a ncurses)
