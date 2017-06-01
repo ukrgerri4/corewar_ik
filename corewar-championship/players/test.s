@@ -2,4 +2,5 @@
 .comment	"Igor-bazuka"
 	
 label:
-	live %-1
+	ld %42, r1
+	aff r1

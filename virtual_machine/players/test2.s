@@ -2,4 +2,6 @@
 .comment	"Andryha-sekira"
 
 label:
-	live %-3
+	ld %255, r2
+    st r2, r3
+    st r3, 15

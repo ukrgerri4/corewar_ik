@@ -7,17 +7,18 @@ void    write_code_to_field(t_struct *pl)
     int             i;
     int             j;
 
-    i = pl->num_pl - 1;
+    i = 0;
     tmp = pl->last;
-    while (i >= 0) {
+    while (i < pl->num_pl) {
         ptr = tmp->pc_ptr;
         j = 0;
         while (j < pl->players[i]->size_cd)
         {
             ptr[j] = pl->players[i]->code[j];
+            pl->color[&(ptr[j]) - pl->map] = i + 1;
             ++j;
         }
-        i--;
+        i++;
         tmp = tmp->prev;
     }
 }
@@ -56,7 +57,6 @@ void    go_some_cycles(t_struct *pl, int cycles)
             refresh();
             visualization(pl, 4096);
         }
-
         tmp = pl->first;
         while (tmp)
         {
@@ -75,9 +75,8 @@ void    go_some_cycles(t_struct *pl, int cycles)
             if (pl->v) {
                 int xc = (tmp->pc_ptr - pl->map) / 64;
                 int yc = ((tmp->pc_ptr - pl->map) % 64) * 3;
-                mvchgat(xc, yc, 2, 0, 6, NULL);
+                mvchgat(xc, yc, 2, 0, 7, NULL);
             }
-
             tmp = tmp->next;
         }
         i++;

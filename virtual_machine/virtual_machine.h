@@ -23,6 +23,7 @@
 typedef struct	s_pc
 {
 	unsigned int 	r[17];
+    int             owner;
 	int 			live;
 	int				cycles;
 	int 			carry;
@@ -54,6 +55,7 @@ typedef struct	s_struct
 	t_st			**players;
 
 	unsigned char 	*map;
+    unsigned char   *color;
     unsigned int    number_last_live_player;
     int             nbr_live;
     int             max_checks;
@@ -113,15 +115,17 @@ void 	ft_error(char *error);
 **ik_function
 */
 void	ft_fill_int(unsigned int *arr, int size, unsigned int n);
-void    init_pc(t_struct *pl, unsigned char *ptr);
+void	ft_bchar(unsigned char *arr, int size, unsigned char c);
+void	init_pc(t_struct *pl, unsigned char *ptr, int i);
 void    delete_pc(t_struct *pl, t_pc **del);
 
 void    start_vm(t_struct *pl);
 void    move_ptr(t_struct *pl, unsigned char **ptr, int i);
 
+void    init_function(void);
+
 void 	init_window(void);
 void	visualization(t_struct *pl, size_t size);
-
-void    init_function(void);
+void    set_color(t_struct *pl, unsigned char *ptr, int color);
 
 #endif

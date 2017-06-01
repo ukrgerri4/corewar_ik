@@ -13,6 +13,19 @@ void    move_ptr(t_struct *pl, unsigned char **ptr, int i)
         *ptr = pl->map + diff % MEM_SIZE;
 }
 
+void set_color(t_struct *pl, unsigned char *ptr, int color)
+{
+    int i;
+    int j;
+
+    i = 0;
+    j = (int)(ptr - pl->map);
+    while (i < 4){
+        pl->color[j++] = (unsigned char)(color);
+        i++;
+    }
+}
+
 void	ft_fill_int(unsigned int *arr, int size, unsigned int n)
 {
     int i;
@@ -20,4 +33,13 @@ void	ft_fill_int(unsigned int *arr, int size, unsigned int n)
     i = 0;
     while (size-- > 0)
         arr[i++] = n;
+}
+
+void	ft_bchar(unsigned char *arr, int size, unsigned char c)
+{
+    int i;
+
+    i = 0;
+    while (size-- > 0)
+        arr[i++] = c;
 }

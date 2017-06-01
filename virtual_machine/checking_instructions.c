@@ -48,3 +48,13 @@ int		ft_choose_arg(t_struct *data, unsigned char **p, unsigned char *args, int n
 	return (1);
 }
 
+long int		cast_if_negative(long int arg)
+{
+	if (arg > 32767)
+	{
+		arg = arg - 65535;
+		if (arg != 0)
+			arg -= 1;
+	}
+	return (arg);
+}

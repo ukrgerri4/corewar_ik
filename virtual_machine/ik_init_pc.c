@@ -1,15 +1,16 @@
 #include "virtual_machine.h"
 
-void    init_pc(t_struct *pl, unsigned char *ptr)
+void init_pc(t_struct *pl, unsigned char *ptr, int i)
 {
     t_pc *tmp;
 
     if (!(tmp = (t_pc*)malloc(sizeof(t_pc))))
         exit(1);
     tmp->pc_ptr = ptr;
-    tmp->carry = 0;
-    tmp->cycles = -1;
+    tmp->owner = i;
     tmp->live = 0;
+    tmp->cycles = -1;
+    tmp->carry = 0;
     ft_fill_int(tmp->r, 17, 0);
     if (pl->first) {
         pl->first->prev = tmp;

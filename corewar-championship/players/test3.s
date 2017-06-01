@@ -2,4 +2,4 @@
 .comment	"six-man"
 
 label:
-	live %-4
+	live %-1

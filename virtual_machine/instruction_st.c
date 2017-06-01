@@ -14,7 +14,7 @@
 
 int 	st(t_struct *data, t_pc *p)
 {
-	unsigned int 	arg;
+	long int		arg;
 	unsigned int 	reg;
 	unsigned char 	*args;
 	unsigned char 	*args_len;
@@ -27,14 +27,16 @@ int 	st(t_struct *data, t_pc *p)
 	if (!ft_choose_arg(data, &point, args, 2))
 		return (free_for_functions(args, args_len, 0));
 	get_len_write(args, args_len, 0);
-	if (((reg = get_argument(data, &point, args_len[0])) > 16) || (args[1] == T_REG
-			&& (arg = get_argument(data, &point, args_len[1])) > 16))
+	if (((reg = get_argument(data, &point, args_len[0])) > 16) ||
+			((arg = get_argument(data, &point, args_len[1])) > 16 && args[1] == T_REG))
 		return (free_for_functions(args, args_len, 0));
 	if (args[1] == T_IND)
 	{
+		point = p->pc_ptr - 1;
+		arg = cast_if_negative(arg);
 		arg = arg % IDX_MOD;
 		move_ptr(data, &point, arg);
-		set_arguments(point, reg);
+        set_arguments(data , p->r[reg], point, p->owner + 1);
 	}
 	else
 		p->r[arg] = p->r[reg];

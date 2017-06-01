@@ -30,6 +30,7 @@ set (SOURCE_FILES_CORWAR
                     virtual_machine/ik_base_function.c
                     virtual_machine/ik_visualization.c
                     virtual_machine/ik_start_pc.c
+                    virtual_machine/ik_init_function.c
 
                     virtual_machine/main.c
                     virtual_machine/allocation_memory.c
@@ -38,7 +39,6 @@ set (SOURCE_FILES_CORWAR
                     virtual_machine/ft_parsing_file.c
                     virtual_machine/ft_search_flags.c
                     virtual_machine/ft_valid_name.c
-                    virtual_machine/virtual_machine.h
                     virtual_machine/support_instructions.c
                     virtual_machine/instruction_live.c
                     virtual_machine/checking_instructions.c
@@ -47,9 +47,18 @@ set (SOURCE_FILES_CORWAR
                     virtual_machine/instruction_st.c
                     virtual_machine/instruction_add.c
                     virtual_machine/instruction_sub.c
-                    virtual_machine/instruction_lld.c
+                    virtual_machine/instruction_and.c
+                    virtual_machine/instruction_or.c
+                    virtual_machine/instruction_xor.c
+                    virtual_machine/instruction_zjmp.c
+                    virtual_machine/instruction_ldi.c
                     virtual_machine/instruction_sti.c
-                    virtual_machine/ik_init_function.c
+                    virtual_machine/instruction_fork.c
+                    virtual_machine/instruction_lld.c
+                    virtual_machine/instruction_lldi.c
+                    virtual_machine/instruction_lfork.c
+                    virtual_machine/virtual_machine.h
+                    virtual_machine/instructions.h
                     op.h )
 
 add_executable(asm ${SOURCE_FILES_ASM})
