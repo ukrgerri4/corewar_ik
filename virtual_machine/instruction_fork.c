@@ -12,13 +12,11 @@
 
 #include "virtual_machine.h"
 
-t_pc	*create_pc_fork_lfork(t_struct *data, t_pc *p, unsigned char *point)
+void	create_pc_fork_lfork(t_struct *data, t_pc *p, unsigned char *point)
 {
-	t_pc	*p_new;
 	int i;
 
 	i = 0;
-	p_new = p;
 	init_pc(data, point, p->owner);
 	while (i < 17) {
 		data->first->r[i] = p->r[i];
@@ -26,14 +24,12 @@ t_pc	*create_pc_fork_lfork(t_struct *data, t_pc *p, unsigned char *point)
 	}
 //	data->first->cycles = p->cycles;//????
 	data->first->carry = p->carry;
-	return (p_new);
 }
 
 int 	my_fork(t_struct *data, t_pc *p)
 {
 	long int 		arg;
 	unsigned char	*point;
-	t_pc 			*p_new;
 
 	move_ptr(data, &p->pc_ptr, 1);
 	point = p->pc_ptr;
@@ -41,7 +37,7 @@ int 	my_fork(t_struct *data, t_pc *p)
 	arg = cast_if_negative(arg);
 	arg = arg % IDX_MOD;
 	move_ptr(data, &point, arg);
-	p_new = create_pc_fork_lfork(data, p, point);
+	create_pc_fork_lfork(data, p, point);
 	move_ptr(data, &p->pc_ptr, 2);
 	return (1);
 }

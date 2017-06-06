@@ -50,14 +50,9 @@ void    go_some_cycles(t_struct *pl, int cycles)
     i = 0;
     while (i < cycles)
     {
-        if (pl->v) {
-            move(0, 0);
-            //halfdelay(1);
-            getch();
-            refresh();
-            visualization(pl, 4096);
-        }
         tmp = pl->first;
+        if (pl->v)
+            visualization(pl, 4096);
         while (tmp)
         {
             if (tmp->cycles == 0) {
@@ -73,11 +68,14 @@ void    go_some_cycles(t_struct *pl, int cycles)
                     move_ptr(pl, &tmp->pc_ptr, 1);
             }
             if (pl->v) {
-                int xc = (tmp->pc_ptr - pl->map) / 64;
-                int yc = ((tmp->pc_ptr - pl->map) % 64) * 3;
-                mvchgat(xc, yc, 2, 0, 7, NULL);
+                mvchgat((tmp->pc_ptr - pl->map) / 64, ((tmp->pc_ptr - pl->map) % 64) * 3, 2, 0, 7, NULL);
             }
             tmp = tmp->next;
+        }
+        if (pl->v) {
+            //halfdelay(1);
+            getch();
+            refresh();
         }
         i++;
     }
@@ -125,7 +123,7 @@ void    start_vm(t_struct *pl)
         int row, col;
         clear();
         getmaxyx(stdscr, row, col);
-        attron(A_BOLD | COLOR_PAIR((int) ((pl->number_last_live_player * -1) - 1)));
+        attron(A_BOLD | COLOR_PAIR(pl->number_last_live_player * -1));
         mvwprintw(stdscr, row / 2, (col - 22) / 2, "Winner is player N[%d]", (int) pl->number_last_live_player);
         attroff(A_BOLD | COLOR_PAIR((int) ((pl->number_last_live_player * -1) - 1)));
         refresh();

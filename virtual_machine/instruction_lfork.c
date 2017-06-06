@@ -16,14 +16,13 @@ int 	lfork(t_struct *data, t_pc *p)
 {
 	long int 		arg;
 	unsigned char	*point;
-	t_pc 			*p_new;
 
 	move_ptr(data, &p->pc_ptr, 1);
 	point = p->pc_ptr;
 	arg = get_argument(data, &point, 2);
 	arg = cast_if_negative(arg);
 	move_ptr(data, &point, arg);
-	p_new = create_pc_fork_lfork(data, p, point);
+	create_pc_fork_lfork(data, p, point);
 	move_ptr(data, &p->pc_ptr, 2);
 	return (1);
 }

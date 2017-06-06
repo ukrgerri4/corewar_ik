@@ -16,9 +16,13 @@ void init_window(void) {
     start_color(); //Активируем поддержку цвета
     use_default_colors(); //Фон stscr будет "прозрачным"
     init_pair(1, COLOR_RED,     COLOR_BLACK);
+    init_pair(11, COLOR_WHITE,   COLOR_RED);
     init_pair(2, COLOR_GREEN,    COLOR_BLACK);
+    init_pair(12, COLOR_WHITE,   COLOR_GREEN);
     init_pair(3, COLOR_YELLOW,  COLOR_BLACK);
+    init_pair(13, COLOR_WHITE,   COLOR_YELLOW);
     init_pair(4, COLOR_BLUE,    COLOR_BLACK);
+    init_pair(14, COLOR_WHITE,   COLOR_BLUE);
 
     init_pair(5, COLOR_WHITE,   COLOR_BLACK);
 
@@ -30,13 +34,11 @@ void init_window(void) {
 
 void	visualization(t_struct *pl, size_t size)
 {
-    char			base[17] = "0123456789abcdef";
     unsigned char	*mem;
-    unsigned char	c;
     size_t			i;
     size_t			j;
 
-
+    move(0, 0);
     i = 0;
     j = 1;
     mem = pl->map;
@@ -44,13 +46,10 @@ void	visualization(t_struct *pl, size_t size)
     {
         while (i < j * 64)
         {
-            c = mem[i];
             if (i < size)
             {
                 attron(A_BOLD | COLOR_PAIR(pl->color[i]));
-                printw("%c", base[c / 16]);
-                c %= 16;
-                printw("%c", base[c % 16]);
+                printw("%02x", mem[i]);
                 attroff(A_BOLD | COLOR_PAIR(pl->color[i]));
             }
                 printw(" ");
@@ -72,7 +71,5 @@ void	visualization(t_struct *pl, size_t size)
         j += 2;
         i++;
     }
-    move(0, 0);
-
 }
 
