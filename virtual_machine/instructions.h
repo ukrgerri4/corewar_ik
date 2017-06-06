@@ -75,15 +75,12 @@ int 		sti(t_struct *data, t_pc *p);
 /*
 **instruction_zjmp.c
 */
+
 int 		zjmp(t_struct *data, t_pc *p);
 /*
 **instruction_ldi.c
 */
 int 	    ldi(t_struct *data, t_pc *p);
-
-
-
-
 
 /*
 **instruction_fork.c
@@ -97,6 +94,8 @@ int 	lldi(t_struct *data, t_pc *p);
 
 
 int 	lfork(t_struct *data, t_pc *p);
+
+int 	aff(t_struct *data, t_pc *p);
 /*
 **support_instructions.c
 */

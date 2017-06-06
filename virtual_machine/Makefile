@@ -49,6 +49,7 @@ SRC =   main.c \
 		instruction_lld.c \
 		instruction_lldi.c \
 		instruction_lfork.c \
+		instruction_aff.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -58,7 +59,7 @@ FLAGS = -Wall -Wextra
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
+$(NAME): $(OBJ)
 	@$(CC) -o $(NAME) $(OBJ) $(LIBFT) -lncurses
 	@echo "\r\033[48;5;15;38;5;25m✅  MADE $(NAME)  \033[0m\033[K"
 	@make clean

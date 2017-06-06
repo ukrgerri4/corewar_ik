@@ -112,7 +112,7 @@ int 	free_for_functions(void *old_1, void *old_2, int res);
 void 	ft_error(char *error);
 
 /*
-**ik_function
+** ik_function
 */
 void	ft_fill_int(unsigned int *arr, int size, unsigned int n);
 void	ft_bchar(unsigned char *arr, int size, unsigned char c);
@@ -124,8 +124,13 @@ void    move_ptr(t_struct *pl, unsigned char **ptr, int i);
 
 void    init_function(void);
 
+/*
+** ik_visualization
+*/
 void 	init_window(void);
 void	visualization(t_struct *pl, size_t size);
+void    out_cycles(t_struct *pl);
+void    out_winner(t_struct *pl);
 void    set_color(t_struct *pl, unsigned char *ptr, int color);
 
 #endif

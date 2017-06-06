@@ -18,7 +18,7 @@ void    init_function(void)
     g_fun[13] = lld;
     g_fun[14] = lldi;
     g_fun[15] = lfork;
-    //g_fun[16] = aff;
+    g_fun[16] = aff;
 }
 
 /*

@@ -1,5 +1,3 @@
-
-
 #include "virtual_machine.h"
 
 int 	sti(t_struct *data, t_pc *p)
@@ -19,7 +17,7 @@ int 	sti(t_struct *data, t_pc *p)
 	get_len_write(args, args_len, 2);
 	if (((reg = get_argument(data, &point, args_len[0])) > 16) ||
 			((arg[0] = get_argument(data, &point, args_len[1])) > 16 && args[1] == T_REG) ||
-			((arg[1] = get_argument(data, &point, args_len[2]) > 16 && args[2] == T_REG)))
+			((arg[1] = get_argument(data, &point, args_len[2])) > 16 && args[2] == T_REG))
 		return (free_for_functions(args, args_len, 0));
 	if (args[1] == T_IND)
 	{
@@ -27,7 +25,7 @@ int 	sti(t_struct *data, t_pc *p)
 		arg[0] = cast_if_negative(arg[0]);
 		arg[0] = arg[0] % IDX_MOD;
 		move_ptr(data, &point, arg[0]);
-		arg[0] = get_argument(data, &point, 4);
+		arg[0] = get_argument(data, &point, 2);
 	}
 	else if (args[1] == T_REG)
 		arg[0] = p->r[arg[0]];

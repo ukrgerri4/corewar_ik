@@ -42,39 +42,60 @@ int     set_cycles(t_pc *cur)
     return 0 ;
 }
 
+void    set_del(void)
+{
+    static int flag;
+
+    if (flag == 0) {
+        nodelay(stdscr, TRUE);
+        flag = 1;
+    }
+    else {
+        nodelay(stdscr, FALSE);
+        flag = 0;
+    }
+}
+
+void    move_pc(t_struct *pl)
+{
+    t_pc *tmp;
+
+    tmp = pl->first;
+    while (tmp)
+    {
+        if (tmp->cycles == 0) {
+            if (!g_fun[*(tmp->pc_ptr)](pl, tmp))
+                move_ptr(pl, &tmp->pc_ptr, 1);
+            tmp->cycles = -1;
+        }
+        else
+        {
+            if (set_cycles(tmp))
+                tmp->cycles--;
+            else
+                move_ptr(pl, &tmp->pc_ptr, 1);
+        }
+        if (pl->v) {
+            mvchgat((tmp->pc_ptr - pl->map) / 64, ((tmp->pc_ptr - pl->map) % 64) * 3, 2, 0, 7, NULL);
+        }
+        tmp = tmp->next;
+    }
+}
+
 void    go_some_cycles(t_struct *pl, int cycles)
 {
     int     i;
-    t_pc    *tmp;
 
     i = 0;
     while (i < cycles)
     {
-        tmp = pl->first;
         if (pl->v)
             visualization(pl, 4096);
-        while (tmp)
-        {
-            if (tmp->cycles == 0) {
-                if (!g_fun[*(tmp->pc_ptr)](pl, tmp))
-                    move_ptr(pl, &tmp->pc_ptr, 1);
-                tmp->cycles = -1;
-            }
-            else
-            {
-                if (set_cycles(tmp))
-                    tmp->cycles--;
-                else
-                    move_ptr(pl, &tmp->pc_ptr, 1);
-            }
-            if (pl->v) {
-                mvchgat((tmp->pc_ptr - pl->map) / 64, ((tmp->pc_ptr - pl->map) % 64) * 3, 2, 0, 7, NULL);
-            }
-            tmp = tmp->next;
-        }
+        move_pc(pl);
         if (pl->v) {
-            //halfdelay(1);
-            getch();
+            if (getch() == ' ')
+                set_del();
+            usleep(10000);
             refresh();
         }
         i++;
@@ -117,18 +138,11 @@ void    start_vm(t_struct *pl)
 {
     write_code_to_field(pl);
     go_some_cycles(pl, pl->glob_cycles);
-    while (check_ending(pl) != 1)
+    while (check_ending(pl) != 1) {
         go_some_cycles(pl, pl->glob_cycles);
+    }
     if (pl->v) {
-        int row, col;
-        clear();
-        getmaxyx(stdscr, row, col);
-        attron(A_BOLD | COLOR_PAIR(pl->number_last_live_player * -1));
-        mvwprintw(stdscr, row / 2, (col - 22) / 2, "Winner is player N[%d]", (int) pl->number_last_live_player);
-        attroff(A_BOLD | COLOR_PAIR((int) ((pl->number_last_live_player * -1) - 1)));
-        refresh();
-        halfdelay(200);
-        getch();
+        out_winner(pl);
     }
 }
 
