@@ -2,7 +2,7 @@
 
 int 	aff(t_struct *data, t_pc *p)
 {
-    move_ptr(data, &p->pc_ptr, 1);
+    move_ptr(data, &p->pc_ptr, 2);
     return (0);
 }
 

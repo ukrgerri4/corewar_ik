@@ -21,6 +21,7 @@ int 	lfork(t_struct *data, t_pc *p)
 	point = p->pc_ptr;
 	arg = get_argument(data, &point, 2);
 	arg = cast_if_negative(arg);
+	move_ptr(data, &point, -3);
 	move_ptr(data, &point, arg);
 	create_pc_fork_lfork(data, p, point);
 	move_ptr(data, &p->pc_ptr, 2);

@@ -70,6 +70,7 @@ int			xor(t_struct *data, t_pc *p);
 /*
 **instruction_sti.c
 */
+long int		cast_if_negative_sti(long int arg);
 int 		sti(t_struct *data, t_pc *p);
 
 /*

@@ -2,5 +2,4 @@
 .comment	"Igor-bazuka"
 	
 label:
-	ld %42, r1
-	aff r1
+	or r2, r3, r4

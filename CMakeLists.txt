@@ -59,7 +59,7 @@ set (SOURCE_FILES_CORWAR
                     virtual_machine/instruction_lfork.c
                     virtual_machine/virtual_machine.h
                     virtual_machine/instructions.h
-                    op.h )
+                    op.h virtual_machine/instruction_aff.c)
 
 add_executable(asm ${SOURCE_FILES_ASM})
 add_executable(corwar ${SOURCE_FILES_CORWAR})

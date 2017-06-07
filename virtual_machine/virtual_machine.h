@@ -69,6 +69,8 @@ typedef struct	s_struct
 
 int             (*g_fun[17])(t_struct *pl, t_pc *current_pc);
 
+WINDOW *map;
+WINDOW *info;
 # include "instructions.h"
 //if exist flag "-n", flag -dump will be ignored
 

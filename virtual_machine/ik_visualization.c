@@ -1,15 +1,12 @@
 #include "virtual_machine.h"
 
 void init_window(void) {
-    initscr(); //инициализируем библиотеку
-    cbreak();  //Не использовать буфер для функции getch()
-    //raw();
-    nonl();
-    noecho(); //Не печатать на экране то, что набирает пользователь на клавиатуре
-    curs_set(0); //Убрать курсор
-    keypad(stdscr, TRUE); //Активировать специальные клавиши клавиатуры (например, если хотим использовать горячие клавиши)
-    start_color(); //Активируем поддержку цвета
+    int row;
+    int col;
 
+    initscr(); //инициализируем библиотеку
+    start_color(); //Активируем поддержку цвета
+    use_default_colors();
     init_pair(1, COLOR_RED,     COLOR_BLACK);
     init_pair(11, COLOR_WHITE,   COLOR_RED);
     init_pair(2, COLOR_GREEN,    COLOR_BLACK);
@@ -18,12 +15,37 @@ void init_window(void) {
     init_pair(13, COLOR_WHITE,   COLOR_YELLOW);
     init_pair(4, COLOR_BLUE,    COLOR_BLACK);
     init_pair(14, COLOR_WHITE,   COLOR_BLUE);
-
-    init_pair(5, COLOR_WHITE,   COLOR_BLACK);
-
+    init_pair(5, COLOR_WHITE,   COLOR_WHITE);
     init_pair(6, COLOR_MAGENTA, COLOR_BLACK);
     init_pair(7, COLOR_BLACK,   COLOR_YELLOW);
     init_pair(8, COLOR_BLACK,   COLOR_BLACK);
+
+    cbreak();  //Не использовать буфер для функции getch()
+    nonl();
+    noecho(); //Не печатать на экране то, что набирает пользователь на клавиатуре
+    curs_set(0); //Убрать курсор
+    keypad(stdscr, TRUE); //Активировать специальные клавиши клавиатуры (например, если хотим использовать горячие клавиши)
+    getmaxyx(stdscr, col, row);
+    int i = 0, j = 0;
+    while (i < 68){
+        j = 0;
+        while (j < 258){
+            //if (i == 0 || j == 0 || i == col - 1 || j == row - 1) {
+                attron(COLOR_PAIR(5));
+                printw(" ");
+                attroff(COLOR_PAIR(5));
+            //}
+            //else
+            //    printw(" ");
+            j++;
+        }
+        printw("\n");
+        i++;
+    }
+    refresh();
+    map = newwin(66, 195, 1, 1);
+    info = newwin(66, 60, 1, 197);
+    wrefresh(info);
 }
 
 void    out_cycles(t_struct *pl)
@@ -31,17 +53,17 @@ void    out_cycles(t_struct *pl)
     int i;
     int j;
 
-    mvprintw(10, 200, "Cycles = ");
-    attron(A_BOLD | COLOR_PAIR(6));
-    printw("%d", pl->iterator++);
-    attroff(A_BOLD | COLOR_PAIR(6));
+    mvwprintw(map, 10, 200, "Cycles = ");
+    wattron(map, A_BOLD | COLOR_PAIR(6));
+    wprintw(map, "%d", pl->iterator++);
+    wattroff(map, A_BOLD | COLOR_PAIR(6));
     i = 0;
     j = 12;
     while (i < pl->num_pl){
-        attron(A_BOLD | COLOR_PAIR(i + 1));
-        mvprintw(j, 200, "Player[%d] say live - [%d] times",
+        wattron(map, A_BOLD | COLOR_PAIR(i + 1));
+        mvwprintw(map, j, 200, "Player[%d] say live - [%d] times",
                  (int)pl->players[i]->player_number, pl->players[i]->count_live);
-        attroff(A_BOLD | COLOR_PAIR(i + 1));
+        wattroff(map, A_BOLD | COLOR_PAIR(i + 1));
         j += 2;
         i++;
     }
@@ -52,14 +74,14 @@ void    out_winner(t_struct *pl)
     int row;
     int col;
 
-    clear();
-    getmaxyx(stdscr, row, col);
-    attron(A_BOLD | COLOR_PAIR(pl->number_last_live_player * -1));
-    mvwprintw(stdscr, row / 2, (col - 22) / 2, "Winner is player N[%d]", (int) pl->number_last_live_player);
-    attroff(A_BOLD | COLOR_PAIR((int) ((pl->number_last_live_player * -1) - 1)));
-    refresh();
+    wclear(map);
+    getmaxyx(map, row, col);
+    wattron(map, A_BOLD | COLOR_PAIR(pl->number_last_live_player * -1));
+    mvwprintw(map, row / 2, (col - 22) / 2, "Winner is player N[%d]", (int) pl->number_last_live_player);
+    wattroff(map, A_BOLD | COLOR_PAIR((int) ((pl->number_last_live_player * -1) - 1)));
+    wrefresh (map);
     halfdelay(200);
-    getch();
+    wgetch(map);
 }
 
 void	visualization(t_struct *pl, size_t size)
@@ -69,21 +91,23 @@ void	visualization(t_struct *pl, size_t size)
 
     i = 0;
     j = 1;
-    move(0, 0);
+    wmove(map, 1, 0);
     while (i < size)
     {
+        wprintw(map, " ");
         while (i < j * 64)
         {
             if (i < size)
             {
-                attron(A_BOLD | COLOR_PAIR(pl->color[i]));
-                printw("%02x", pl->map[i]);
-                attroff(A_BOLD | COLOR_PAIR(pl->color[i]));
+                wattron(map, A_BOLD | COLOR_PAIR(pl->color[i]));
+                wprintw(map, " %02x", pl->map[i]);
+                wattroff(map, A_BOLD | COLOR_PAIR(pl->color[i]));
             }
-                printw(" ");
+            if (i == j * 64 - 1)
+                wprintw(map, " ");
             i++;
         }
-        printw("\n");
+        wprintw(map, "\n");
         j++;
     }
     out_cycles(pl);
