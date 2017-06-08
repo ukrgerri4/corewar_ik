@@ -26,18 +26,13 @@ void init_window(void) {
     noecho(); //Не печатать на экране то, что набирает пользователь на клавиатуре
     curs_set(0); //Убрать курсор
     keypad(stdscr, TRUE); //Активировать специальные клавиши клавиатуры (например, если хотим использовать горячие клавиши)
-    //getmaxyx(stdscr, col, row);
     int i = 0, j = 0;
     while (i < 68){
         j = 0;
         while (j < 258){
-            //if (i == 0 || j == 0 || i == col - 1 || j == row - 1) {
                 attron(COLOR_PAIR(5));
                 printw(" ");
                 attroff(COLOR_PAIR(5));
-            //}
-            //else
-            //    printw(" ");
             j++;
         }
         printw("\n");
