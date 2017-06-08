@@ -1,12 +1,13 @@
 #include "virtual_machine.h"
 
 void init_window(void) {
-    int row;
-    int col;
+    //int row;
+    //int col;
 
     initscr(); //инициализируем библиотеку
     start_color(); //Активируем поддержку цвета
     use_default_colors();
+    //init_color(COLOR_RED, 700, 500, 20);
     init_pair(1, COLOR_RED,     COLOR_BLACK);
     init_pair(11, COLOR_WHITE,   COLOR_RED);
     init_pair(2, COLOR_GREEN,    COLOR_BLACK);
@@ -25,7 +26,7 @@ void init_window(void) {
     noecho(); //Не печатать на экране то, что набирает пользователь на клавиатуре
     curs_set(0); //Убрать курсор
     keypad(stdscr, TRUE); //Активировать специальные клавиши клавиатуры (например, если хотим использовать горячие клавиши)
-    getmaxyx(stdscr, col, row);
+    //getmaxyx(stdscr, col, row);
     int i = 0, j = 0;
     while (i < 68){
         j = 0;
@@ -53,17 +54,17 @@ void    out_cycles(t_struct *pl)
     int i;
     int j;
 
-    mvwprintw(map, 10, 200, "Cycles = ");
-    wattron(map, A_BOLD | COLOR_PAIR(6));
-    wprintw(map, "%d", pl->iterator++);
-    wattroff(map, A_BOLD | COLOR_PAIR(6));
+    mvwprintw(info, 2, 2, "Cycles = ");
+    wattron(info, A_BOLD | COLOR_PAIR(6));
+    wprintw(info, "%d", ++pl->iterator);
+    wattroff(info, A_BOLD | COLOR_PAIR(6));
     i = 0;
-    j = 12;
+    j = 8;
     while (i < pl->num_pl){
-        wattron(map, A_BOLD | COLOR_PAIR(i + 1));
-        mvwprintw(map, j, 200, "Player[%d] say live - [%d] times",
+        wattron(info, A_BOLD | COLOR_PAIR(i + 1));
+        mvwprintw(info, j, 2, "Player[%d] say live - [%d] times",
                  (int)pl->players[i]->player_number, pl->players[i]->count_live);
-        wattroff(map, A_BOLD | COLOR_PAIR(i + 1));
+        wattroff(info, A_BOLD | COLOR_PAIR(i + 1));
         j += 2;
         i++;
     }
@@ -99,8 +100,9 @@ void	visualization(t_struct *pl, size_t size)
         {
             if (i < size)
             {
+                wprintw(map, " ");
                 wattron(map, A_BOLD | COLOR_PAIR(pl->color[i]));
-                wprintw(map, " %02x", pl->map[i]);
+                wprintw(map, "%02x", pl->map[i]);
                 wattroff(map, A_BOLD | COLOR_PAIR(pl->color[i]));
             }
             if (i == j * 64 - 1)

@@ -89,15 +89,16 @@ void    go_some_cycles(t_struct *pl, int cycles)
     i = 0;
     while (i < cycles)
     {
-        if (pl->v)
+        if (pl->v) {
             visualization(pl, 4096);
+        }
         move_pc(pl);
         if (pl->v) {
+            wrefresh (map);
+            wrefresh(info);
             if (wgetch(map) == ' ')
                 set_del();
             usleep(10000);
-            wrefresh (map);
-            wrefresh(info);
         }
         i++;
     }
