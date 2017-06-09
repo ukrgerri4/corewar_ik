@@ -19,16 +19,13 @@ void set_color(t_struct *pl, unsigned char *ptr, int color)
     int j;
 
     i = 0;
-    j = (int)(ptr - pl->map);
     while (i < 4){
+        j = (int)(ptr - pl->map);
         pl->color[j] = (unsigned char)(color);
-        if (pl->v) {
-            attron(A_BOLD | COLOR_PAIR(color + 10));
-            move(j / 64, j % 64 * 3);
-            printw("%02x", pl->map[j]);
-            attroff(A_BOLD | COLOR_PAIR(color + 10));
-        }
-        j++;
+        wattron(map, A_BOLD | COLOR_PAIR(color + 10));
+        mvwprintw(map, j / 64, j % 64 * 3, "%02x", pl->map[j]);
+        wattroff(map, A_BOLD | COLOR_PAIR(color + 10));
+        move_ptr(pl, &ptr, 1);
         i++;
     }
 }

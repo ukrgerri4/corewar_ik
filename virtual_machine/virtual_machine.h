@@ -13,12 +13,26 @@
 #ifndef VIRTUAL_MACHINE_H
 # define VIRTUAL_MACHINE_H
 
-# include "../asm/asm.h"
+//# include "../asm/asm.h"
 # include "../libftprintf/get_next_line.h"
 # include "../op.h"
 # include <stdio.h>
 # include <errno.h>
 # include <ncurses.h>
+
+typedef struct      s_op
+{
+    char            *name;
+    int             nb_param;
+    char            params_types[3];
+    int             opcode;
+    int             nb_tours;
+    char            *full_name;
+    char            params_byte;
+    char            index_size;
+}                   t_op;
+
+t_op                *g_tab;
 
 typedef struct	s_pc
 {
@@ -31,8 +45,6 @@ typedef struct	s_pc
 	struct s_pc		*next;
     struct s_pc		*prev;
 }				t_pc;
-
-
 
 typedef struct	s_st
 {
@@ -65,12 +77,14 @@ typedef struct	s_struct
 
 	int 			iterator;//delete
 	int 			v;
+    __useconds_t    speed;
 }				t_struct;
 
 int             (*g_fun[17])(t_struct *pl, t_pc *current_pc);
 
 WINDOW *map;
-WINDOW *info;
+WINDOW *info1;
+WINDOW *info2;
 # include "instructions.h"
 //if exist flag "-n", flag -dump will be ignored
 
@@ -130,7 +144,9 @@ void    init_function(void);
 ** ik_visualization
 */
 void 	init_window(void);
+void    set_frame(void);
 void	visualization(t_struct *pl, size_t size);
+
 void    out_cycles(t_struct *pl);
 void    out_winner(t_struct *pl);
 void    set_color(t_struct *pl, unsigned char *ptr, int color);

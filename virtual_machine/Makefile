@@ -30,6 +30,7 @@ SRC =   main.c \
 		ik_base_function.c \
 		ik_init_pc.c \
 		ik_start_pc.c \
+		ik_init_windows.c \
 		ik_visualization.c \
 		ik_init_function.c \
 		support_instructions.c \

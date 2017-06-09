@@ -21,11 +21,12 @@ int 	ld(t_struct *data, t_pc *p)
 	unsigned char	*point;
 
 	move_ptr(data, &p->pc_ptr, 1);
-	point = p->pc_ptr;
 	args = (unsigned char *)ft_strnew(3);
 	args_len = (unsigned char *)ft_strnew(3);
-	if (!ft_choose_arg(data, &point, args, 1))
+	if (!ft_choose_arg(data, &p->pc_ptr, args, 1))
 		return (free_for_functions(args, args_len, 0));
+	point = p->pc_ptr;
+	move_ptr(data, &point, 1);
 	get_len_write(args, args_len, 4);
 	arg = get_argument(data, &point, args_len[0]);
 	if ((reg = get_argument(data, &point, args_len[1])) > 16)

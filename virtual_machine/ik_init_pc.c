@@ -9,7 +9,7 @@ void init_pc(t_struct *pl, unsigned char *ptr, int i)
     tmp->pc_ptr = ptr;
     tmp->owner = i;
     tmp->live = 0;
-    tmp->cycles = -1;
+    tmp->cycles = 0;
     tmp->carry = 0;
     ft_fill_int(tmp->r, 17, 0);
     if (pl->first) {

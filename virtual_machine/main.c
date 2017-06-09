@@ -63,6 +63,7 @@ void 	ft_init_st(t_struct	*pl)
 	ft_bchar(pl->color, MEM_SIZE, 8);
     pl->iterator = 0;//delete
 	pl->v = 1;
+    pl->speed = 1000;
 }
 
 int 	main(int argc, char **argv)

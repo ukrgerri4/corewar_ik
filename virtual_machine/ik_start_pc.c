@@ -28,8 +28,9 @@ int     set_cycles(t_pc *cur)
     int i;
 
     i = 0;
-    if (cur->cycles > 0)
+    if (cur->cycles > 0) {
         return 1;
+    }
     while (i < 16)
     {
         if (g_tab[i].opcode == *(cur->pc_ptr))
@@ -56,28 +57,58 @@ void    set_del(void)
     }
 }
 
+void    set_start_cycles(t_struct *pl)
+{
+    t_pc *tmp;
+
+    if (pl->v) {
+        visualization(pl, 4096);
+    }
+    tmp = pl->first;
+    while (tmp)
+    {
+        tmp->cycles--;
+        set_cycles(tmp);
+        if (pl->v) {
+            mvwchgat(map, (tmp->pc_ptr - pl->map) / 64, ((tmp->pc_ptr - pl->map) % 64) * 3, 2, 0, 7, NULL);
+        }
+        tmp = tmp->next;
+    }
+    if (pl->v) {
+        mvwprintw(info1, 2, 2, "Cycle = ");
+        wattron(info1, A_BOLD | COLOR_PAIR(6));
+        wprintw(info1, "%d", 0);
+        wattroff(info1, A_BOLD | COLOR_PAIR(6));
+        wrefresh (map);
+        wrefresh(info1);
+        if (wgetch(map) == ' ')
+            set_del();
+    }
+}
+
 void    move_pc(t_struct *pl)
 {
     t_pc *tmp;
+    int flag_chec_function_use;
 
     tmp = pl->first;
     while (tmp)
     {
-        if (tmp->cycles == 0) {
-            if (!g_fun[*(tmp->pc_ptr)](pl, tmp))
-                move_ptr(pl, &tmp->pc_ptr, 1);
-            tmp->cycles = -1;
-        }
-        else
+        flag_chec_function_use = 0;
+        tmp->cycles--;
+        if (tmp->cycles == 0)
         {
-            if (set_cycles(tmp))
-                tmp->cycles--;
-            else
+            g_fun[*(tmp->pc_ptr)](pl, tmp);
+            tmp->cycles = -1;
+            flag_chec_function_use = 1;
+        }
+        if (!set_cycles(tmp))
+        {
+            if (!flag_chec_function_use)
                 move_ptr(pl, &tmp->pc_ptr, 1);
         }
-        if (pl->v) {
-            mvwchgat(map, (tmp->pc_ptr - pl->map) / 64 + 1, ((tmp->pc_ptr - pl->map) % 64) * 3 + 2, 2, 0, 7, NULL);
-        }
+        if (pl->v)
+            mvwchgat(map, (tmp->pc_ptr - pl->map) / 64, ((tmp->pc_ptr - pl->map) % 64) * 3, 2, 0, 7, NULL);
         tmp = tmp->next;
     }
 }
@@ -85,6 +116,7 @@ void    move_pc(t_struct *pl)
 void    go_some_cycles(t_struct *pl, int cycles)
 {
     int     i;
+    int ch;
 
     i = 0;
     while (i < cycles)
@@ -94,11 +126,24 @@ void    go_some_cycles(t_struct *pl, int cycles)
         }
         move_pc(pl);
         if (pl->v) {
+            mvwprintw(info1, 2, 2, "Cycle = ");
+            wattron(info1, A_BOLD | COLOR_PAIR(6));
+            wprintw(info1, "%d", ++pl->iterator);
+            mvwprintw(info1, 3, 2, "Speed = [%d]      ", pl->speed);
+            wattroff(info1, A_BOLD | COLOR_PAIR(6));
             wrefresh (map);
-            wrefresh(info);
-            if (wgetch(map) == ' ')
+            wrefresh(info1);
+            ch = wgetch(map);
+
+            if (ch == '+') {
+                if (pl->speed > 1000)
+                    pl->speed -= 1000;
+            }
+            else if (ch == '-')
+                pl->speed += 5000;
+            else if (ch == ' ')
                 set_del();
-            usleep(10000);
+            usleep(pl->speed);
         }
         i++;
     }
@@ -139,6 +184,7 @@ int     check_ending(t_struct *pl)
 void    start_vm(t_struct *pl)
 {
     write_code_to_field(pl);
+    set_start_cycles(pl);
     go_some_cycles(pl, pl->glob_cycles);
     while (check_ending(pl) != 1) {
         go_some_cycles(pl, pl->glob_cycles);
