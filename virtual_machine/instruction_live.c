@@ -34,8 +34,7 @@ int					live(t_struct *data, t_pc *p)
 
 	move_ptr(data, &p->pc_ptr, 1);
 	point = p->pc_ptr;
-	if ((arg = get_argument(data, &point, 4)) == 0)
-		return (0);
+	arg = get_argument(data, &point, 4);
 	if ((player = get_player_live(data, arg)) != NULL)
 	{
 		player->count_live++;

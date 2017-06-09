@@ -77,7 +77,7 @@ typedef struct	s_struct
 
 	int 			iterator;//delete
 	int 			v;
-    __useconds_t    speed;
+    useconds_t      speed;
 }				t_struct;
 
 int             (*g_fun[17])(t_struct *pl, t_pc *current_pc);
@@ -85,6 +85,7 @@ int             (*g_fun[17])(t_struct *pl, t_pc *current_pc);
 WINDOW *map;
 WINDOW *info1;
 WINDOW *info2;
+WINDOW *info3;
 # include "instructions.h"
 //if exist flag "-n", flag -dump will be ignored
 
@@ -111,6 +112,11 @@ void 	ft_valid_name(char **argv, t_struct *pl);
 int		ft_len_db_array(char **array);
 
 /*
+** ft_move_players_by_n
+*/
+char 	**ft_move_pl_by_n(char **argv, char **names, t_struct *pl);
+
+/*
 **allocation_memory.c
 */
 char	**ft_add_str_in_double(char **old, char *str);
@@ -128,26 +134,43 @@ int 	free_for_functions(void *old_1, void *old_2, int res);
 void 	ft_error(char *error);
 
 /*
-** ik_function
+** ik_base_function
 */
 void	ft_fill_int(unsigned int *arr, int size, unsigned int n);
 void	ft_bchar(unsigned char *arr, int size, unsigned char c);
-void	init_pc(t_struct *pl, unsigned char *ptr, int i);
-void    delete_pc(t_struct *pl, t_pc **del);
-
-void    start_vm(t_struct *pl);
 void    move_ptr(t_struct *pl, unsigned char **ptr, int i);
 
+/*
+** ik_init_pc__function
+*/
+void	init_pc(t_struct *pl, unsigned char *ptr, int i);
+void    push_back_pc(t_struct *pl, unsigned char *ptr, int i);
+void    delete_pc(t_struct *pl, t_pc **del);
+
+/*
+** ik_start_pc
+*/
+void    start_vm(t_struct *pl);
 void    init_function(void);
+
+/*
+** ik_start_pc_function
+*/
+int     set_cycles(t_pc *cur);
+void    set_del(void);
+void    move_pc(t_struct *pl);
+void    kill_or_save_pc(t_struct *pl);
 
 /*
 ** ik_visualization
 */
-void 	init_window(void);
+void 	init_window(t_struct *pl);
 void    set_frame(void);
-void	visualization(t_struct *pl, size_t size);
 
-void    out_cycles(t_struct *pl);
+void	out_map(t_struct *pl, size_t size);
+void    out_info1(t_struct *pl);
+void    out_info2(t_struct *pl);
+void    out_info3(t_struct *pl);
 void    out_winner(t_struct *pl);
 void    set_color(t_struct *pl, unsigned char *ptr, int color);
 

@@ -81,7 +81,7 @@ void			ft_parsing_file(t_struct *pl)
 			ft_error(strerror(errno));
 		size = lseek(fd, 0, SEEK_END);
 		lseek(fd, 0, SEEK_SET);
-		if (size < 0)
+		if (size <= 0)
 			ft_error("bad file content");
 		file = (unsigned char *)ft_strnew((size_t)size + 1);
 		file[size] = '\0';

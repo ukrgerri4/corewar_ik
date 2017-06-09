@@ -25,12 +25,14 @@ SRC =   main.c \
 		free_memory.c \
 		ft_error.c \
 		ft_parsing_file.c \
+		ft_move_players_by_n.c \
 		ft_search_flags.c \
 		ft_valid_name.c \
 		ik_base_function.c \
 		ik_init_pc.c \
 		ik_start_pc.c \
-		ik_init_windows.c \
+		ik_start_pc_functions.c \
+		ik_init_visualization.c \
 		ik_visualization.c \
 		ik_init_function.c \
 		support_instructions.c \

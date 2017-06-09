@@ -61,9 +61,9 @@ void 	ft_init_st(t_struct	*pl)
 	if (!(pl->color = (unsigned char*)malloc(sizeof(unsigned char) * MEM_SIZE)))
 		exit(1);
 	ft_bchar(pl->color, MEM_SIZE, 8);
-    pl->iterator = 0;//delete
+    pl->iterator = 1;//delete
 	pl->v = 1;
-    pl->speed = 1000;
+    pl->speed = 2000;
 }
 
 int 	main(int argc, char **argv)
@@ -73,8 +73,6 @@ int 	main(int argc, char **argv)
 	init_function();
     g_tab = init_tab();
 	ft_init_st(&pl);
-	if (pl.v)
-		init_window();
 	if (argc == 1)
 	{
 		//output info how use exec
@@ -85,6 +83,8 @@ int 	main(int argc, char **argv)
 		ft_valid_name(argv, &pl);
 		ft_parsing_file(&pl);
 	}
+    if (pl.v)
+        init_window(&pl);
     start_vm(&pl);
 	if (pl.v)
     	endwin();
