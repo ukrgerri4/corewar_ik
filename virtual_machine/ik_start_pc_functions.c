@@ -46,6 +46,7 @@ void    move_pc(t_struct *pl)
         tmp->cycles--;
         if (tmp->cycles == 0)
         {
+            out_info2(tmp);
             g_fun[*(tmp->pc_ptr)](pl, tmp);
             tmp->cycles = -1;
             flag_chec_function_use = 1;
@@ -59,7 +60,8 @@ void    move_pc(t_struct *pl)
             }
         }
         if (pl->v)
-            mvwchgat(map, (tmp->pc_ptr - pl->map) / 64, ((tmp->pc_ptr - pl->map) % 64) * 3, 2, 0, 7, NULL);
+            mvwchgat(map, (tmp->pc_ptr - pl->map) / 64,
+            ((tmp->pc_ptr - pl->map) % 64) * 3, 2, 0, 7, NULL);
         tmp = tmp->next;
     }
 }

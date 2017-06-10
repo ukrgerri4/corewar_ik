@@ -1,18 +1,18 @@
 #include "virtual_machine.h"
 
-void	out_map(t_struct *pl, size_t size)
+void out_map(t_struct *pl)
 {
-    size_t			i;
-    size_t			j;
+    int			i;
+    int			j;
 
     i = 0;
     j = 1;
     wmove(map, 0, 0);
-    while (i < size)
+    while (i < MEM_SIZE)
     {
         while (i < j * 64)
         {
-            if (i < size)
+            if (i < MEM_SIZE)
             {
                 wattron(map, A_BOLD | COLOR_PAIR(pl->color[i]));
                 wprintw(map, "%02x", pl->map[i]);
@@ -51,17 +51,22 @@ void    out_info1(t_struct *pl)
         j += 2;
         i++;
     }
-    mvwprintw(info1, 20, 2, "Last say live: ");
+    mvwprintw(info1, 30, 2, "Winner: ");
     wattron(info1, A_BOLD | COLOR_PAIR(pl->number_last_live_player * -1));
     wprintw(info1, "[%d]", pl->number_last_live_player);
     wattroff(info1, A_BOLD | COLOR_PAIR(pl->number_last_live_player * -1));
     wrefresh(info1);
 }
 
-void    out_info2(t_struct *pl)
+void    out_info2(t_pc *tmp)
 {
     werase(info2);
-    mvwprintw(info2, 2, 2, "Some info");
+    mvwprintw(info2, 1, 2, "Fun. number = %d",*(tmp->pc_ptr));
+    int i = 1;
+    while (i < 17){
+        mvwprintw(info2, i + 1, 2, "r%d = %d", i, tmp->r[i]);
+        i++;
+    }
     wrefresh(info2);
 }
 

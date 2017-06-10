@@ -42,7 +42,7 @@ void    push_back_pc(t_struct *pl, unsigned char *ptr, int i)
         tmp->prev = pl->last;
     }
     else
-        tmp->next = NULL;
+        tmp->prev = NULL;
     pl->last = tmp;
     if (pl->first == NULL)
         pl->first = tmp;

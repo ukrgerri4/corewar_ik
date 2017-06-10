@@ -167,10 +167,11 @@ void    kill_or_save_pc(t_struct *pl);
 void 	init_window(t_struct *pl);
 void    set_frame(void);
 
-void	out_map(t_struct *pl, size_t size);
+void    out_map(t_struct *pl);
 void    out_info1(t_struct *pl);
-void    out_info2(t_struct *pl);
+void    out_info2(t_pc *tmp); //debug version
 void    out_info3(t_struct *pl);
+void    out_dump(t_struct *pl);
 void    out_winner(t_struct *pl);
 void    set_color(t_struct *pl, unsigned char *ptr, int color);
 

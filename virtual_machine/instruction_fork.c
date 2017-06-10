@@ -19,7 +19,7 @@ void	create_pc_fork_lfork(t_struct *data, t_pc *p, unsigned char *point)
 	i = 0;
 	push_back_pc(data, point, p->owner);
 	while (i < 17) {
-		data->first->r[i] = p->r[i];
+		data->last->r[i] = p->r[i];
 		i++;
 	}
 //	data->first->cycles = p->cycles;//????

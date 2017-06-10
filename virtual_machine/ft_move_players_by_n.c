@@ -75,7 +75,10 @@ char 	**ft_move_pl_by_n(char **argv, char **names, t_struct *pl)
 		if(ft_strequ(argv[i], "-n"))
 		{
 			num_tmp = argv[++i][0] - '0';
-			names = move_pl_index(num_tmp - 1, argv[++i], names);
+			if (num_tmp - 1 < pl->num_pl)
+				names = move_pl_index(num_tmp - 1, argv[++i], names);
+			else
+				ft_error("input number isn't correct");
 		}
 		else
 			i++;

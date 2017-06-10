@@ -4,10 +4,8 @@
 int 		rearange_point(t_struct *data, unsigned char **p, unsigned char *args, int n)
 {
 	int 	i;
-	int		flag;
 
 	i = 0;
-	flag = 0;
 	while (i < g_tab[n].nb_param)
 	{
 		if (args[i] == T_REG)
@@ -21,12 +19,9 @@ int 		rearange_point(t_struct *data, unsigned char **p, unsigned char *args, int
 			else
 				move_ptr(data, p, 2);
 		}
-		if (args[i] > 0)
-			flag++;
 		i++;
 	}
-	if (flag == 0)
-		move_ptr(data, p, 1);
+	move_ptr(data, p, 1);
 	return (0);
 }
 
@@ -38,14 +33,16 @@ int 		ft_check_arguments(unsigned char *arg, int n)
 			|| arg[1] > 0 || arg[2] > 0)
 			return (0);
 	}
-	if (g_tab[n].nb_param == 2)
+	else if (g_tab[n].nb_param == 2)
 	{
-		if ((arg[1] & g_tab[n].params_types[1]) == 0 || arg[2] > 0)
+		if ((arg[0] & g_tab[n].params_types[0]) == 0
+			|| (arg[1] & g_tab[n].params_types[1]) == 0 || arg[2] > 0)
 			return (0);
 	}
 	else if (g_tab[n].nb_param == 3)
 	{
-		if ((arg[1] & g_tab[n].params_types[1]) == 0
+		if ((arg[0] & g_tab[n].params_types[0]) == 0
+			|| (arg[1] & g_tab[n].params_types[1]) == 0
 			|| (arg[2] & g_tab[n].params_types[2]) == 0)
 			return (0);
 	}
@@ -70,7 +67,6 @@ int		ft_choose_arg(t_struct *data, unsigned char **p, unsigned char *args, int n
 		args[1] = 4;
 	if (args[2] == 3)
 		args[2] = 4;
-	//ft_printf("1 =%d 2 =%d 3 =%d\n", args[0], args[1], args[2]);
 	if (!ft_check_arguments(args, n))
 		return (rearange_point(data, p, args, n));
 	return (1);

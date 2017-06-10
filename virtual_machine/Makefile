@@ -33,6 +33,7 @@ SRC =   main.c \
 		ik_start_pc.c \
 		ik_start_pc_functions.c \
 		ik_init_visualization.c \
+		ik_dump_out.c \
 		ik_visualization.c \
 		ik_init_function.c \
 		support_instructions.c \
@@ -65,7 +66,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(CC) -o $(NAME) $(OBJ) $(LIBFT) -lncurses
 	@echo "\r\033[48;5;15;38;5;25m✅  MADE $(NAME)  \033[0m\033[K"
-	@make clean
+	@rm -f $(OBJ) lem_in.h.gch *~
 
 $(OBJ): %.o: %.c
 	@$(CC) -c $(FLAGS) $< -o $@

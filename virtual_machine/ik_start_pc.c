@@ -29,21 +29,23 @@ static void    set_start_cycles(t_struct *pl)
     t_pc *tmp;
 
     if (pl->v)
-        out_map(pl, 4096);
+        out_map(pl);
     tmp = pl->first;
     while (tmp)
     {
         tmp->cycles--;
         set_cycles(tmp);
         if (pl->v)
-            mvwchgat(map, (tmp->pc_ptr - pl->map) / 64, ((tmp->pc_ptr - pl->map) % 64) * 3, 2, 0, 7, NULL);
+            mvwchgat(map, (tmp->pc_ptr - pl->map) / 64,
+            ((tmp->pc_ptr - pl->map) % 64) * 3,
+            2, 0, 7, NULL);
         tmp = tmp->next;
     }
     if (pl->v)
     {
         wrefresh (map);
         out_info1(pl);
-        out_info2(pl);
+        //out_info2(pl);
         out_info3(pl);
         if (wgetch(map) == ' ')
             set_del();
@@ -59,13 +61,13 @@ static void    go_some_cycles(t_struct *pl, int cycles)
     while (i < cycles)
     {
         if (pl->v)
-            out_map(pl, 4096);
+            out_map(pl);
         move_pc(pl);
         if (pl->v)
         {
             wrefresh (map);
             out_info1(pl);
-            out_info2(pl);
+            //out_info2(pl);
             out_info3(pl);
             ch = wgetch(map);
             if (ch == '+')
@@ -80,6 +82,10 @@ static void    go_some_cycles(t_struct *pl, int cycles)
             usleep(pl->speed);
         }
         i++;
+        if (i == pl->fl_dump) {
+            out_dump(pl);
+            exit(0);
+        }
     }
 }
 
@@ -115,5 +121,7 @@ void    start_vm(t_struct *pl)
         go_some_cycles(pl, pl->glob_cycles);
     if (pl->v)
         out_winner(pl);
+    //else
+    //   ft_printf("Winner: Player[%d] - \"%s\"", pl->number_last_live_player, pl->players[pl->number_last_live_player * -1 -1]->name);
 }
 
