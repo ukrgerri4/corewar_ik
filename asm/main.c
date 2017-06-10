@@ -43,7 +43,7 @@ t_op 		*init_tab(void)
 	return (tab);
 
 }
-/*void		write_file(t_asm *file)
+void		write_file(t_asm *file)
 {
 	t_line		*line;
 	
@@ -75,7 +75,7 @@ void		print_t_op(void)
 		ft_printf("%s ", g_tab[i].full_name);
 		i++;
 	}
-}*/
+}
 
 
 int 		main(int argc, char **argv)
@@ -84,7 +84,6 @@ int 		main(int argc, char **argv)
 	t_asm	*file;
 
 	g_tab = init_tab();
-	//print_t_op();
 	if (argc != 2)
 		ft_error("\nusage: ./asm file.s");
 	if ((fd = open(argv[1], O_RDONLY, 0)) == -1)
@@ -93,8 +92,8 @@ int 		main(int argc, char **argv)
 	read_filename(fd, argv[1], file);
 	read_file(fd, file);
 	ft_parse_lines(file->code);
-	//write_file(file);
 	make_cor(file);
+	ft_printf("Writing output program to %s.cor\n", file->filename);
 	return (0);
 }
 

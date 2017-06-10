@@ -1,5 +1,5 @@
 .name		"zero"
 .comment	"Igor-bazuka"
 	
-label:
-    ldi %4, r2, r4
+	ld %256, r2
+	sti r2, -2 ,%1

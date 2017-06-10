@@ -74,12 +74,14 @@ void 		check_arguments(char a1, char a2, char a3, int n)
 	}
 	if (g_tab[n].nb_param == 2)
 	{
-		if ((a2 & g_tab[n].params_types[1]) == 0 || a3 > 0)
+		if ((a1 & g_tab[n].params_types[0]) == 0
+			||(a2 & g_tab[n].params_types[1]) == 0 || a3 > 0)
 			ft_error("invalid parameter");
 	}
 	else if (g_tab[n].nb_param == 3)
 	{
-		if ((a2 & g_tab[n].params_types[1]) == 0
+		if ((a1 & g_tab[n].params_types[0]) == 0
+			||(a2 & g_tab[n].params_types[1]) == 0
 			|| (a3 & g_tab[n].params_types[2]) == 0)
 			ft_error("invalid type of parameter");
 	}

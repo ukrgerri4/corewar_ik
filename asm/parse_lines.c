@@ -15,7 +15,7 @@
 void 		check_link(char *link, t_line *lines)
 {
 	link++;
-	while (lines->next->next)
+	while (lines->next)
 	{
 		if (ft_strnequ(link, lines->line, ft_strlen(link))
 			&& lines->line[ft_strlen(link)] == LABEL_CHAR)
@@ -73,8 +73,9 @@ void 		ft_parse_lines(t_line *str)
 	t_line	*start;
 
 	start = str;
-	while (str->next->next)
+	while (str->next)
 	{
+		//ft_printf("%s\n", str->line);
 		if (str->line[ft_strlen(str->line) - 1] == SEPARATOR_CHAR
 			|| ft_strstr(str->line, ",,"))
 			exit_notice("Syntax error at token ", str->line);
@@ -90,5 +91,4 @@ void 		ft_parse_lines(t_line *str)
 		del_tab(tab);
 		str = str->next;
 	}
-	//ft_printf("it`s good\n"); //DELETE!!
 }

@@ -22,6 +22,15 @@ t_asm	*init_file(void)
 	file->filename = NULL;
 	file->magic = COREWAR_EXEC_MAGIC;
 	file->code = NULL;
+	file->prog_size = 0;
+	file->code = NULL;
+	file->header = NULL;
+	file->prog = NULL;
+	file->prog_len = 0;
+	file->i = 0;
+	file->arg_byte = 0;
+	file->command_byte = 0;
+	file->mark = 0;
 	return (file);
 }
 
@@ -44,6 +53,7 @@ void	init_name(int fd, t_asm *file, char *line)
 	len = 0;
 	file->name = ft_strnew(PROG_NAME_LENGTH);
 	p = line;
+	p = point_jump(p);
 	p += 5;
 	p = point_jump(p);
 	if (*p != '"')
@@ -71,6 +81,7 @@ void	init_comment(int fd, t_asm *file, char *line)
 	len = 0;
 	file->comment = ft_strnew(COMMENT_LENGTH);
 	p = line;
+	p = point_jump(p);
 	p += 8;
 	p = point_jump(p);
 	if (*p != '"')
@@ -90,6 +101,38 @@ void	init_comment(int fd, t_asm *file, char *line)
 		ft_error("comment is very long");
 }
 
+char 		**separate_line(char *line, int i, int l)
+{
+	char 	**tab;
+	char 	*str;
+
+	str = ft_strnew(ft_strlen(line) + 8);
+	str[l] = line[i];
+	while (line[i])
+	{
+		str[++l] = line[++i];
+		if (line[i] == LABEL_CHAR && line[i - 1] != DIRECT_CHAR
+			&& line[i - 1] != ' ' && line[i - 1] != SEPARATOR_CHAR)
+			str[++l] = ' ';
+		if (line[i] == DIRECT_CHAR
+			|| (line[i] == '-' && ft_isdigit(line[i + 1])
+				&& line[i - 1] != DIRECT_CHAR))
+		{
+			str[l + 1] = str[l];
+			str[l++] = ' ';
+		}
+		if (str[l] == SEPARATOR_CHAR && str[l - 1] == ' ')
+		{
+			while (str[l - 1] == ' ')
+				l--;
+			str[l] = SEPARATOR_CHAR;
+		}
+	}
+	tab = ft_strsplit(str, ' ');
+	free(str);
+	return (tab);
+}
+
 void		trim_line(char *line, t_asm *file)
 {
 	char 	**tab;
@@ -102,7 +145,7 @@ void		trim_line(char *line, t_asm *file)
 	while (s->next)
 		s = s->next;
 	s->line = ft_strnew(ft_strlen(line));
-	tab = ft_strsplit(line, ' ');
+	tab = separate_line(line, 0, 0);
 	ft_strcpy(s->line, tab[0]);
 	while (tab[++i])
 	{

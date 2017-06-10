@@ -66,14 +66,14 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 	check_filename(file, filename);
 	while (get_next_line(fd, &line) > 0)
 	{
-		if (line[0] == COMMENT_CHAR || line[0] == '\0')
-			ft_strdel(&line);
-		else if (ft_strnequ(line, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING)))
+		if (is_no_code(line))
+			line[0] = '\0';
+		else if (ft_strstr(line, NAME_CMD_STRING))
 			init_name(fd, file, line);
-		else if (ft_strnequ(line, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING)))
+		else if (ft_strstr(line, COMMENT_CMD_STRING))
 			init_comment(fd, file, line);
 		else
-			ft_error(ft_strjoin("\ninvalid instruction : ", line));
+			exit_notice("invalid instruction ",line);
 		if (file->name && file->comment)
 			break ;
 		ft_strdel(&line);
@@ -81,6 +81,22 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 	if (!file->filename || !file->comment || !file->name)
 		ft_error("invalid file");
 	create_filename_fd(file);
+}
+
+void		check_end_file(int fd)
+{
+	char 	*line;
+	long 	position;
+
+	line = ft_strnew(1);
+	position = lseek (fd, -1L, SEEK_CUR);
+	if (position == -1L)
+		ft_error("lseek to current position failed");
+	if (read(fd, line, 1) == -1)
+		ft_error("no empty line in end of the file");
+	if (*line != '\n' && *line != ' ' && *line != '\t')
+		ft_error("no empty line in end of the file");
+	free(line);
 }
 
 void		read_file(int fd, t_asm *file)
@@ -99,7 +115,8 @@ void		read_file(int fd, t_asm *file)
 			make_line(file);
 		}
 		else
-			ft_error(ft_strjoin("\ninvalid instruction : ", line));
+			exit_notice("invalid instruction ",line);
 	}
-    free(line);
+	free(line);
+	check_end_file(fd);
 }
