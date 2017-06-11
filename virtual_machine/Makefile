@@ -38,6 +38,7 @@ SRC =   main.c \
 		ik_init_function.c \
 		support_instructions.c \
 		checking_instructions.c \
+		input_params.c \
 		instruction_live.c \
 		instruction_ld.c \
 		instruction_st.c \

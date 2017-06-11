@@ -64,6 +64,7 @@ set (SOURCE_FILES_CORWAR
                     virtual_machine/ik_init_visualization.c
                     virtual_machine/ik_start_pc_functions.c
                     virtual_machine/ik_dump_out.c
+                    virtual_machine//input_params.c
                     op.h)
 
 add_executable(asm ${SOURCE_FILES_ASM})

@@ -12,35 +12,36 @@
 
 #include "virtual_machine.h"
 
+void	set_indirect(short int addr, t_pc *p, t_struct *data, unsigned int value)
+{
+	unsigned char *start_point;
+
+	start_point = p->pc_ptr - 1;
+	addr = (short int)(addr % IDX_MOD);
+	move_ptr(data, &start_point, addr);
+	set_arguments(data , value, start_point, p->owner + 1);
+}
+
+
 int 	st(t_struct *data, t_pc *p)
 {
-	long int		arg;
-	unsigned int 	reg;
-	unsigned char 	*args;
-	unsigned char 	*args_len;
-	unsigned char	*point;
+	int 		args[3];
+	unsigned char 	**type_and_len;
 
-	args = (unsigned char *)ft_strnew(3);
-	args_len = (unsigned char *)ft_strnew(3);
+	type_and_len = init_type_len();
 	move_ptr(data, &p->pc_ptr, 1);
-	if (!ft_choose_arg(data, &p->pc_ptr, args, 2))
-		return (free_for_functions(args, args_len, 0));
-	point = p->pc_ptr;
-	move_ptr(data, &point, 1);
-	get_len_write(args, args_len, 0);
-	if (((reg = get_argument(data, &point, args_len[0])) > 16) ||
-			((arg = get_argument(data, &point, args_len[1])) > 16 && args[1] == T_REG))
-		return (free_for_functions(args, args_len, 0));
-	if (args[1] == T_IND)
+	if (!ft_choose_arg(data, &p->pc_ptr, type_and_len[0], 2))
 	{
-		point = p->pc_ptr - 1;
-		arg = cast_if_negative(arg);
-		arg = arg % IDX_MOD;
-		move_ptr(data, &point, arg);
-        set_arguments(data , p->r[reg], point, p->owner + 1);
+		ft_free_db_array((char**)type_and_len);
+		return (0);
 	}
-	else
-		p->r[arg] = p->r[reg];
-	move_ptr(data, &p->pc_ptr, (args_len[0] + args_len[1] + args_len[2] + 1));
-	return (free_for_functions(args, args_len, 1));
+	get_len_write(type_and_len[0], type_and_len[1], 2);
+	input_params(type_and_len, args, data, p);
+	if (type_and_len[0][1] == T_IND)
+		set_indirect((short int)args[1], p, data, p->r[args[0]]);
+	else if (type_and_len[0][1] == T_REG)
+		p->r[args[1]] = p->r[args[0]];
+	move_ptr(data, &p->pc_ptr, (type_and_len[1][0] + type_and_len[1][1] + 1));
+	ft_free_db_array((char**)type_and_len);
+	return (1);
 }

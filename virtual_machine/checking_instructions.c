@@ -82,3 +82,14 @@ long int		cast_if_negative(long int arg)
 	}
 	return (arg);
 }
+
+long int		cast_if_negative_int(long int arg)
+{
+	if (arg > 2147483647)
+	{
+		arg = arg - 4294967295;
+		if (arg <= 0)
+			arg -= 1;
+	}
+	return (arg);
+}

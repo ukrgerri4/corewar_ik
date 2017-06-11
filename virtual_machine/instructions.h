@@ -21,6 +21,7 @@
 int		ft_choose_arg(t_struct *data, unsigned char **p, unsigned char *args, int n);
 void	get_len_write(unsigned char *args, unsigned char *args_len, int len_dir);
 long int	cast_if_negative(long int arg);
+long int	cast_if_negative_int(long int arg);
 
 
 /*
@@ -70,7 +71,7 @@ int			xor(t_struct *data, t_pc *p);
 /*
 **instruction_sti.c
 */
-long int		cast_if_negative_sti(long int arg);
+
 int 		sti(t_struct *data, t_pc *p);
 
 /*
@@ -101,8 +102,14 @@ int 	aff(t_struct *data, t_pc *p);
 **support_instructions.c
 */
 void			get_len_write(unsigned char *args, unsigned char *args_len, int len_dir);
-unsigned int	get_argument(t_struct *data, unsigned char **p, int size); // зчитує аргументи для команди
+unsigned int	get_argument(t_struct *data, unsigned char **p, int size);
 void            change_carry(t_pc *list, unsigned int value);
 void            set_arguments(t_struct *data, unsigned int reg, unsigned char *p, int color);
+/*
+**input_params.c
+*/
+unsigned char	**init_type_len(void);
+void	get_indirect_value(unsigned char *point, int *args, t_struct *data);
+int		input_params(unsigned char **type_and_len, int *args, t_struct *data, t_pc *p); // зчитує аргументи для команди
 
 #endif //COREVAR_INSTRUCTIONS_H
