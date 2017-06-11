@@ -36,6 +36,7 @@ void    push_back_pc(t_struct *pl, unsigned char *ptr, int i)
     tmp->live = 0;
     tmp->cycles = 0;
     tmp->carry = 0;
+    tmp->cur_fun = 0;
     ft_fill_int(tmp->r, 17, 0);
     if (pl->last) {
         pl->last->next = tmp;

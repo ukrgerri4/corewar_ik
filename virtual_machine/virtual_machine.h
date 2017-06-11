@@ -41,6 +41,7 @@ typedef struct	s_pc
 	int 			live;
 	int				cycles;
 	int 			carry;
+	unsigned char	cur_fun;
 	unsigned char	*pc_ptr;
 	struct s_pc		*next;
     struct s_pc		*prev;

@@ -2,7 +2,7 @@
 
 void    init_function(void)
 {
-    g_fun[0] = 0;
+    g_fun[0] = NULL;
     g_fun[1] = live;
     g_fun[2] = ld;
     g_fun[3] = st;

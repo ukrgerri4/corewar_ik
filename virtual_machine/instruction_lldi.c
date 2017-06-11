@@ -34,9 +34,9 @@ int 	lldi(t_struct *data, t_pc *p)
 	point = p->pc_ptr;
 	move_ptr(data, &point, 1);
 	get_len_write(args, args_len, 2);
-	if (((arg[2] = get_argument(data, &point, args_len[0])) > 16) ||
-		((arg[0] = get_argument(data, &point, args_len[1])) > 16 && args[1] == T_REG) ||
-		((arg[1] = get_argument(data, &point, args_len[2])) > 16 && args[2] == T_REG))
+	if (((arg[0] = get_argument(data, &point, args_len[0])) > 16 && args[0] == T_REG)||
+		((arg[1] = get_argument(data, &point, args_len[1])) > 16 && args[1] == T_REG) ||
+		((arg[2] = get_argument(data, &point, args_len[2])) > 16 && args[2] == T_REG))
 		return (free_for_functions(args, args_len, 0));
 	if (args[0] == T_IND)
 		overwrite_t_ind_lldi(&arg[0], data, p->pc_ptr - 1);

@@ -19,7 +19,10 @@ int 	zjmp(t_struct *data, t_pc *p)
 	unsigned char	*start;
 
 	if (p->carry == 0)
+	{
+		move_ptr(data, &p->pc_ptr, 3);
 		return (0);
+	}
 	start = p->pc_ptr;
 	move_ptr(data, &p->pc_ptr, 1);
 	point = p->pc_ptr;

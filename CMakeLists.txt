@@ -39,6 +39,7 @@ set (SOURCE_FILES_CORWAR
                     virtual_machine/ft_parsing_file.c
                     virtual_machine/ft_search_flags.c
                     virtual_machine/ft_valid_name.c
+                    virtual_machine/ft_move_players_by_n.c
                     virtual_machine/support_instructions.c
                     virtual_machine/instruction_live.c
                     virtual_machine/checking_instructions.c
@@ -59,7 +60,11 @@ set (SOURCE_FILES_CORWAR
                     virtual_machine/instruction_lfork.c
                     virtual_machine/virtual_machine.h
                     virtual_machine/instructions.h
-                    op.h virtual_machine/instruction_aff.c virtual_machine/ik_init_visualization.c virtual_machine/ik_start_pc_functions.c virtual_machine/ik_dump_out.c)
+                    virtual_machine/instruction_aff.c
+                    virtual_machine/ik_init_visualization.c
+                    virtual_machine/ik_start_pc_functions.c
+                    virtual_machine/ik_dump_out.c
+                    op.h)
 
 add_executable(asm ${SOURCE_FILES_ASM})
 add_executable(corwar ${SOURCE_FILES_CORWAR})
