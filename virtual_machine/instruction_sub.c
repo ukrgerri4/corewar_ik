@@ -14,25 +14,17 @@
 
 int 	sub(t_struct *data, t_pc *p)
 {
-	long int 		reg[3];
-	unsigned char 	*args;
-	unsigned char 	*args_len;
-	unsigned char	*point;
+	t_fun_arg       arg;
 
-	args = (unsigned char *)ft_strnew(3);
-	args_len = (unsigned char *)ft_strnew(3);
+	init_fun_arg(&arg);
+	arg.start_point = p->pc_ptr;
 	move_ptr(data, &p->pc_ptr, 1);
-	if (!ft_choose_arg(data, &p->pc_ptr, args, 4))
-		return (free_for_functions(args, args_len, 0));
-	point = p->pc_ptr;
-	move_ptr(data, &point, 1);
-	get_len_write(args, args_len, 0);
-	if (((reg[0] = get_argument(data, &point, args_len[0])) > 16)
-		|| ((reg[1] = get_argument(data, &point, args_len[1])) > 16)
-		|| ((reg[2] = get_argument(data, &point, args_len[2])) > 16))
-		return (free_for_functions(args, args_len, 0));
-	p->r[reg[2]] = p->r[reg[0]] - p->r[reg[1]];
-	move_ptr(data, &p->pc_ptr, (args_len[0] + args_len[1] + args_len[2] + 1));
-	change_carry(p, p->r[reg[2]]);
-	return (free_for_functions(args, args_len, 1));
+	ft_choose_arg(&p->pc_ptr, arg.type_and_len, 4);
+	if (!ft_check_arguments(arg.type_and_len[0], 4))
+		return (exit_with_move(data, arg.type_and_len, p, 0));
+	if (!input_params(arg.type_and_len, arg.args, data, p))
+		return (exit_with_move(data, arg.type_and_len, p, 0));
+	p->r[arg.args[2]] = p->r[arg.args[0]] - p->r[arg.args[1]];
+	change_carry(p, p->r[arg.args[2]]);
+	return (exit_with_move(data, arg.type_and_len, p, 1));
 }

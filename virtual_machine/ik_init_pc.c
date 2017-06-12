@@ -25,7 +25,7 @@ void init_pc(t_struct *pl, unsigned char *ptr, int i)
 }
 
 
-void    push_back_pc(t_struct *pl, unsigned char *ptr, int i)
+void    push_back_pc(t_struct *pl, unsigned char *ptr, int i) // delete
 {
     t_pc *tmp;
 

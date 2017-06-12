@@ -1,31 +1,25 @@
 #include "virtual_machine.h"
 
-
-
 int 	sti(t_struct *data, t_pc *p)
 {
-	int 			args[3];
+    t_fun_arg       arg;
 	int 			addr;
-	unsigned char 	**type_and_len;
-	unsigned char	*start_point;
 
 
-	type_and_len = init_type_len();
-	start_point = p->pc_ptr;
+	init_fun_arg(&arg);
+	arg.start_point = p->pc_ptr;
 	move_ptr(data, &p->pc_ptr, 1);
-	if (!ft_choose_arg(data, &p->pc_ptr, type_and_len[0], 10))
-	{
-		ft_free_db_array((char**)type_and_len);
-		return (0);
-	}
-	get_len_write(type_and_len[0], type_and_len[1], 2);
-	input_params(type_and_len, args, data, p);
-	//кейс с IND
-	addr = args[1] + args[2];
+	ft_choose_arg(&p->pc_ptr, arg.type_and_len, 10);
+    if (!ft_check_arguments(arg.type_and_len[0], 10))
+		return (exit_with_move(data, arg.type_and_len, p, 0));
+	if (!input_params(arg.type_and_len, arg.args, data, p))
+		return (exit_with_move(data, arg.type_and_len, p, 0));
+    get_last_value(data, &arg, 1, p);
+	get_last_value(data, &arg, 2, p);
+	addr = arg.args[1] + arg.args[2];
 	addr = addr % IDX_MOD;
-	move_ptr(data, &start_point, addr);
-    set_arguments(data, p->r[args[0]], start_point, p->owner + 1);
-	move_ptr(data, &p->pc_ptr, (type_and_len[1][0] + type_and_len[1][1] + type_and_len[1][2] + 1));
-	ft_free_db_array((char**)type_and_len);
-	return (1);
+	move_ptr(data, &arg.start_point, addr);
+    set_arguments(data, p->r[arg.args[0]], arg.start_point, p->owner + 1);
+	return (exit_with_move(data, arg.type_and_len, p, 1));
 }
+

@@ -14,9 +14,8 @@
 
 int 	zjmp(t_struct *data, t_pc *p)
 {
-	long int 		arg;
-	unsigned char	*point;
 	unsigned char	*start;
+	short int		addr;
 
 	if (p->carry == 0)
 	{
@@ -25,11 +24,9 @@ int 	zjmp(t_struct *data, t_pc *p)
 	}
 	start = p->pc_ptr;
 	move_ptr(data, &p->pc_ptr, 1);
-	point = p->pc_ptr;
-	arg = get_argument(data, &point, 2);
-	arg = cast_if_negative(arg);
-	arg = arg % IDX_MOD;
+	addr = (short int)get_argument(data, &p->pc_ptr, 2);
+	addr = (short int)(addr % IDX_MOD);
 	p->pc_ptr = start;
-	move_ptr(data, &p->pc_ptr, arg);
+	move_ptr(data, &p->pc_ptr, addr);
 	return (1);
 }

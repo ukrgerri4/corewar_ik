@@ -2,7 +2,6 @@
 
 void    init_function(void)
 {
-    g_fun[0] = NULL;
     g_fun[1] = live;
     g_fun[2] = ld;
     g_fun[3] = st;
@@ -20,9 +19,3 @@ void    init_function(void)
     g_fun[15] = lfork;
     g_fun[16] = aff;
 }
-
-/*
-void    use_function(t_struct *pl, t_pc *current_pc)
-{
-
-}*/

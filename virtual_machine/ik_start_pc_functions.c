@@ -12,7 +12,7 @@ int     set_cycles(t_pc *cur)
     {
         if (g_tab[i].opcode == *(cur->pc_ptr))
         {
-            cur->cycles = g_tab[i].nb_tours;
+            cur->cycles = g_tab[i].nb_tours - 1;
             cur->cur_fun = *(cur->pc_ptr);
             return 1 ;
         }
@@ -38,12 +38,10 @@ void    set_del(void)
 void    move_pc(t_struct *pl)
 {
     t_pc *tmp;
-    int flag_chec_function_use;
 
     tmp = pl->first;
     while (tmp)
     {
-        flag_chec_function_use = 0;
         tmp->cycles--;
         if (tmp->cycles == 0)
         {
@@ -52,12 +50,11 @@ void    move_pc(t_struct *pl)
             g_fun[tmp->cur_fun](pl, tmp);
             tmp->cycles = -1;
             tmp->cur_fun = 0;
-            flag_chec_function_use = 1;
         }
-        if (!set_cycles(tmp) && !flag_chec_function_use)
+        else
         {
-            move_ptr(pl, &tmp->pc_ptr, 1);
-            set_cycles(tmp);
+            if (!set_cycles(tmp))
+                move_ptr(pl, &tmp->pc_ptr, 1);
         }
         if (pl->v)
             mvwchgat(map, (tmp->pc_ptr - pl->map) / 64,

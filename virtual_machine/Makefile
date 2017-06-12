@@ -42,7 +42,7 @@ SRC =   main.c \
 		instruction_live.c \
 		instruction_ld.c \
 		instruction_st.c \
-		instruction_add.c \
+	    instruction_add.c \
 		instruction_sub.c \
 		instruction_and.c \
 		instruction_or.c \

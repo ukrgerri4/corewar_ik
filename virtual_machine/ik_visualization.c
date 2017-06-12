@@ -85,6 +85,27 @@ void    out_info3(t_struct *pl)
     wrefresh(info3);
 }
 
+void    out_start_position(t_struct *pl)
+{
+    t_pc *tmp;
+
+    out_map(pl);
+    tmp = pl->first;
+    while (tmp)
+    {
+        mvwchgat(map, (tmp->pc_ptr - pl->map) / 64,
+                 ((tmp->pc_ptr - pl->map) % 64) * 3,
+                 2, 0, 7, NULL);
+        tmp = tmp->next;
+    }
+    wrefresh (map);
+    out_info1(pl);
+    //out_info2(pl);
+    out_info3(pl);
+    if (wgetch(map) == ' ')
+        set_del();
+}
+
 void    out_winner(t_struct *pl)
 {
     int row;

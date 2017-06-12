@@ -24,34 +24,6 @@ static void    write_code_to_field(t_struct *pl)
     }
 }
 
-static void    set_start_cycles(t_struct *pl)
-{
-    t_pc *tmp;
-
-    if (pl->v)
-        out_map(pl);
-    tmp = pl->first;
-    while (tmp)
-    {
-        tmp->cycles--;
-        set_cycles(tmp);
-        if (pl->v)
-            mvwchgat(map, (tmp->pc_ptr - pl->map) / 64,
-            ((tmp->pc_ptr - pl->map) % 64) * 3,
-            2, 0, 7, NULL);
-        tmp = tmp->next;
-    }
-    if (pl->v)
-    {
-        wrefresh (map);
-        out_info1(pl);
-        //out_info2(pl);
-        out_info3(pl);
-        if (wgetch(map) == ' ')
-            set_del();
-    }
-}
-
 static void    go_some_cycles(t_struct *pl, int cycles)
 {
     int     i;
@@ -115,13 +87,12 @@ static int     check_ending(t_struct *pl)
 void    start_vm(t_struct *pl)
 {
     write_code_to_field(pl);
-    set_start_cycles(pl);
+    if (pl->v)
+        out_start_position(pl);
     go_some_cycles(pl, pl->glob_cycles);
     while (check_ending(pl) != 1)
         go_some_cycles(pl, pl->glob_cycles);
     if (pl->v)
         out_winner(pl);
-    //else
-    //   ft_printf("Winner: Player[%d] - \"%s\"", pl->number_last_live_player, pl->players[pl->number_last_live_player * -1 -1]->name);
 }
 
