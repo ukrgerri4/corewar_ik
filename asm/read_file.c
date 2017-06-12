@@ -71,7 +71,7 @@ void		read_filename(int fd, char *filename, t_asm	*file)
 		else if (ft_strstr(line, NAME_CMD_STRING))
 			init_name(fd, file, line);
 		else if (ft_strstr(line, COMMENT_CMD_STRING))
-			init_comment(fd, file, line);
+			init_comment(fd, file, line, 0);
 		else
 			exit_notice("invalid instruction ",line);
 		if (file->name && file->comment)

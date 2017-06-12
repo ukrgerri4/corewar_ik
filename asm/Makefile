@@ -28,6 +28,7 @@ SRC =   main.c \
         parse_lines.c \
         clean_data.c \
         check_instructions.c \
+        separate_lines.c \
         ik_1.c \
         ik_2.c \
         ik_print_memory.c \

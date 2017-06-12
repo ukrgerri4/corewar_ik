@@ -75,7 +75,6 @@ void 		ft_parse_lines(t_line *str)
 	start = str;
 	while (str->next)
 	{
-		//ft_printf("%s\n", str->line);
 		if (str->line[ft_strlen(str->line) - 1] == SEPARATOR_CHAR
 			|| ft_strstr(str->line, ",,"))
 			exit_notice("Syntax error at token ", str->line);

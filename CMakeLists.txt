@@ -17,6 +17,7 @@ set(SOURCE_FILES_ASM
                     asm/init_data.c
                     asm/parse_lines.c
                     asm/read_file.c
+                    asm/separate_lines.c
                     asm/ik_1.c
                     asm/ik_2.c
                     asm/ik_print_memory.c

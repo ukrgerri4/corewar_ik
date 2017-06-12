@@ -95,7 +95,12 @@ void    write_command(t_asm *file, char **line)
     write_command_number(file, line[0]);
     file->arg_byte = file->i;
     if (g_tab[file->tab_nb].params_byte)
-        file->i++;
+    {
+        if (file->i < CHAMP_MAX_SIZE - 1)
+            file->i++;
+        else
+            ft_error("champion length more than CHAMP_MAX_SIZE");
+    }
     write_arguments_number(file, ft_strsplit(line[1], ','));
 }
 

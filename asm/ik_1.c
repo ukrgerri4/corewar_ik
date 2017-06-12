@@ -2,7 +2,11 @@
 
 void    write_reg(t_asm *file, char *str, unsigned char reg)
 {
-    str[file->i++] = reg;
+    str[file->i] = reg;
+    if (file->i < CHAMP_MAX_SIZE - 1)
+        file->i++;
+    else
+        ft_error("champion length more than CHAMP_MAX_SIZE");
 }
 
 void    write_ind(t_asm *file, char *str,unsigned short ind)
@@ -13,7 +17,12 @@ void    write_ind(t_asm *file, char *str,unsigned short ind)
     j = 0;
     while (j < 2) {
         tmp = ind;
-        str[file->i++] = (char) (tmp >> (8 - 8 * j++));
+        str[file->i] = (char) (tmp >> (8 - 8 * j));
+        if (file->i < CHAMP_MAX_SIZE - 1)
+            file->i++;
+        else
+            ft_error("champion length more than CHAMP_MAX_SIZE");
+        j++;
     }
 }
 
@@ -25,7 +34,12 @@ void    write_dir(t_asm *file, char *str,unsigned int dir)
     j = 0;
     while (j < 4) {
         tmp = dir;
-        str[file->i++] = (char) (tmp >> (24 - 8 * j++));
+        str[file->i] = (char) (tmp >> (24 - 8 * j));
+        if (file->i < CHAMP_MAX_SIZE - 1)
+            file->i++;
+        else
+            ft_error("champion length more than CHAMP_MAX_SIZE");
+        j++;
     }
 }
 

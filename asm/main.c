@@ -92,6 +92,7 @@ int 		main(int argc, char **argv)
 	read_filename(fd, argv[1], file);
 	read_file(fd, file);
 	ft_parse_lines(file->code);
+	//sleep(100);
 	make_cor(file);
 	ft_printf("Writing output program to %s.cor\n", file->filename);
 	return (0);

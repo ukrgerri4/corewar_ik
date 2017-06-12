@@ -31,7 +31,7 @@ int 	ld(t_struct *data, t_pc *p)
 	if (type_and_len[0][0] == T_IND)
 		get_indirect_value(start_point, &args[0], data);
 	p->r[args[1]] = (unsigned int)args[0];
-	printf("%d", type_and_len[1][0]);
+	change_carry(p, p->r[args[1]]);
 	move_ptr(data, &p->pc_ptr, (type_and_len[1][0] + type_and_len[1][1] + 1));
 	ft_free_db_array((char**)type_and_len);
 	return (1);

@@ -80,12 +80,12 @@ void				read_file(int fd, t_asm *filename);
 void				make_line(t_asm *file);
 
 /*
-** init_file.c
+** init_data.c
 */
 t_asm				*init_file(void);
 size_t				com_len(char *p, int *len);
 void				init_name(int fd, t_asm *file, char *line);
-void				init_comment(int fd, t_asm *file, char *line);
+void				init_comment(int fd, t_asm *file, char *line, int len);
 void				trim_line(char *line, t_asm *file);
 
 /*

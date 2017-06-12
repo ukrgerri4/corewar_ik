@@ -1982,47 +1982,4 @@ sjmp:
 	live	%0
 	ld		%4, r2
 	ld		%101253622, r3
-	ld		%134807571, r5
-	ld		%134807571, r7
-	ld		%0, r16
-	zjmp	%405
-	live	%-1
-	ld		%0, r2
-	ld		%190055682, r3
-	ld		%190056194, r5
-	ld		%190056194, r7
-	ld		%0, r16
-	zjmp	%448
-	ld		%16, r12
-	add		r12, r9, r9
-	add		r12, r10, r10
-	add		r12, r11, r11
-	st		r1, 6
-	live	%-42
-	ld		%0, r2
-	live	%-42
-	sti		r10, r11, r13
-	add		r12, r13, r13
-	xor		r13, %-255, r14
-	live	%4902343
-	st		r2, -50
-	st		r2, -59
-	st		r2, -68
-	st		r2, -77
-	st		r2, -86
-	st		r2, -95
-	st		r2, -104
-	st		r2, -113
-	st		r2, -122
-	st		r2, -131
-	st		r2, -140
-	st		r2, -149
-	st		r2, -158
-	st		r2, -167
-	st		r2, -176
-	st		r2, -185
-	st		r2, -194
-	st		r2, -203
-
-	live	%-100500
 	
