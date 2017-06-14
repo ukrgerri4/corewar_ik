@@ -7,7 +7,8 @@ void    write_mark_place(t_asm *file, char *mark, int rdi)
     tmp = file->mark;
     while (tmp)
     {
-        if (tmp->mark && mark && !ft_strcmp(tmp->mark, mark)) {
+        if (tmp->mark && mark && !ft_strcmp(tmp->mark, mark))
+        {
             ft_strdel(&mark);
             break;
         }

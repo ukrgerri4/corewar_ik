@@ -87,6 +87,10 @@ void    write_arguments_number(t_asm *file, char **arg)
         }
         i++;
     }
+    i = 0;
+    while (arg[i])
+        ft_strdel(&arg[i++]);
+    free(arg);
 }
 
 void    write_command(t_asm *file, char **line)

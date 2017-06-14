@@ -20,9 +20,7 @@ t_asm	*init_file(void)
 	file->name = NULL;
 	file->comment = NULL;
 	file->filename = NULL;
-	file->magic = COREWAR_EXEC_MAGIC;
 	file->code = NULL;
-	file->prog_size = 0;
 	file->code = NULL;
 	file->header = NULL;
 	file->prog = NULL;
@@ -102,8 +100,8 @@ void	init_comment(int fd, t_asm *file, char *line, int len)
 			file->comment[ft_strlen(file->comment)] = '\n';
 			free(line);
 		}
-		free(line);
 	}
+	free(line);
 	if (len > COMMENT_LENGTH)
 		ft_error("comment is very long");
 }

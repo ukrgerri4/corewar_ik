@@ -1,0 +1,3387 @@
+Introducing contestants...
+* Player 1, weighing 264 bytes, "Xx_DaRk_SaSuKe_93_xX" ("The Dirty Hamster") !
+P    1 | st r1 235
+P    1 | st r1 205
+P    1 | ld 8 r15
+P    1 | ld 1 r16
+P    1 | ld -400 r13
+P    1 | ld 0 r11
+P    1 | ld 0 r16
+P    1 | zjmp 11 OK
+P    1 | ld 268434178 r9
+P    1 | ld 16816278 r7
+P    1 | ld 9999999 r8
+P    1 | ld 300 r10
+P    1 | fork 156 (234)
+P    2 | live -1
+P    1 | live 999999
+P    2 | add r11 r15 r11
+P    2 | sti r7 300 8
+       | -> store to 300 + 8 = 308 (with pc and mod 552)
+P    2 | sti r8 300 8
+       | -> store to 300 + 8 = 308 (with pc and mod 557)
+P    2 | ld 0 r16
+P    2 | zjmp -27 OK
+P    2 | live -1
+P    2 | add r11 r15 r11
+P    2 | sti r7 300 16
+       | -> store to 300 + 16 = 316 (with pc and mod 560)
+P    2 | sti r8 300 16
+       | -> store to 300 + 16 = 316 (with pc and mod 565)
+P    2 | ld 0 r16
+P    2 | zjmp -27 OK
+P    2 | live -1
+P    2 | add r11 r15 r11
+P    2 | sti r7 300 24
+       | -> store to 300 + 24 = 324 (with pc and mod 568)
+P    2 | sti r8 300 24
+       | -> store to 300 + 24 = 324 (with pc and mod 573)
+P    2 | ld 0 r16
+P    2 | zjmp -27 OK
+P    2 | live -1
+P    2 | add r11 r15 r11
+P    2 | sti r7 300 32
+       | -> store to 300 + 32 = 332 (with pc and mod 576)
+P    2 | sti r8 300 32
+       | -> store to 300 + 32 = 332 (with pc and mod 581)
+P    2 | ld 0 r16
+P    2 | zjmp -27 OK
+P    2 | live -1
+P    2 | add r11 r15 r11
+P    2 | sti r7 300 40
+       | -> store to 300 + 40 = 340 (with pc and mod 584)
+P    2 | sti r8 300 40
+       | -> store to 300 + 40 = 340 (with pc and mod 589)
+P    2 | ld 0 r16
+P    2 | zjmp -27 OK
+P    2 | live -1
+P    2 | add r11 r15 r11
+P    2 | sti r7 300 48
+       | -> store to 300 + 48 = 348 (with pc and mod 592)
+P    2 | sti r8 300 48
+       | -> store to 300 + 48 = 348 (with pc and mod 597)
+P    2 | ld 0 r16
+P    2 | zjmp -27 OK
+P    2 | live -1
+P    2 | add r11 r15 r11
+P    2 | sti r7 300 56
+       | -> store to 300 + 56 = 356 (with pc and mod 600)
+P    2 | sti r8 300 56
+       | -> store to 300 + 56 = 356 (with pc and mod 605)
+P    2 | ld 0 r16
+P    2 | zjmp -27 OK
+P    2 | live -1
+P    2 | add r11 r15 r11
+P    2 | sti r7 300 64
+       | -> store to 300 + 64 = 364 (with pc and mod 608)
+P    2 | sti r8 300 64
+       | -> store to 300 + 64 = 364 (with pc and mod 613)
+P    2 | ld 0 r16
+P    2 | zjmp -27 OK
+P    2 | live -1
+P    2 | add r11 r15 r11
+P    2 | sti r7 300 72
+       | -> store to 300 + 72 = 372 (with pc and mod 616)
+P    1 | fork 123 (209)
+P    1 | ld 0 r16
+P    3 | live -1
+P    3 | sub r13 r15 r13
+P    2 | sti r8 300 72
+       | -> store to 300 + 72 = 372 (with pc and mod 621)
+P    2 | ld 0 r16
+P    1 | zjmp 3 OK
+P    1 | st r1 58
+P    1 | st r1 58
+P    1 | st r1 58
+P    3 | sti r9 300 -408
+       | -> store to 300 + -408 = -108 (with pc and mod 111)
+P    2 | zjmp -27 OK
+P    1 | st r1 58
+P    3 | ld 0 r16
+P    1 | st r1 58
+P    2 | live -1
+P    1 | st r1 58
+P    1 | st r1 58
+P    2 | add r11 r15 r11
+P    1 | st r1 58
+P    3 | zjmp -22 OK
+P    1 | st r1 58
+P    1 | st r1 58
+P    3 | live -1
+P    1 | ld 0 r16
+P    3 | sub r13 r15 r13
+P    2 | sti r7 300 80
+       | -> store to 300 + 80 = 380 (with pc and mod 624)
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -416
+       | -> store to 300 + -416 = -116 (with pc and mod 103)
+P    2 | sti r8 300 80
+       | -> store to 300 + 80 = 380 (with pc and mod 629)
+P    3 | ld 0 r16
+P    2 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    3 | live -1
+P    2 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -424
+       | -> store to 300 + -424 = -124 (with pc and mod 95)
+P    2 | sti r7 300 88
+       | -> store to 300 + 88 = 388 (with pc and mod 632)
+P    3 | ld 0 r16
+P    1 | zjmp -50 OK
+P    3 | zjmp -22 OK
+P    2 | sti r8 300 88
+       | -> store to 300 + 88 = 388 (with pc and mod 637)
+P    1 | live -1
+P    2 | ld 0 r16
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    2 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -432
+       | -> store to 300 + -432 = -132 (with pc and mod 87)
+P    2 | add r11 r15 r11
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    2 | sti r7 300 96
+       | -> store to 300 + 96 = 396 (with pc and mod 640)
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | sti r8 300 96
+       | -> store to 300 + 96 = 396 (with pc and mod 645)
+P    2 | ld 0 r16
+P    1 | zjmp -50 OK
+P    3 | sti r9 300 -440
+       | -> store to 300 + -440 = -140 (with pc and mod 79)
+P    3 | ld 0 r16
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    2 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | sti r7 300 104
+       | -> store to 300 + 104 = 404 (with pc and mod 648)
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -448
+       | -> store to 300 + -448 = -148 (with pc and mod 71)
+P    3 | ld 0 r16
+P    2 | sti r8 300 104
+       | -> store to 300 + 104 = 404 (with pc and mod 653)
+P    1 | live -1
+P    2 | ld 0 r16
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    2 | zjmp -27 OK
+P    3 | live -1
+P    2 | live -1
+P    3 | sub r13 r15 r13
+P    1 | zjmp -50 OK
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -456
+       | -> store to 300 + -456 = -156 (with pc and mod 63)
+P    3 | ld 0 r16
+P    2 | sti r7 300 112
+       | -> store to 300 + 112 = 412 (with pc and mod 656)
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    2 | sti r8 300 112
+       | -> store to 300 + 112 = 412 (with pc and mod 661)
+P    3 | live -1
+P    2 | ld 0 r16
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    2 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -464
+       | -> store to 300 + -464 = -164 (with pc and mod 55)
+P    3 | ld 0 r16
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | zjmp -50 OK
+P    2 | sti r7 300 120
+       | -> store to 300 + 120 = 420 (with pc and mod 664)
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | sti r8 300 120
+       | -> store to 300 + 120 = 420 (with pc and mod 669)
+P    1 | live -1
+P    2 | ld 0 r16
+P    1 | live -1
+P    3 | sti r9 300 -472
+       | -> store to 300 + -472 = -172 (with pc and mod 47)
+P    3 | ld 0 r16
+P    1 | live -1
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    2 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    2 | add r11 r15 r11
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | sti r7 300 128
+       | -> store to 300 + 128 = 428 (with pc and mod 672)
+P    1 | live -1
+P    3 | sti r9 300 -480
+       | -> store to 300 + -480 = -180 (with pc and mod 39)
+P    3 | ld 0 r16
+P    1 | zjmp -50 OK
+P    2 | sti r8 300 128
+       | -> store to 300 + 128 = 428 (with pc and mod 677)
+P    2 | ld 0 r16
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    2 | live -1
+P    1 | live -1
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -488
+       | -> store to 300 + -488 = -188 (with pc and mod 31)
+P    3 | ld 0 r16
+P    1 | live -1
+P    2 | sti r7 300 136
+       | -> store to 300 + 136 = 436 (with pc and mod 680)
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    2 | sti r8 300 136
+       | -> store to 300 + 136 = 436 (with pc and mod 685)
+P    1 | live -1
+P    2 | ld 0 r16
+P    3 | sub r13 r15 r13
+P    1 | zjmp -50 OK
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    3 | sti r9 300 -496
+       | -> store to 300 + -496 = -196 (with pc and mod 23)
+P    2 | live -1
+P    3 | ld 0 r16
+P    1 | live -1
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    2 | sti r7 300 144
+       | -> store to 300 + 144 = 444 (with pc and mod 688)
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    2 | sti r8 300 144
+       | -> store to 300 + 144 = 444 (with pc and mod 693)
+P    2 | ld 0 r16
+P    1 | live -1
+P    3 | sti r9 300 -504
+       | -> store to 300 + -504 = -204 (with pc and mod 15)
+P    3 | ld 0 r16
+P    1 | live -1
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    2 | live -1
+P    3 | live -1
+P    2 | add r11 r15 r11
+P    1 | zjmp -50 OK
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    2 | sti r7 300 152
+       | -> store to 300 + 152 = 452 (with pc and mod 696)
+P    1 | live -1
+P    3 | sti r9 300 -512
+       | -> store to 300 + -512 = -212 (with pc and mod 7)
+P    3 | ld 0 r16
+P    1 | live -1
+P    2 | sti r8 300 152
+       | -> store to 300 + 152 = 452 (with pc and mod 701)
+P    1 | live -1
+P    2 | ld 0 r16
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    2 | zjmp -27 OK
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | live -1
+P    1 | live -1
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    3 | sti r9 300 -520
+       | -> store to 300 + -520 = -220 (with pc and mod -1)
+P    3 | ld 0 r16
+P    2 | sti r7 300 160
+       | -> store to 300 + 160 = 460 (with pc and mod 704)
+P    1 | zjmp -50 OK
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    2 | sti r8 300 160
+       | -> store to 300 + 160 = 460 (with pc and mod 709)
+P    3 | sub r13 r15 r13
+P    2 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    3 | sti r9 300 -528
+       | -> store to 300 + -528 = -228 (with pc and mod -9)
+P    3 | ld 0 r16
+P    2 | live -1
+P    1 | live -1
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    2 | sti r7 300 168
+       | -> store to 300 + 168 = 468 (with pc and mod 712)
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | sti r8 300 168
+       | -> store to 300 + 168 = 468 (with pc and mod 717)
+P    1 | zjmp -50 OK
+P    3 | sti r9 300 -536
+       | -> store to 300 + -536 = -236 (with pc and mod -17)
+P    2 | ld 0 r16
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    2 | zjmp -27 OK
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    2 | live -1
+P    3 | live -1
+P    1 | live -1
+P    2 | add r11 r15 r11
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    2 | sti r7 300 176
+       | -> store to 300 + 176 = 476 (with pc and mod 720)
+P    1 | live -1
+P    3 | sti r9 300 -544
+       | -> store to 300 + -544 = -244 (with pc and mod -25)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    2 | sti r8 300 176
+       | -> store to 300 + 176 = 476 (with pc and mod 725)
+P    3 | zjmp -22 OK
+P    2 | ld 0 r16
+P    1 | live -1
+P    3 | live -1
+P    3 | sub r13 r15 r13
+P    2 | zjmp -27 OK
+P    1 | zjmp -50 OK
+P    2 | live -1
+P    1 | live -1
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    3 | sti r9 300 -552
+       | -> store to 300 + -552 = -252 (with pc and mod -33)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    2 | sti r7 300 184
+       | -> store to 300 + 184 = 484 (with pc and mod 728)
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    2 | sti r8 300 184
+       | -> store to 300 + 184 = 484 (with pc and mod 733)
+P    1 | live -1
+P    2 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -560
+       | -> store to 300 + -560 = -260 (with pc and mod -41)
+P    2 | zjmp -27 OK
+P    3 | ld 0 r16
+P    1 | live -1
+P    2 | live -1
+P    2 | add r11 r15 r11
+P    3 | zjmp -22 OK
+P    1 | zjmp -50 OK
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    2 | sti r7 300 192
+       | -> store to 300 + 192 = 492 (with pc and mod 736)
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -568
+       | -> store to 300 + -568 = -268 (with pc and mod -49)
+P    2 | sti r8 300 192
+       | -> store to 300 + 192 = 492 (with pc and mod 741)
+P    3 | ld 0 r16
+P    2 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    3 | live -1
+P    2 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -576
+       | -> store to 300 + -576 = -276 (with pc and mod -57)
+P    2 | sti r7 300 200
+       | -> store to 300 + 200 = 500 (with pc and mod 744)
+P    3 | ld 0 r16
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    2 | sti r8 300 200
+       | -> store to 300 + 200 = 500 (with pc and mod 749)
+P    1 | live -1
+P    2 | ld 0 r16
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    2 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -584
+       | -> store to 300 + -584 = -284 (with pc and mod -65)
+P    2 | add r11 r15 r11
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    2 | sti r7 300 208
+       | -> store to 300 + 208 = 508 (with pc and mod 752)
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    2 | sti r8 300 208
+       | -> store to 300 + 208 = 508 (with pc and mod 757)
+P    2 | ld 0 r16
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    3 | sti r9 300 -592
+       | -> store to 300 + -592 = -292 (with pc and mod -73)
+P    3 | ld 0 r16
+P    2 | zjmp -27 OK
+P    1 | live -1
+P    2 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    2 | add r11 r15 r11
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | sti r7 300 216
+       | -> store to 300 + 216 = 516 (with pc and mod 248)
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -600
+       | -> store to 300 + -600 = -300 (with pc and mod -81)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    3 | live -1
+P    1 | zjmp -50 OK
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -608
+       | -> store to 300 + -608 = -308 (with pc and mod -89)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -616
+       | -> store to 300 + -616 = -316 (with pc and mod -97)
+P    3 | ld 0 r16
+P    1 | zjmp -50 OK
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -624
+       | -> store to 300 + -624 = -324 (with pc and mod -105)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    3 | sti r9 300 -632
+       | -> store to 300 + -632 = -332 (with pc and mod -113)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    2 | live 9999872
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | live 9999872
+P    1 | live -1
+P    2 | live 9999872
+P    1 | live -1
+P    3 | sti r9 300 -640
+       | -> store to 300 + -640 = -340 (with pc and mod -121)
+P    2 | live 9999872
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    2 | live 9999872
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    2 | live 9999872
+P    3 | live -1
+P    2 | live 9999872
+P    3 | sub r13 r15 r13
+P    1 | zjmp -50 OK
+P    2 | live 9999872
+P    1 | live -1
+P    1 | live -1
+P    2 | live 9999872
+P    3 | sti r9 300 -648
+       | -> store to 300 + -648 = -348 (with pc and mod -129)
+P    3 | ld 0 r16
+P    1 | live -1
+P    2 | live 9999872
+P    1 | live -1
+P    2 | live 9999872
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    2 | live 9999872
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | live 9999872
+P    1 | live -1
+P    2 | live 9999872
+P    1 | live -1
+P    3 | sti r9 300 -656
+       | -> store to 300 + -656 = -356 (with pc and mod -137)
+P    3 | ld 0 r16
+P    1 | live -1
+P    2 | live 9999872
+P    2 | live 9999872
+P    3 | zjmp -22 OK
+P    1 | zjmp -50 OK
+P    2 | live 9999872
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    2 | live 9999872
+P    1 | live -1
+P    1 | live -1
+P    2 | live 9999872
+P    1 | live -1
+P    3 | sti r9 300 -664
+       | -> store to 300 + -664 = -364 (with pc and mod -145)
+P    2 | live 9999872
+P    3 | ld 0 r16
+P    1 | live -1
+P    2 | live 9999872
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    2 | live 9999872
+P    3 | live -1
+P    1 | live -1
+P    2 | live 9999872
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    2 | live 9999872
+P    1 | live -1
+P    2 | live 9999872
+P    3 | sti r9 300 -672
+       | -> store to 300 + -672 = -372 (with pc and mod -153)
+P    3 | ld 0 r16
+P    1 | zjmp -50 OK
+P    2 | live 9999872
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -680
+       | -> store to 300 + -680 = -380 (with pc and mod -161)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    3 | sti r9 300 -688
+       | -> store to 300 + -688 = -388 (with pc and mod -169)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -696
+       | -> store to 300 + -696 = -396 (with pc and mod -177)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    3 | live -1
+P    1 | zjmp -50 OK
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -704
+       | -> store to 300 + -704 = -404 (with pc and mod -185)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -712
+       | -> store to 300 + -712 = -412 (with pc and mod -193)
+P    3 | ld 0 r16
+P    1 | zjmp -50 OK
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -720
+       | -> store to 300 + -720 = -420 (with pc and mod -201)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    3 | sti r9 300 -728
+       | -> store to 300 + -728 = -428 (with pc and mod -209)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -736
+       | -> store to 300 + -736 = -436 (with pc and mod -217)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    3 | sub r13 r15 r13
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -744
+       | -> store to 300 + -744 = -444 (with pc and mod -225)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -752
+       | -> store to 300 + -752 = -452 (with pc and mod -233)
+P    3 | ld 0 r16
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | zjmp -50 OK
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -760
+       | -> store to 300 + -760 = -460 (with pc and mod -241)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -768
+       | -> store to 300 + -768 = -468 (with pc and mod -249)
+P    3 | ld 0 r16
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -776
+       | -> store to 300 + -776 = -476 (with pc and mod -257)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    3 | sti r9 300 -784
+       | -> store to 300 + -784 = -484 (with pc and mod -265)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -792
+       | -> store to 300 + -792 = -492 (with pc and mod -273)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    3 | live -1
+P    1 | zjmp -50 OK
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -800
+       | -> store to 300 + -800 = -500 (with pc and mod -281)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -808
+       | -> store to 300 + -808 = -508 (with pc and mod -289)
+P    3 | ld 0 r16
+P    1 | zjmp -50 OK
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | sub r13 r15 r13
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r9 300 -816
+       | -> store to 300 + -816 = -516 (with pc and mod 215)
+P    3 | ld 0 r16
+P    1 | live -1
+P    1 | live -1
+P    3 | zjmp -22 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    3 | zjmp 2573 OK
+P    1 | live -1
+P    3 | live -1
+P    1 | live -1
+P    3 | add r11 r15 r11
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    3 | sti r7 300 -1
+       | -> store to 300 + -1 = 299 (with pc and mod 543)
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | zjmp -50 OK
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    3 | live 9999872
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    3 | live 9999872
+P    1 | live -1
+P    1 | live -1
+P    3 | live 9999872
+P    3 | live 9999872
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | live -1
+P    1 | zjmp -50 OK
+P    1 | live -1
+Contestant 1, "Xx_DaRk_SaSuKe_93_xX", has won !

@@ -2,20 +2,22 @@
 
 void    fill_mark(t_asm *file)
 {
-    t_mark *tmp;
+    t_mark          *tmp_mark;
+    t_mark_inside   *inside;
 
-    tmp = file->mark;
-    while (tmp)
+    tmp_mark = file->mark;
+    while (tmp_mark)
     {
-        while(tmp->start){
-            file->i = tmp->start->place_of_byte;
-            if (tmp->start->rdi == T_IND)
-                write_ind(file, file->prog, (unsigned short)(tmp->steps - tmp->start->before_command_byte));
+        inside = tmp_mark->start;
+        while(inside){
+            file->i = inside->place_of_byte;
+            if (inside->rdi == T_IND)
+                write_ind(file, file->prog, (unsigned short)(tmp_mark->steps - inside->before_command_byte));
             else
-                write_dir(file, file->prog, (unsigned int)(tmp->steps - tmp->start->before_command_byte));
-            tmp->start = tmp->start->next;
+                write_dir(file, file->prog, (unsigned int)(tmp_mark->steps - inside->before_command_byte));
+            inside = inside->next;
         }
-        tmp = tmp->next;
+        tmp_mark = tmp_mark->next;
     }
 }
 

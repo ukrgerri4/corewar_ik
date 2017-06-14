@@ -40,8 +40,6 @@ typedef struct		s_line
 
 typedef struct		s_asm
 {
-    unsigned int	magic;
-    unsigned int	prog_size;
     char			*name;
     char			*comment;
     char			*filename;

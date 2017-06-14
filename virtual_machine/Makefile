@@ -6,7 +6,7 @@
 #    By: apoplavs <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/24 16:11:32 by apoplavs          #+#    #+#              #
-#    Updated: 2017/05/05 10:51:03 by apoplavs         ###   ########.fr        #
+#    Updated: 2017/06/14 21:56:16 by ikryvenk         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,52 +20,48 @@ CC = gcc
 
 LIBFT = ../libftprintf/libftprintf.a
 
-SRC =   main.c \
-		allocation_memory.c \
-		free_memory.c \
-		ft_error.c \
-		ft_parsing_file.c \
-		ft_move_players_by_n.c \
-		ft_search_flags.c \
-		ft_valid_name.c \
-		ik_base_function.c \
-		ik_init_pc.c \
-		ik_start_pc.c \
-		ik_start_pc_functions.c \
-		ik_init_visualization.c \
-		ik_dump_out.c \
-		ik_visualization.c \
-		ik_init_function.c \
-		support_instructions.c \
-		checking_instructions.c \
-		input_params.c \
-		instruction_live.c \
-		instruction_ld.c \
-		instruction_st.c \
-	    instruction_add.c \
-		instruction_sub.c \
-		instruction_and.c \
-		instruction_or.c \
-		instruction_xor.c \
-		instruction_zjmp.c \
-		instruction_ldi.c \
-		instruction_sti.c \
-		instruction_fork.c \
-		instruction_lld.c \
-		instruction_lldi.c \
-		instruction_lfork.c \
-		instruction_aff.c \
+SRC =  main.c \
+       init_function.c \
+       base_function.c \
+       pars_alloc_and_free.c \
+       pars_parsing_file.c \
+       pars_search_flags.c \
+       pars_valid_name.c \
+       pars_move_players_by_n.c \
+       exec_pc_0.c \
+       exec_pc_1.c \
+       00_helpfun_0.c \
+       00_helpfun_1.c \
+       00_live.c \
+       01_ld.c \
+       02_st.c \
+       03_add.c \
+       04_sub.c \
+       05_and.c \
+       06_or.c \
+       07_xor.c \
+       08_zjmp.c \
+       09_ldi.c \
+       10_sti.c \
+       11_fork.c \
+       12_lld.c \
+       13_lldi.c \
+       14_lfork.c \
+       15_aff.c \
+       visual_0.c \
+       visual_1.c \
+       visual_2_dump.c \
 
 OBJ = $(SRC:.c=.o)
 
-HEADERS = ../libftprintf/get_next_line.h virtual_machine.h ../op.h instructions.h
+HEADERS = ../libftprintf/get_next_line.h vm.h ../op.h vm_instructions.h
 
-FLAGS = -Wall -Wextra
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) -o $(NAME) $(OBJ) $(LIBFT) -lncurses
+	@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) -lncurses
 	@echo "\r\033[48;5;15;38;5;25m✅  MADE $(NAME)  \033[0m\033[K"
 	@rm -f $(OBJ) lem_in.h.gch *~
 

@@ -8,7 +8,7 @@ void    init_mark(t_asm *file, char *name, int steps)
     while (tmp)
     {
         if (!ft_strcmp(tmp->mark, name))
-            break ;
+            break;
         tmp = tmp->next;
     }
     if (tmp)
