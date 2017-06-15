@@ -6,7 +6,7 @@
 /*   By: apoplavs <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/29 13:21:18 by apoplavs          #+#    #+#             */
-/*   Updated: 2017/05/29 13:21:26 by apoplavs         ###   ########.fr       */
+/*   Updated: 2017/06/15 21:09:21 by ikryvenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ int					live(t_struct *data, t_pc *p)
 	{
 		player->count_live++;
 		data->number_last_live_player = player->player_number;
+		if (!data->fl_v)
+			ft_printf("A process shows that player [%d] \"%s\" is alive\n",
+					(p->owner + 1) * -1, data->players[p->owner]->name);
 	}
 	data->nbr_live++;
 	p->live++;

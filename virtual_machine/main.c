@@ -40,7 +40,7 @@ t_op	g_tab[17] = {
 
 void	usage(void)
 {
-	printf("Usage:\n                      \e[5;31m>>>>>>>>>>>WARNING!<<"
+	ft_printf("Usage:\n                      \e[5;31m>>>>>>>>>>>WARNING!<<"
 			"<<<<<<<<<\e[0m\n"
 	"\e[5;31mPlease be careful before input arguments in this game "
 	"this can kill you or broke your leg.\e[0m\n"
