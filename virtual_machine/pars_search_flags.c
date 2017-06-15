@@ -29,7 +29,7 @@ void	find_flag(char *flag, char *argum, t_struct *pl)
 				pl->fl_n = ft_atoi(argum);
 		}
 		else if (ft_strequ(flag, "-n"))
-			ft_error("flag must be with number 1-4 nothing else exemple: [-n 1 'name.cor']");
+			ft_error("flag must be with number 1-4 exemple: [-n 1 '*.cor']");
 		else if (ft_strequ(flag, "-d"))
 			pl->fl_dump = 0;
 	}
@@ -39,7 +39,7 @@ void	find_flag(char *flag, char *argum, t_struct *pl)
 		ft_error("bad flags input");
 }
 
-void 	ft_search_flags(char **argc, int argv, t_struct *pl)
+void	ft_search_flags(char **argc, int argv, t_struct *pl)
 {
 	int i;
 
@@ -50,7 +50,7 @@ void 	ft_search_flags(char **argc, int argv, t_struct *pl)
 		{
 			find_flag(argc[i], argc[i + 1], pl);
 			if (pl->fl_n == 0 || pl->fl_n > 4)
-				ft_error("flag must be with number 1-4 nothing else exemple: [-n 1 'name.cor']");
+				ft_error("flag must be with number1-4 exemple: [-n 1 '*.cor']");
 		}
 		i++;
 	}

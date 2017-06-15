@@ -41,7 +41,7 @@ char		**ft_add_str_in_double(char **old, char *str)
 	return (old);
 }
 
-void	ft_free_db_array(char **array)
+void		ft_free_db_array(char **array)
 {
 	int i;
 

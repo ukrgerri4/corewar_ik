@@ -12,7 +12,7 @@
 
 #include "vm.h"
 
-int 	ft_interpretation(unsigned char *str, int size)
+int				ft_interpretation(unsigned char *str, int size)
 {
 	int res;
 	int i;
@@ -31,8 +31,8 @@ int 	ft_interpretation(unsigned char *str, int size)
 
 unsigned char	*ft_unig_strsub(unsigned char *file, int from, int to)
 {
-	int size;
-	unsigned char *res;
+	int				size;
+	unsigned char	*res;
 
 	size = to - from;
 	res = (unsigned char *)ft_strnew((size_t)size + 1);
@@ -47,23 +47,28 @@ unsigned char	*ft_unig_strsub(unsigned char *file, int from, int to)
 	return (res);
 }
 
-void	ft_write_pl_info(size_t size, unsigned char *file, int i, t_struct *pl)
+void			ft_write_pl_info(size_t size,
+								unsigned char *file, int i, t_struct *pl)
 {
 	int point;
 
 	point = 3;
 	pl->players[i]->magic = ft_unig_strsub(file, 0, point);
 	point++;
-	pl->players[i]->name = ft_unig_strsub(file, point, point + PROG_NAME_LENGTH + 4);
+	pl->players[i]->name =
+			ft_unig_strsub(file, point, point + PROG_NAME_LENGTH + 4);
 	point += PROG_NAME_LENGTH + 4;
-	pl->players[i]->size_cd = ft_interpretation(ft_unig_strsub(file, point, point + 4), 4);
+	pl->players[i]->size_cd =
+			ft_interpretation(ft_unig_strsub(file, point, point + 4), 4);
 	point += 4;
-	pl->players[i]->comment = ft_unig_strsub(file, point, point + COMMENT_LENGTH + 4);
+	pl->players[i]->comment =
+			ft_unig_strsub(file, point, point + COMMENT_LENGTH + 4);
 	point += COMMENT_LENGTH + 4;
 	pl->players[i]->code = ft_unig_strsub(file, point, (int)size);
 	if (pl->players[i]->size_cd != (int)size - point)
 		ft_error("declared size of program and program isn't match");
-	if (pl->players[i]->size_cd > CHAMP_MAX_SIZE || (int)size - point > CHAMP_MAX_SIZE)
+	if (pl->players[i]->size_cd > CHAMP_MAX_SIZE
+		|| (int)size - point > CHAMP_MAX_SIZE)
 		ft_error("size of program is to bigger than max declared size");
 }
 

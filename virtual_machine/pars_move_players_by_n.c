@@ -12,7 +12,7 @@
 
 #include "vm.h"
 
-void		check_after_n_file(char **argv, t_struct *pl)
+void	check_after_n_file(char **argv, t_struct *pl)
 {
 	int		i;
 	char	**tmp;
@@ -26,7 +26,7 @@ void		check_after_n_file(char **argv, t_struct *pl)
 			if (argv[i])
 			{
 				tmp = ft_strsplit(argv[i], '.');
-				if (!ft_strequ(tmp[ft_len_db_array(tmp) - 1], "cor"))
+				if (!ft_strequ(tmp[len_arr(tmp) - 1], "cor"))
 					ft_error("after flag '-n' number[1-4] 'file.cor'");
 				ft_free_db_array(tmp);
 			}
@@ -39,7 +39,7 @@ void		check_after_n_file(char **argv, t_struct *pl)
 	}
 }
 
-char 	**move_pl_index(int nb, char *player, char **names)
+char	**move_pl_index(int nb, char *player, char **names)
 {
 	int		i;
 	int		j;
@@ -63,7 +63,7 @@ char 	**move_pl_index(int nb, char *player, char **names)
 	return (new);
 }
 
-char 	**ft_move_pl_by_n(char **argv, char **names, t_struct *pl)
+char	**ft_move_pl_by_n(char **argv, char **names, t_struct *pl)
 {
 	int		i;
 	int		num_tmp;
@@ -72,7 +72,7 @@ char 	**ft_move_pl_by_n(char **argv, char **names, t_struct *pl)
 	check_after_n_file(argv, pl);
 	while (argv[i])
 	{
-		if(ft_strequ(argv[i], "-n"))
+		if (ft_strequ(argv[i], "-n"))
 		{
 			num_tmp = argv[++i][0] - '0';
 			if (num_tmp - 1 < pl->num_pl)

@@ -30,31 +30,32 @@ SRC =  main.c \
        pars_move_players_by_n.c \
        exec_pc_0.c \
        exec_pc_1.c \
-       00_helpfun_0.c \
-       00_helpfun_1.c \
-       00_live.c \
-       01_ld.c \
-       02_st.c \
-       03_add.c \
-       04_sub.c \
-       05_and.c \
-       06_or.c \
-       07_xor.c \
-       08_zjmp.c \
-       09_ldi.c \
-       10_sti.c \
-       11_fork.c \
-       12_lld.c \
-       13_lldi.c \
-       14_lfork.c \
-       15_aff.c \
+       f00_helpfun_0.c \
+       f00_helpfun_1.c \
+       f00_live.c \
+       f01_ld.c \
+       f02_st.c \
+       f03_add.c \
+       f04_sub.c \
+       f05_and.c \
+       f06_or.c \
+       f07_xor.c \
+       f08_zjmp.c \
+       f09_ldi.c \
+       f10_sti.c \
+       f11_fork.c \
+       f12_lld.c \
+       f13_lldi.c \
+       f14_lfork.c \
+       f15_aff.c \
        visual_0.c \
        visual_1.c \
-       visual_2_dump.c \
+       visual_2.c \
+       visual_3_dump.c \
 
 OBJ = $(SRC:.c=.o)
 
-HEADERS = ../libftprintf/get_next_line.h vm.h ../op.h vm_instructions.h
+HEADERS = ../libftprintf/get_next_line.h vm.h ../op.h
 
 FLAGS = -Wall -Wextra -Werror
 

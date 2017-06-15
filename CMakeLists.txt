@@ -9,21 +9,19 @@ set(FLAGS "-lncurses")
 
 set(SOURCE_FILES_ASM
         asm/main.c
-        asm/asm.h
-        asm/check_data.c
-        asm/check_instructions.c
+        asm/pars_check_data.c
+        asm/pars_check_instructions.c
+        asm/pars_init_data.c
+        asm/pars_lines.c
+        asm/pars_read_file.c
+        asm/pars_separate_lines.c
+        asm/write_code.c
+        asm/write_base_fun.c
+        asm/write_init_mark.c
+        asm/write_code_comand.c
+        asm/write_code_mark.c
         asm/clean_data.c
-        asm/error_management.c
-        asm/init_data.c
-        asm/parse_lines.c
-        asm/read_file.c
-        asm/separate_lines.c
-        asm/ik_1.c
-        asm/ik_2.c
-        asm/ik_print_memory.c
-        asm/ik_init_struct.c
-        asm/ik_write_comand.c
-        asm/ik_write_mark.c
+        asm/error_management.c        
         op.h)
 
 set (SOURCE_FILES_CORWAR
@@ -37,30 +35,29 @@ set (SOURCE_FILES_CORWAR
         virtual_machine/pars_move_players_by_n.c
         virtual_machine/exec_pc_0.c
         virtual_machine/exec_pc_1.c
-        virtual_machine/00_helpfun_0.c
-        virtual_machine/00_helpfun_1.c
-        virtual_machine/00_live.c
-        virtual_machine/01_ld.c
-        virtual_machine/02_st.c
-        virtual_machine/03_add.c
-        virtual_machine/04_sub.c
-        virtual_machine/05_and.c
-        virtual_machine/06_or.c
-        virtual_machine/07_xor.c
-        virtual_machine/08_zjmp.c
-        virtual_machine/09_ldi.c
-        virtual_machine/10_sti.c
-        virtual_machine/11_fork.c
-        virtual_machine/12_lld.c
-        virtual_machine/13_lldi.c
-        virtual_machine/14_lfork.c
-        virtual_machine/15_aff.c
+        virtual_machine/f00_helpfun_0.c
+        virtual_machine/f00_helpfun_1.c
+        virtual_machine/f00_live.c
+        virtual_machine/f01_ld.c
+        virtual_machine/f02_st.c
+        virtual_machine/f03_add.c
+        virtual_machine/f04_sub.c
+        virtual_machine/f05_and.c
+        virtual_machine/f06_or.c
+        virtual_machine/f07_xor.c
+        virtual_machine/f08_zjmp.c
+        virtual_machine/f09_ldi.c
+        virtual_machine/f10_sti.c
+        virtual_machine/f11_fork.c
+        virtual_machine/f12_lld.c
+        virtual_machine/f13_lldi.c
+        virtual_machine/f14_lfork.c
+        virtual_machine/f15_aff.c
         virtual_machine/visual_0.c
         virtual_machine/visual_1.c
-        virtual_machine/visual_2(dump).c
+        virtual_machine/visual_3_dump.c
         virtual_machine/vm.h
-        virtual_machine/vm_instructions.h
-        op.h )
+        op.h virtual_machine/visual_2.c)
 
 add_executable(asm ${SOURCE_FILES_ASM})
 add_executable(corwar ${SOURCE_FILES_CORWAR})

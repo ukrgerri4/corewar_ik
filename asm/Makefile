@@ -20,21 +20,20 @@ CC = gcc
 
 LIBFT = ../libftprintf/libftprintf.a
 
-SRC =   main.c \
-        error_management.c \
-        init_data.c \
-        check_data.c \
-        read_file.c \
-        parse_lines.c \
-        clean_data.c \
-        check_instructions.c \
-        separate_lines.c \
-        ik_1.c \
-        ik_2.c \
-        ik_print_memory.c \
-        ik_init_struct.c \
-        ik_write_comand.c \
-        ik_write_mark.c
+SRC =   main.c                    \
+        pars_check_data.c         \
+        pars_check_instructions.c \
+        pars_init_data.c          \
+        pars_lines.c              \
+        pars_read_file.c          \
+        pars_separate_lines.c     \
+        write_code.c              \
+        write_base_fun.c          \
+        write_init_mark.c         \
+        write_code_comand.c       \
+        write_code_mark.c         \
+        clean_data.c              \
+        error_management.c        \
 
 OBJ = $(SRC:.c=.o)
 
