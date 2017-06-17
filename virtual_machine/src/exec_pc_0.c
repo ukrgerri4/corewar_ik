@@ -67,7 +67,7 @@ static void	go_some_cycles(t_struct *pl, int cycles)
 		if (pl->fl_v)
 			end_cycle_out(pl);
 		i++;
-		if (i == pl->fl_dump)
+		if (!pl->fl_dump || i == pl->fl_dump)
 		{
 			out_dump(pl);
 			exit(0);

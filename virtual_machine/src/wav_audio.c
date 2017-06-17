@@ -6,7 +6,7 @@
 /*   By: ikryvenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 15:04:29 by ikryvenk          #+#    #+#             */
-/*   Updated: 2017/06/16 17:12:12 by ikryvenk         ###   ########.fr       */
+/*   Updated: 2017/06/17 14:28:41 by ikryvenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		sound(void)
 	if (SDL_Init(SDL_INIT_AUDIO) < 0)
 		return (1);
 	close(2);
-	if (SDL_LoadWAV("source/1.wav",
+	if (SDL_LoadWAV("source/boom.wav",
 					&wav_spec, &wav_buffer, &wav_length) == NULL)
 		return (1);
 	wav_spec.callback = my_audio_callback;

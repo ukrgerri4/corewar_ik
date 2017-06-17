@@ -6,7 +6,7 @@
 /*   By: ikryvenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/15 20:35:20 by ikryvenk          #+#    #+#             */
-/*   Updated: 2017/06/15 20:39:24 by ikryvenk         ###   ########.fr       */
+/*   Updated: 2017/06/17 14:27:33 by ikryvenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define VM_H
 
 # include "../../libftprintf/get_next_line.h"
-# include "../../op.h"
+# include "op.h"
 # include <errno.h>
 # include <ncurses.h>
 # include <SDL2/SDL.h>

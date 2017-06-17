@@ -20,20 +20,20 @@ CC = gcc
 
 LIBFT = ../libftprintf/libftprintf.a
 
-SRC =   main.c                    \
-        pars_check_data.c         \
-        pars_check_instructions.c \
-        pars_init_data.c          \
-        pars_lines.c              \
-        pars_read_file.c          \
-        pars_separate_lines.c     \
-        write_code.c              \
-        write_base_fun.c          \
-        write_init_mark.c         \
-        write_code_comand.c       \
-        write_code_mark.c         \
-        clean_data.c              \
-        error_management.c        \
+SRC =   src/main.c                    \
+        src/pars_check_data.c         \
+        src/pars_check_instructions.c \
+        src/pars_init_data.c          \
+        src/pars_lines.c              \
+        src/pars_read_file.c          \
+        src/pars_separate_lines.c     \
+        src/write_code.c              \
+        src/write_base_fun.c          \
+        src/write_init_mark.c         \
+        src/write_code_comand.c       \
+        src/write_code_mark.c         \
+        src/clean_data.c              \
+        src/error_management.c        \
 
 OBJ = $(SRC:.c=.o)
 
@@ -47,7 +47,7 @@ $(NAME): $(OBJ) $(LIBFT)
 	@$(CC) -o $(NAME) $(OBJ) $(LIBFT)
 	@echo "\r\033[48;5;15;38;5;25m✅  MADE $(NAME)  \033[0m\033[K"
 
-$(OBJ): %.o: %.c
+$(OBJ): src/%.o: src/%.c
 	@$(CC) -c $(FLAGS) $< -o $@
 	@printf "\r\033[38;5;11m⌛ MAKE %s     plz wait :  %*s\033[0m\033[K" $(NAME) $(DELTA) "$@"
 

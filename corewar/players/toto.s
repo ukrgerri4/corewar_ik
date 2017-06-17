@@ -4,10 +4,10 @@
 #     VOALA
 #
 .name		"Celebratio
-n Fun
-ebre v0.99pl42"
-.comment	"Jour
- J"
+n Funebre v0.99pl42"
+.comment	"J
+
+our J"
 
 		ld   %0,r3		
 label:		zjmp %:avantdebt
